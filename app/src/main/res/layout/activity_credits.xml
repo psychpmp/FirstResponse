@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/creditsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Credits"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Add credits content here -->
+    <TextView
+        android:id="@+id/creditsContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/creditsTitle"
+        android:text="Credits content goes here"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

@@ -1,0 +1,434 @@
+<resources>
+    <string name="app_name">FirstResponse</string>
+    <string name="home">Home</string>
+    <string name="about_us">About Us</string>
+    <string name="website">Website</string>
+    <string name="url">https://redcrosskarnataka.org/</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string name="seizure1"> Epilepsy is a brain condition that causes a person to have seizures. It is one of the most common disorders of the nervous system.
+        There are different types of seizures. The type of seizure depends on which part and how much of the brain is affected and what happens during the seizure. The 2 main categories of epileptic seizures are <b>focal (partial) seizure</b> and <b>generalized seizure</b>.</string>
+    <string name="seizure2"> A seizure can be caused by many things. These can include:
+        <b>An imbalance of nerve-signaling brain chemicals (neurotransmitters),</b>
+        <b>Brain tumor,</b>
+        <b>Stroke,</b>
+        <b>Brain damage from illness or injury.</b>
+        Epilepsy may be caused by a combination of these. In most cases, the cause of epilepsy can’t be found.</string>
+
+    <string name="seizure3"> "Your symptoms depend on the type of seizure. General symptoms or warning signs of a seizure can include:\n
+<b>1.Staring\n</b>
+<b>2.Jerking movements of the arms and legs\n</b>
+<b>3.Stiffening of the body\n</b>
+<b>4.Loss of consciousness\n</b>
+<b>5.Breathing problems or stopping breathing\n</b>
+<b>6.Loss of bowel or bladder control\n</b>
+<b>7.Falling suddenly for no apparent reason,especially when associated with loss of consciousness\n</b>
+<b>8.Not responding to noise or words for brief periods\n</b>
+<b>9.Appearing confused or in a haze\n</b>
+<b>10.Nodding your head rhythmically, when associated with loss of awareness or loss of consciousness\n</b>
+<b>11.Periods of rapid eye blinking and staring"</b></string>
+
+    <string name="seizure4">The goal of treatment is to control, stop, or reduce how often seizures occur. Treatment is most often done with medicine. There are many types of medicines used to treat epilepsy. Your healthcare provider will need to identify the type of seizure you are having. Medicines are selected based on the type of seizure, age of the person, side effects, cost, and ease of use.\n\n
+        <b>1.Blood tests\n</b>
+        <b>2.Urine tests\n</b>
+        <b>3.Electroencephalogram (EEG)\n</b>
+        <b>4.Vagus Nerve Stimulation (VNS)\n</b>
+        <b>5.Surgery"</b></string>
+
+    <string name="earth_para1">
+        An earthquake is a sudden shaking of Earth\'s surface caused by the movement of rocks deep underneath.\n
+        Most quakes are unnoticeable by people on Earth\'s surface. Thousands of quakes occur every day but are too weak to be felt.\n
+
+    </string>
+
+    <string name="earth_para2"><b>■Plate tectonics</b> - The Earth’s outermost layer is fragmented into about 15 major slabs called tectonic plates. These slabs form the lithosphere, which is comprised of the crust (continental and oceanic) and the upper part of the mantle. Tectonic plates move very slowly relative to each other, typically a few centimetres per year, but this still causes a huge amount of deformation at the plate boundaries, which in turn results in earthquakes.\n
+       \n<b>■Elastic rebound theory</b> - Before an earthquake, the buildup of stress in the rocks on either side of a fault results in gradual deformation. Eventually, this deformation exceeds the frictional force holding the rocks together and sudden slip occurs along the fault. This releases the accumulated stress and the rocks on either side of the fault return to their original shape (elastic rebound) but are offset on either side of the fault.\n
+    </string>
+
+    <string name="earth_indoor"><b>Drop, Cover, and Hold On:</b> <b>Drop</b> to your hands and knees to prevent falling. <b>Cover</b> your head and neck (and entire body if possible) under a sturdy piece of furniture like a table or desk. <b>Hold</b> On to the furniture to keep it in place until the shaking stops.\n<b>Stay away from windows, glass, and exterior walls:</b> These can break or collapse, causing injury.\n<b>Do not run outside:</b> It’s often safer to stay indoors because falling debris can be hazardous near buildings.\n<b>Avoid elevators:</b> If the power goes out or the building is damaged, elevators can become trapped.\n
+    </string>
+
+    <string name="earth_outdoor"><b>Move away from buildings, trees, streetlights, and utility wires:</b> These structures can collapse or break during an earthquake.\n<b>Find an open space:</b> Stay in an open area until the shaking stops.\n<b>Drop to the ground:</b> Stay low to reduce the risk of being knocked down by the shaking.\n
+    </string>
+
+    <string name="earth_vehicle"><b>Pull over:</b> Stop as quickly and safely as possible, avoiding overpasses, bridges, or power lines.\n<b>Stay inside the vehicle:</b> The vehicle can offer protection from falling debris.\n<b>Avoid parking near buildings, trees, or large signs:</b> These could collapse onto your vehicle.\n<b>Proceed cautiously:</b> After the shaking stops, drive carefully, watching for road damage or hazards.\n
+    </string>
+
+    <string name="earth_building"><b>Stay inside:</b> Do not use elevators. Find cover under sturdy furniture.\n<b>Move away from windows and outside walls:</b> These are prone to shattering or collapsing.\n
+    </string>
+
+    <string name="earth_coast"><b>Be aware of tsunamis:</b> Earthquakes near coastlines can trigger tsunamis. After the shaking stops, move to higher ground as quickly as possible if you are near the ocean.\n
+    </string>
+
+    <string name="earth_afterearthquake"><b>Be prepared for aftershocks:</b> These smaller tremors can happen minutes or even days after the main quake.\n<b>Check for injuries and hazards:</b> Once the shaking stops, check yourself and others for injuries. Look for fire hazards like gas leaks or broken electrical wires.\n<b>Stay tuned to news or alerts:</b> Use a radio or mobile device (if available) to listen for emergency updates and instructions.\n
+    </string>
+
+    <string name="epi_para1">
+        An epidemic is a sudden disease outbreak that affects a large number of people in a particular region, community, or population.\n
+        An epidemic of an infectious disease can happen if the virus, bacteria, or other cause of the disease has recently grown stronger, is introduced somewhere it has never been before, or finds new ways to enter the bodies of those it is affecting. It also can happen if people somehow grow more susceptible to the cause of the disease or have greater exposure to it.\n
+        Epidemics typically are classified as common-source or propagated. A disease is labeled one or the other based on the way it spreads through a group of people.
+
+    </string>
+
+    <string name="epi_para2">
+        An <b>EPIDEMIC</b> involves the wide-ranging spread of a disease throughout an entire area or particular community where it’s not permanently prevalent. A <b>PANDEMIC</b> involves an even wider spread, often reaching across the entire world. The word <b>ENDEMIC</b> is used to describe a disease that persistently and regularly spreads within a particular area or region (that is, it never fully goes away).
+
+    </string>
+
+    <string name="epi_para3">
+      \n  <b>Follow public health guidelines\n</b>
+        <b>Practice good hygiene\n</b>
+        <b>Wear masks\n</b>
+        <b>Maintain physical distancing\n</b>
+        <b>Follow respiratory etiquette\n</b>
+        <b>Clean and disinfect frequently touched surfaces\n</b>
+        <b>Stay home if you\'re feeling unwell\n</b>
+        <b>Stay informed and avoid misinformation\n</b>
+        <b>Support vaccination efforts\n</b>
+    </string>
+
+    <string name="epi_para4">
+        Due to Covid-19 pandemic many people have suffered, we have supported the community by donating them sanitizers, soaps, face masks, grocery kits etc., and also we have extended financial support of Rs.3,00,000 to all the Red Cross District branches.
+    </string>
+
+    <string name="flood_para1">
+        Floods are the most frequent type of natural disaster and occur when an overflow of water submerges land that is usually dry. Floods are often caused by heavy rainfall, rapid snow-melt or a storm surge from a tropical cyclone or tsunami in coastal areas.
+
+    </string>
+
+    <string name="flood_para2">
+        \n A flood can develop in a many ways. The most common is when rivers or streams overflow their banks. These floods are called riverine floods. Heavy rain, a broken dam or levee, rapid ice-melt in the mountains, or even a beaver dam in a vulnerable spot can overwhelm a river and send it spreading over nearby land. The land surrounding a river is called a flood plain.\n\n
+
+        Coastal flooding, also called estuarine flooding, happens when a large storm or tsunami causes the sea to rush inland.
+    </string>
+    <string name="flood_para3">
+
+
+        <b>  To prepare for a flood, you should:</b>\n
+
+        \n ■Avoid building in flood prone areas unless you\n elevate and reinforce your home.\n
+        ■Elevate the furnace, water heater, and electric\n panel if susceptible to flooding.\n
+        ■Install "Check Valves" in sewer traps to prevent\n floodwater from backing up into the drains of\n your home.\n
+        ■Contact community officials to find out if they\n are planning to construct barriers (levees, beams\n and flood walls) to stop floodwater from entering\n the homes in your area.\n
+        ■Seal the walls in your basement with\n waterproofing compounds to avoid seepage.\n
+
+        <b>\n  If a flood is likely to hit  your area, you should:</b>\n
+\n
+        ■Listen to the radio or television for information.\n
+        ■Be aware that flash flooding can occur. If there is\n any possibility of a flash flood, move immediately\n to higher ground. Do not wait for instructions to\n move.\n
+        ■Be aware of streams, drainage channels,\n canyons, and other areas known to flood\n suddenly. Flash floods can occur in these areas\n with or without such typical warnings as rain\n clouds or heavy rain.\n
+
+        <b>\n  If you must prepare to evacuate, you should:</b>\n
+\n
+        ■Secure your home. If you have time, bring in\n outdoor furniture. Move essential items to an\n upper floor.\n
+        ■Turn off utilities at the main switches or valves if\n instructed to do so. Disconnect electrical\n appliances. Do not touch electrical equipment if\n you are wet or standing in water.\n
+        <b>\n  If you have to leave your home, remember\n these evacuation tips:</b>\n
+\n
+        ■Do not walk through moving water. Six inches of\n moving water can make you fall. If you have to\n walk in water, walk where the water is not\n moving. Use a stick to check the firmness of the\n ground in front of you.\n
+        ■Do not drive into flooded areas. If floodwaters\n rise around your car, abandon the car and move\n to higher ground if you can do so safely. You and\n the vehicle can be quickly swept away.\n</string>
+
+
+
+    <string name="forest_para1">
+        Wildfire, also called forest, bush or vegetation fire, can be described as any uncontrolled and non-prescribed combustion or burning of plants in a natural setting such as a forest, grassland, brush land or tundra, which consumes the natural fuels and spreads based on environmental conditions (e.g., wind, topography). Wildfire can be incited by human actions, such as land clearing, extreme drought or in rare cases by lightning.\n
+        Types of forest fires:\n
+        <b>    1. Crown fires\n
+             2. Surface fires\n
+             3. Ground fires\n
+        </b>
+    </string>
+
+    <string name="forest_para2">
+      <b>  1.Natural Causes - Lightning\n
+         2.Man made Causes\n
+         3.Environmental Causes - Based on climate\n</b>
+    </string>
+
+    <string name="water_safety"><b>Use Clean Water Sources</b> – Drink only from trusted or treated sources.\n<b>Boil or Purify Water</b> – Boil water for at least one minute or use purification methods if unsure of its quality.\n<b>Clean Water Containers</b> – Regularly wash and seal containers to prevent contamination.\n<b>Install Water Filters</b> – Use filters for added protection against bacteria and other impurities.\n<b>Be Cautious with Ic</b>e and Street Food – Ensure ice and food were prepared with clean water.\n<b>Prepare for Floods</b> – Secure water supplies, avoid contact with floodwaters, and use bottled or purified water during emergencies.\n<b>Stay Informed</b> – Follow local advisories on water safety, especially during natural disasters.\n
+    </string>
+
+    <string name="road_safety1"><b>For Civilians:</b>\n\n<b>Follow traffic laws:</b> Always obey pedestrian signals and cross at designated areas.\n<b>Stay alert:</b> Avoid distractions like using mobile phones when walking near or crossing roads.\n<b>Use pedestrian crossings:</b> Cross at zebra crossings or traffic lights for maximum safety.\n<b>Be aware of surroundings:</b> Watch for incoming vehicles and make eye contact with drivers before crossing.
+    </string>
+
+    <string name="road_safety2"><b>For Riders:</b>\n\n<b>Wear safety gear:</b> Always wear a helmet and protective clothing, especially for long rides.\n<b>Maintain vehicle condition:</b> Regularly inspect brakes, lights, and tires to ensure the vehicle is roadworthy.\n<b>Practice defensive driving:</b> Stay alert and anticipate potential hazards, like sudden stops or lane changes.\n<b>Be visible:</b> Use reflective clothing or lights at night to increase visibility.\n<b>Avoid risky behavior:</b> Never ride under the influence of alcohol or drugs, and avoid excessive speeding.\n
+    </string>
+
+    <string name="daily_food_safety"><b>Wash hands and utensils:</b> Clean hands, cooking tools, and surfaces before and after handling food.\n<b>Cook food thoroughly:</b> Ensure food reaches safe internal temperatures to kill harmful bacteria.\n<b>Store food properly:</b> Refrigerate perishable items within two hours to prevent spoilage.\n<b>Separate raw and cooked foods:</b> Avoid cross-contamination by using different cutting boards and utensils for raw meats and cooked foods.\n<b>Check expiration dates:</b> Regularly inspect and discard expired or spoiled products.\n<b>Clean fresh produce:</b> Wash fruits and vegetables thoroughly under running water before consumption.\n
+    </string>
+
+    <string name="emergency_food_safety"><b>Store emergency food supplies:</b> Keep non-perishable, sealed food items like canned goods, dried fruits, and ready-to-eat meals.\n<b>Use safe water:</b> Ensure access to bottled or treated water for drinking and food preparation.\n<b>Proper food storage:</b> Store food in clean, airtight containers and maintain safe temperatures, using coolers or ice packs if necessary.\n<b>Inspect food before consumption:</b> Check for signs of spoilage, such as unusual odors, color changes, or damaged packaging.\n<b>Maintain hygiene:</b> Wash hands and utensils with clean water before handling food to prevent contamination.\n<b>Use heat or fire safely:</b> If cooking is necessary, ensure food is heated to safe temperatures, and use safe cooking methods in emergency conditions.\n
+    </string>
+
+    <string name="heatwave"><b>Stay hydrated:</b> Drink plenty of water to avoid dehydration, especially during peak heat hours.\n<b>Limit outdoor activities:</b> Avoid strenuous tasks outdoors, particularly during the hottest parts of the day.\n<b>Wear light, breathable clothing:</b> Choose loose-fitting, light-colored clothing to stay cool.\n<b>Use cooling systems efficiently:</b> Keep fans or air conditioners in good condition and use them to maintain a cool indoor environment.\n<b>Create shaded areas:</b> Use umbrellas, tents, or vegetation to provide shade in outdoor spaces.\n<b>Check on vulnerable individuals:</b> Ensure the elderly, children, and those with health conditions are cared for during extreme heat.\n<b>Plan for power outages:</b> Prepare backup options, such as portable fans, to handle potential power cuts during heatwaves.\n
+    </string>
+
+    <string name="acute_grief"><b>Offer a listening ear:</b> Allow them to express their feelings without judgment or trying to fix the situation.\n<b>Be patient and present:</b> Grief is a process that takes time, so offer ongoing support rather than expecting quick recovery.\n<b>Encourage professional help:</b> Suggest they talk to a therapist or grief counselor if needed for additional support.\n<b>Help with practical tasks:</b> Offer assistance with daily activities like cooking, cleaning, or errands to relieve their burden.\n<b>Respect their grief process:</b> Avoid pushing them to move on or minimizing their pain; everyone grieves differently.\n<b>Check in regularly:</b> Stay in touch with them over time, as grief can be a long-term process, and ongoing support is valuable.\n<b>Share memories:</b> If appropriate, talk about the person they lost, which can help them feel connected and supported.\n
+    </string>
+
+    <string name="panic_attack1"><b>Stay calm and reassuring:</b> Your calm presence can help reduce their anxiety.\n<b>Encourage deep breathing:</b> Guide them through slow, deep breaths to help control hyperventilation.\n<b>Offer grounding techniques:</b> Ask them to focus on their surroundings or describe objects they see to shift focus away from the panic.
+    </string>
+
+    <string name="panic_attack2"><b>Speak softly and comfortingly:</b> Remind them that the panic attack will pass and that they are not in danger.\n<b>Give them space if needed:</b> Some may prefer solitude during an attack, so be respectful of their wishes.\n<b>Avoid telling them to "calm down":</b> This may increase their stress; instead, focus on reassurance and support.\n<b>Encourage professional help:</b> If panic attacks are frequent, suggest seeking help from a therapist or counselor.\n
+    </string>
+
+    <string name="anxiety_management1"><b>Listen without judgment:</b> Allow them to express their feelings openly without offering immediate solutions.\n<b>Offer reassurance:</b> Remind them that it is okay to feel anxious and that they are not alone.\n<b>Encourage deep breathing:</b> Help them practice slow, deep breaths to reduce anxiety symptoms.\n<b>Avoid minimizing their feelings:</b> Avoid saying things like "just relax" or "don't worry," as it can make them feel misunderstood.\n<b>Suggest grounding techniques:</b> Encourage them to focus on the present, such as by using the "5-4-3-2-1" grounding method(for further understanding, go to the Grounding Techniques page).
+    </string>
+
+    <string name="anxiety_management2"><b>Help them create a calm environment:</b> Reduce triggers such as loud noises or stressful stimuli.\n<b>Encourage seeking professional help:</b> Suggest therapy or counseling if anxiety is interfering with their daily life.\n
+    </string>
+
+    <string name="trauma_informed_care"><b>Ensure physical and emotional safety:</b> Create an environment where individuals feel safe, both physically and emotionally, to foster trust and reduce anxiety.\n<b>Build trust and transparency:</b> Communicate clearly and openly to develop a trusting relationship between caregivers and individuals.\n<b>Provide choice and empowerment:</b> Give individuals control over their care decisions and offer choices, helping them feel empowered and respected.\n<b>Collaborate and share power:</b> Work together with individuals, respecting their autonomy and input in the treatment process.\n<b>Recognize cultural, historical, and gender factors:</b> Be aware of cultural backgrounds and past experiences, including historical trauma, to offer more personalized care.\n<b>Understand trauma’s widespread impact:</b> Recognize that trauma affects everyone differently and can have a deep impact on emotional and physical well-being.\n<b>Avoid re-traumatization:</b> Ensure practices and interactions don’t unintentionally trigger or worsen an individual’s trauma.\n
+    </string>
+
+    <string name="stress_reduction"><b>Practice mindfulness and meditation:</b> Engage in deep breathing, meditation, or mindfulness exercises to calm the mind and reduce anxiety.\n<b>Exercise regularly:</b> Physical activity helps lower stress hormones like cortisol and boosts endorphins, which improve mood.\n<b>Get enough sleep:</b> Ensure consistent, restful sleep to help the body recover and handle stress more effectively.\n<b>Manage time effectively</b>: Organize tasks, set priorities, and break larger tasks into manageable steps to reduce feelings of overwhelm.\n<b>Stay connected with supportive people:</b> Talk to friends, family, or professionals to share your concerns and lighten emotional burdens.\n<b>Engage in hobbies:</b> Take time for activities that bring joy and relaxation, such as reading, cooking, or gardening.\n<b>Eat a healthy diet:</b> Balanced nutrition can improve mood and energy levels, helping the body cope with stress.\n<b>Avoid excessive caffeine or alcohol:</b> These substances can increase stress and anxiety, so it is important to consume them in moderation.\n<b>Practice relaxation techniques:</b> Progressive muscle relaxation, yoga, or guided imagery can help relax the body and mind.\n<b>Set boundaries:</b> Learn to say no to avoid overcommitting yourself and adding unnecessary stress.\n
+    </string>
+
+    <string name="grounding_techniques">Here are some common grounding techniques:\n\n<b>5-4-3-2-1 technique:</b> Identify five things you can see, four things you can touch, three things you can hear, two things you can smell, and one thing you can taste.\n<b>Deep breathing:</b> Focus on slow, deep breaths to calm the mind and body.\n<b>Hold a textured object:</b> Feel an object with a distinct texture (like a stone or fabric) to bring attention to the sensation.\n<b>Count backward:</b> Start from 100 and count backward to divert attention from distressing thoughts.\n<b>Move your body:</b> Stretch, walk, or engage in light physical activity to focus on bodily sensations.\n<b>Describe your surroundings:</b> Verbally describe what you see around you to help stay in the present moment.\n<b>Clench and release:</b> Tense and then release different muscle groups to focus on physical sensations.\n<b>Recite a mantra:</b> Repeat a comforting phrase or affirmation to shift focus from anxiety to a positive thought.\n<b>Splash cold water on your face:</b> Engage your sense of touch and temperature to bring immediate awareness to your body.\n<b>Listen to music:</b> Play calming or familiar music to divert attention from overwhelming emotions.\n<b>Savor a small snack:</b> Focus on the taste and texture of food or drink to reconnect with the present moment.\n<b>Write in a journal:</b> Express your thoughts or describe your surroundings to engage your mind.\n<b>Trace your hand:</b> Use a finger to trace the outline of your hand while focusing on the sensation of touch.\n<b>Use a grounding phrase:</b> Repeat to yourself, “I am here, I am safe, I am in control,” to affirm your sense of stability.\n<b>Visualize a safe place:</b> Imagine a peaceful or safe place and focus on the details to create a sense of calm.\n
+    </string>
+
+    <string name="capillaries_bleeding"><b>Clean the wound:</b> Wash the area gently with soap and water to prevent infection.\n<b>Apply a sterile dressing or band-aid:</b> Place a clean bandage or adhesive strip over the wound to protect it.\n<b>Direct pressure (if needed):</b> If the bleeding is slow to stop, apply light pressure to control it.\n<b>Monitor for infection:</b> Capillary bleeding is often minor, but make sure to check for signs of infection like redness or swelling as the wound heals.\n
+    </string>
+
+    <string name="venous_bleeding"><b>Direct pressure:</b> Apply firm, consistent pressure with a sterile cloth or bandage.\n<b>Elevate the injury:</b> If the bleeding is from a limb, elevate it above the level of the heart to slow the bleeding.\n<b>Monitor and control bleeding:</b> Continue applying pressure until the bleeding stops. Replace the dressing if it becomes soaked, but try to avoid disturbing the clotting process by lifting the bandage unnecessarily.\n<b>Seek medical attention:</b> If bleeding is profuse or does not stop with pressure, seek medical help.\n
+    </string>
+
+    <string name="arterial_bleeding"><b>Immediate pressure:</b> Apply direct, firm pressure to the wound using a sterile cloth or dressing to try and control the bleeding.\n<b>Use a tourniquet:</b> If pressure doesn’t stop the bleeding and it’s on a limb, use a tourniquet above the wound (between the heart and the injury) if trained to do so.\n<b>Call for emergency help:</b> This type of bleeding can be life-threatening, so call for emergency medical services immediately.\n<b>Keep the person calm and lying down:</b> To reduce shock, keep the injured person still and lying flat if possible.\n
+    </string>
+
+    <string name="dry_bite"><b>Stay calm:</b> The bite can still be painful, but there’s no venom to cause serious harm.\n<b>Clean the wound:</b> Use soap and water to clean the bite site to reduce the risk of infection.\n<b>Apply a bandage:</b> Cover the wound with a clean bandage to protect it from further irritation.\n<b>Monitor the area:</b> If swelling or unusual symptoms occur, seek medical advice just in case venom was injected but the effects are delayed.\n
+    </string>
+
+    <string name="venomous_bite"><b>Stay calm and still:</b> Movement can spread the venom more quickly through the body. Try to limit activity as much as possible.\n<b>Call emergency services immediately:</b> Venomous bites require professional medical treatment, usually antivenom.\n<b>Keep the bite area below the heart:</b> This helps slow the spread of venom.\n<b>Remove tight clothing and jewelry:</b> As swelling may occur, remove anything that could become constricting.\n<b>Immobilize the affected area:</b> Use a splint to keep the limb still if the bite is on a leg or arm.\n<b>Apply a clean bandage:</b> Place a loose bandage over the bite but avoid using a tourniquet, as it can restrict blood flow and cause further damage.\n<b>Do not suck out the venom:</b> This outdated method can cause more harm than good and isn’t effective.\n
+    </string>
+
+    <string name="grade_1_sprain"><b>Rest:</b> Avoid activities that may strain the joint for a few days to allow healing.\n<b>Ice:</b> Apply ice to the affected area for 15-20 minutes every 1-2 hours for the first 48 hours to reduce swelling and pain.\n<b>Compression:</b> Use an elastic bandage to wrap the injured joint to limit swelling but not too tight as to cut off circulation.\n<b>Elevation:</b> Keep the injured joint elevated above heart level as much as possible to reduce swelling.\n<b>Over-the-counter pain relief:</b> You can take ibuprofen or acetaminophen to manage pain and swelling.\n<b>Gentle exercise:</b> After a few days, start gentle movement exercises to prevent stiffness, but avoid anything that causes pain.\n
+    </string>
+
+    <string name="grade_2_sprain"><b>Rest:</b> Avoid activities that may strain the joint for a few days to allow healing.\n<b>Ice:</b> Apply ice to the affected area for 15-20 minutes every 1-2 hours for the first 48 hours to reduce swelling and pain.\n<b>Compression:</b> Use an elastic bandage to wrap the injured joint to limit swelling but not too tight as to cut off circulation.\n<b>Elevation:</b> Keep the injured joint elevated above heart level as much as possible to reduce swelling.\n<b>Immobilization:</b> The joint may need to be immobilized with a brace or splint for support while healing.\n<b>Physical Therapy:</b> Once the pain and swelling have subsided, guided physical therapy may be necessary to restore mobility, strength, and stability to the joint.\n<b>Pain management:</b> Non-steroidal anti-inflammatory drugs (NSAIDs) can help with pain and swelling.\n<b>Recovery time:</b> A moderate sprain may take several weeks (4-6 weeks) to fully heal.\n
+    </string>
+
+    <string name="grade_3_sprain"><b>Immediate medical attention:</b> A severe sprain often requires professional medical care, including diagnostic imaging like an X-ray or MRI to assess ligament damage.\n<b>Immobilization or surgery:</b> The joint may need to be immobilized for a longer period, and in some cases, surgery may be required to repair torn ligaments.\n<b>Rehabilitation:</b> Physical therapy will be critical to restoring full function, which may take several months.\n<b>Avoid weight-bearing activities:</b> Use crutches or other mobility aids to avoid putting weight on the injured joint.\n<b>Long-term management:</b> Even after healing, ongoing exercises to strengthen the joint and maintain flexibility may be necessary to prevent future injuries.\n
+    </string>
+
+    <string name="nose_bleed"><b>Stay calm:</b> Keep yourself or the person calm to avoid raising blood pressure, which can worsen the bleeding.\n<b>Sit upright and lean forward:</b> This helps prevent swallowing blood, which can irritate the stomach or cause choking. Leaning forward allows the blood to drain out of the nose.\n<b>Pinch the nose:</b> Using your thumb and index finger, pinch the soft part of the nose just below the nasal bridge. Hold it for about 10-15 minutes without interruption.\n<b>Breathe through the mouth:</b> Continue breathing through your mouth while pinching the nose.\n<b>Cold compress:</b> Apply a cold compress to the bridge of the nose to constrict blood vessels and help slow the bleeding.\n<b>Avoid blowing your nose:</b> Once the bleeding stops, avoid blowing or picking your nose, as this could restart the bleeding.\n
+    </string>
+
+    <string name="minor_concussion_symptoms">Headache\nDizziness or feeling lightheaded\nNausea or vomiting\nConfusion or disorientation\nSensitivity to light or noise\nBlurred vision\nDifficulty concentrating or remembering\nFatigue or drowsiness\n
+    </string>
+
+    <string name="minor_concussion"><b>Rest and monitor:</b> Rest is crucial for recovery. Avoid physically demanding activities or anything that requires intense mental focus, such as reading or using a computer. The person should be monitored for 24-48 hours after the injury to ensure symptoms don’t worsen.\n<b>Limit screen time:</b> Avoid using electronic devices like phones, tablets, or computers, as they can aggravate symptoms such as headaches and difficulty concentrating.\n<b>Avoid sports and strenuous activities:</b> Physical activities, especially contact sports, should be avoided until cleared by a healthcare provider, as they can lead to further injury or complications.\n<b>Stay in a calm, quiet environment:</b> Loud noises or bright lights can worsen symptoms. Try to rest in a quiet, dimly lit room.\n<b>Gradual return to normal activities:</b> Once symptoms start to improve, slowly resume daily activities, but stop if symptoms worsen. Return to full physical activity only after being cleared by a healthcare provider.\n
+    </string>
+
+    <string name="headache"><b>Rest:</b> Find a quiet, dark room to rest and relax. Reducing sensory input can help relieve the pain.\n<b>Hydration:</b> Drink water, especially if dehydration may be a cause.\n<b>Over-the-counter pain relievers:</b> Medications like acetaminophen, ibuprofen, or aspirin can help alleviate headache pain.\n<b>Cold or warm compress:</b> Use a cold compress on the forehead or a warm compress on the back of the neck, depending on what feels better for you.\n<b>Relaxation techniques:</b> Deep breathing, meditation, or gentle stretching can help ease tension headaches.\n<b>Avoid triggers:</b> Pay attention to potential headache triggers, such as stress, certain foods, or lack of sleep, and try to minimize exposure.\n
+    </string>
+
+    <string name="cause_musclecramps"><b>Dehydration:</b> Loss of fluids and electrolytes (like sodium, potassium, or magnesium) can cause cramping.\n<b>Overuse of muscles:</b> Strenuous exercise, especially if muscles aren\'t used to the intensity, can trigger cramps.\n<b>Poor circulation:</b> Reduced blood flow to muscles can cause cramps, especially during exercise.\n<b>Holding a position for too long:</b> Staying in one position, such as sitting or standing, can lead to cramps.\n<b>Nutrient deficiencies:</b> Lack of essential minerals like potassium, calcium, or magnesium can cause cramping.\n
+    </string>
+
+    <string name="musclecramps"><b>Gentle stretching:</b> Slowly stretch the affected muscle. For example, if your calf muscle is cramping, flex your foot and stretch the calf by pulling your toes toward you.\n<b>Massage:</b> Gently rub or knead the cramped muscle to help relax it.\n<b>Apply Heat:</b> Apply a warm towel, heating pad, or take a warm bath to relax tight muscles.\n<b>Apply some Cold:</b> Use an ice pack on the affected muscle if it remains sore after the cramp subsides.\n<b>Hydrate:</b> Drink water or an electrolyte-rich sports drink to replenish fluids and minerals lost due to dehydration.\n<b>Walk or Move:</b> Walking around or gently moving the affected area can increase blood circulation, helping relieve the cramp.\n<b>Pain Relief:</b> If the muscle remains sore after the cramp, over-the-counter pain relievers such as ibuprofen or acetaminophen may help reduce the discomfort.\n
+    </string>
+
+    <string name="blister_cause"><b>Friction:</b> Repeated rubbing of the skin, such as from poorly fitting shoes, can cause friction blisters.\n<b>Burns:</b> Exposure to heat, including sunburns, can lead to the formation of blisters.\n<b>Chemical Exposure:</b> Certain irritants or chemicals can cause blisters when they come into contact with the skin.\n<b>Medical Conditions:</b> Some conditions, like chickenpox or eczema, can cause blisters as part of their symptoms.\n
+    </string>
+
+    <string name="blister"><b>Leave the blister intact:</b> If the blister is small and not too painful, it is best to leave it alone. The blister acts as a natural barrier to infection, and the fluid inside promotes healing. Cover it with a clean, loose bandage or blister pad to protect it from further friction.\n<b>Do not pop the blister:</b> Popping a blister can increase the risk of infection. If the blister is large, painful, or in a location where it’s likely to burst, you can consult a healthcare professional for advice.\n<b>Clean the area:</b> If the blister bursts, wash the area with soap and water to reduce the risk of infection. Gently pat the area dry and apply an antibiotic ointment to protect the skin.\n<b>Cover with a bandage:</b> Use a sterile bandage or blister pad to protect the area. Change the bandage daily or if it becomes wet or dirty.\n<b>Pain relief:</b> Over-the-counter pain relievers like ibuprofen can help reduce pain and inflammation associated with a blister.\n<b>Watch for infection:</b> Signs of infection include redness, warmth, increased pain, and yellow or green discharge. If these symptoms occur, seek medical attention.\n
+    </string>
+
+    <string name="bruise"><b>Rest and protect the injured area:</b> Minimize use of the injured area to prevent further trauma and allow the tissue to heal.\n<b>Ice the bruise:</b> Apply an ice pack (wrapped in a cloth) to the bruised area for 10-20 minutes. This helps reduce swelling and limits the size of the bruise by constricting blood vessels and slowing blood flow to the area. Do not apply ice directly to the skin, as this can cause frostbite.\n<b>Elevate the bruised area:</b> If possible, elevate the bruised area above heart level to reduce blood flow and limit swelling.\n<b>Compression:</b> Lightly wrap the bruised area with a bandage to provide mild compression, which can help reduce swelling. Make sure not to wrap it too tightly, as it may impair circulation.\n<b>Pain relief:</b> Over-the-counter pain relievers like acetaminophen can help alleviate discomfort. Avoid NSAIDs like ibuprofen or aspirin shortly after the injury, as they may increase bleeding.\n<b>Monitor the bruise:</b> Most bruises heal on their own in about 1-2 weeks. However, if a bruise is unusually large, very painful, or doesn’t improve, consult a healthcare provider. Bruising easily or without a known cause could also indicate an underlying medical issue.\n
+    </string>
+
+    <string name="mild_symptoms">Sneezing, runny or stuffy nose\nItchy or watery eyes\nRash, hives (raised, itchy welts on the skin)\nMild swelling, usually localized\nCoughing, wheezing\n
+    </string>
+
+    <string name="severe_symptoms">Difficulty breathing or shortness of breath\nSwelling of the lips, tongue, or throat\nRapid or weak pulse\nNausea, vomiting, or diarrhea\nDizziness or fainting\nLoss of consciousness\nHaving a severe symptom is a life-threatening emergency that requires immediate medical intervention.\n
+    </string>
+
+    <string name="mild_symptoms1"><b>Antihistamines:</b> Over-the-counter antihistamines (like diphenhydramine or loratadine) can help reduce itching, sneezing, and swelling.\n<b>Cold compresses:</b> Apply a cool, damp cloth to rashes or areas with swelling to reduce irritation.\n<b>Avoid the allergen:</b> Once you identify what caused the reaction (e.g., a specific food or pollen), avoid exposure to the allergen in the future.\n<b>Topical creams:</b> Hydrocortisone creams or calamine lotion can help soothe itching and skin irritation.\n
+    </string>
+
+    <string name="severe_symptoms1"><b>Administer an epinephrine auto-injector (e.g., EpiPen):</b> If you have been prescribed an epinephrine auto-injector, use it immediately at the first sign of a severe allergic reaction.\n<b>Call emergency services:</b> Dial emergency medical services immediately after administering epinephrine or if severe symptoms arise.\n
+    </string>
+
+    <string name="severe_symptoms2"><b>Positioning:</b> Keep the person lying down with their legs elevated unless they are having difficulty breathing, in which case they should be sitting upright.\n<b>Monitor breathing:</b> If breathing stops or the person becomes unconscious, perform CPR if you are trained until medical help arrives.\n
+    </string>
+
+    <string name="strain_symptoms">Pain and tenderness in the affected muscle or tendon\nSwelling, bruising, or redness\nMuscle weakness or difficulty moving the affected area\nMuscle spasms or cramping\n
+    </string>
+
+    <string name="strain"><b>Rest:</b> Avoid using the injured area to prevent further damage. Give the muscle or tendon time to heal by reducing activity, especially in the first 48 hours after the injury.\n<b>Ice:</b> Apply ice to the strained area for 15-20 minutes every 1-2 hours for the first 48 hours. This helps reduce swelling and numbs the pain. Use a cold pack or ice wrapped in a cloth to avoid direct contact with the skin.\n<b>Compression:</b> Wrap the injured area with an elastic bandage (like an Ace wrap) to limit swelling. Make sure the wrap is snug but not so tight that it restricts blood flow.\n<b>Elevation:</b> If possible, elevate the injured area above heart level to reduce swelling and inflammation. For example, if the strain is in your leg, prop it up on pillows.\n<b>Over-the-counter pain relief:</b> Non-steroidal anti-inflammatory drugs (NSAIDs), such as ibuprofen or aspirin, can help reduce pain and inflammation.\n<b>Gentle stretching and physical therapy:</b> After the initial inflammation subsides, gentle stretching and strengthening exercises may help restore muscle function. Consult a healthcare provider or physical therapist to ensure you are doing the appropriate exercises for your recovery.\n<b>Avoid strenuous activity:</b> Do not rush back into full activity too soon, as this can delay healing and lead to re-injury. Gradually return to your usual activities as the strain heals.\n
+    </string>
+
+
+    <!-- Quiz Questions -->
+    <string-array name="quiz_questions">
+        <item>What is the first step to take when you encounter someone who is unconscious but breathing?</item>
+        <item>What should you do if someone is choking and cannot breathe?</item>
+        <item>What is the main purpose of performing CPR?</item>
+        <item>How should you treat a burn?</item>
+        <item>What is the recommended way to treat a sprain?</item>
+        <item>What is the first thing you should do in case of a severe allergic reaction?</item>
+        <item>How should you manage a bleeding wound?</item>
+        <item>What is the most common symptom of shock?</item>
+        <item>How do you treat a nosebleed?</item>
+        <item>What should you do if you suspect someone has a spinal injury?</item>
+    </string-array>
+
+    <!-- Quiz Answers -->
+    <string-array name="quiz_answers_1">
+        <item>Call for medical help</item>
+        <item>Perform CPR</item>
+        <item>Check their airway</item>
+        <item>Give them food</item>
+    </string-array>
+    <string-array name="quiz_answers_2">
+        <item>Perform abdominal thrusts</item>
+        <item>Give them water</item>
+        <item>Pat their back</item>
+        <item>Perform chest compressions</item>
+    </string-array>
+    <string-array name="quiz_answers_3">
+        <item>To restart the heart</item>
+        <item>To remove an obstruction from the airway</item>
+        <item>To stabilize the patient’s condition</item>
+        <item>To restore breathing and circulation</item>
+    </string-array>
+    <string-array name="quiz_answers_4">
+        <item>Apply ice directly</item>
+        <item>Use a bandage</item>
+        <item>Cool the burn with running water</item>
+        <item>Apply ointment</item>
+    </string-array>
+    <string-array name="quiz_answers_5">
+        <item>Apply heat</item>
+        <item>Rest, ice, compress, and elevate</item>
+        <item>Massage the area</item>
+        <item>Keep moving the joint</item>
+    </string-array>
+    <string-array name="quiz_answers_6">
+        <item>Administer antihistamines</item>
+        <item>Call emergency services</item>
+        <item>Apply a cold compress</item>
+        <item>Give them water</item>
+    </string-array>
+    <string-array name="quiz_answers_7">
+        <item>Apply pressure and elevate</item>
+        <item>Clean with soap and water</item>
+        <item>Use a tourniquet</item>
+        <item>Apply ice directly</item>
+    </string-array>
+    <string-array name="quiz_answers_8">
+        <item>Fever</item>
+        <item>Rapid heartbeat</item>
+        <item>Nausea</item>
+        <item>Headache</item>
+    </string-array>
+    <string-array name="quiz_answers_9">
+        <item>Tilt the head back</item>
+        <item>Pinch the nostrils and lean forward</item>
+        <item>Apply ice to the back of the neck</item>
+        <item>Swallow the blood</item>
+    </string-array>
+    <string-array name="quiz_answers_10">
+        <item>Move them to a comfortable position</item>
+        <item>Keep them still and immobilized</item>
+        <item>Encourage them to walk slowly</item>
+        <item>Apply heat to the area</item>
+    </string-array>
+
+    <!-- Correct Answers Indexes -->
+    <integer-array name="correct_answers">
+        <item>0</item> <!-- Answer for Question 1 -->
+        <item>0</item> <!-- Answer for Question 2 -->
+        <item>3</item> <!-- Answer for Question 3 -->
+        <item>2</item> <!-- Answer for Question 4 -->
+        <item>1</item> <!-- Answer for Question 5 -->
+        <item>1</item> <!-- Answer for Question 6 -->
+        <item>0</item> <!-- Answer for Question 7 -->
+        <item>1</item> <!-- Answer for Question 8 -->
+        <item>1</item> <!-- Answer for Question 9 -->
+        <item>1</item> <!-- Answer for Question 10 -->
+    </integer-array>
+
+
+    <string-array name="first_aid_supplies">
+        <item>Adhesive Bandages</item>
+        <item>Sterile Gauze Pads</item>
+        <item>Antiseptic Wipes</item>
+        <item>Medical Tape</item>
+        <item>Elastic Bandages</item>
+        <item>Disposable Gloves</item>
+        <item>CPR Face Shield</item>
+        <item>Tweezers</item>
+        <item>Scissors (Trauma Shears)</item>
+        <item>Instant Cold Packs</item>
+        <item>Hydrocortisone Cream</item>
+        <item>Antibiotic Ointment</item>
+        <item>Pain Relievers</item>
+        <item>Thermometer</item>
+        <item>Emergency Blanket</item>
+    </string-array>
+
+    <string-array name="first_aid_questions">
+        <item>Which item is used to cover small cuts or abrasions?</item>
+        <item>Which item is used to clean wounds to prevent infection?</item>
+        <item>What is used to secure dressings or gauze?</item>
+        <item>What is used to provide support to sprains?</item>
+        <item>Which item should you wear to avoid contact with blood or bodily fluids?</item>
+        <item>What is used for safe mouth-to-mouth resuscitation?</item>
+        <item>Which tool is best for removing splinters?</item>
+        <item>What is used for cutting bandages or clothing?</item>
+        <item>What item helps reduce swelling in injuries?</item>
+        <item>Which cream is used for treating insect bites?</item>
+        <item>Which ointment prevents infection in cuts?</item>
+        <item>Which item is for pain relief during emergencies?</item>
+        <item>Which device helps check for fever?</item>
+        <item>Which item keeps a person warm during shock?</item>
+        <item>Which item is primarily used to cover wounds to control bleeding?</item>
+    </string-array>
+
+    <!-- Correct answers index for Level 2 -->
+    <integer-array name="first_aid_correct_answers">
+        <item>0</item> <!-- Adhesive Bandages -->
+        <item>2</item> <!-- Antiseptic Wipes -->
+        <item>3</item> <!-- Medical Tape -->
+        <item>4</item> <!-- Elastic Bandages -->
+        <item>5</item> <!-- Disposable Gloves -->
+        <item>6</item> <!-- CPR Face Shield -->
+        <item>7</item> <!-- Tweezers -->
+        <item>8</item> <!-- Scissors -->
+        <item>9</item> <!-- Instant Cold Packs -->
+        <item>10</item> <!-- Hydrocortisone Cream -->
+        <item>11</item> <!-- Antibiotic Ointment -->
+        <item>12</item> <!-- Pain Relievers -->
+        <item>13</item> <!-- Thermometer -->
+        <item>14</item> <!-- Emergency Blanket -->
+        <item>1</item> <!-- Sterile Gauze Pads -->
+    </integer-array>
+
+    <!-- First Aid Kit Descriptions -->
+    <string name="bandage_description">Bandages are essential for covering and protecting wounds. They are ideal for treating minor cuts, abrasions, and burns. Use them to keep injuries clean and prevent further damage.</string>
+    <string name="antiseptic_description">Antiseptic solutions are crucial for cleaning wounds to prevent infections. They help to kill germs and bacteria, reducing the risk of complications and speeding up the healing process.</string>
+    <string name="gauze_description">Gauze pads are used to absorb blood, fluids, and exudate from wounds. They are ideal for covering wounds, applying medication, and providing protection to injured areas.</string>
+    <string name="adhesive_tape_description">Adhesive tape is used to secure bandages, gauze, and other dressings in place. It ensures that wound coverings stay intact and are not displaced, which is important for effective healing.</string>
+    <string name="scissors_description">Medical scissors are designed for cutting tape, bandages, gauze, and other materials. They are essential for quickly and safely preparing first aid supplies during emergencies.</string>
+    <string name="pain_reliever_description">Pain relievers are used to alleviate pain and discomfort caused by injuries. They help manage pain levels and improve the overall comfort of individuals who have sustained minor injuries.</string>
+    <string name="thermometer_description">Thermometers are used to measure body temperature, which is crucial for detecting fever and other health conditions. Accurate temperature readings help in assessing the severity of illness or injury.</string>
+    <string name="alcohol_wipes_description">Alcohol wipes are used for disinfecting and cleaning wounds. They are essential for preventing infection and maintaining a sterile environment when treating injuries.</string>
+    <string name="gloves_description">Medical gloves are worn to protect hands and prevent contamination during first aid. They are crucial for maintaining hygiene and safety when dealing with blood or other bodily fluids.</string>
+    <string name="first_aid_manual_description">A first aid manual provides essential instructions and guidelines for treating common injuries and medical emergencies. It is a valuable resource for ensuring proper care during emergencies.</string>
+    <string name="cold_compress_description">Cold compresses are used to reduce swelling, numb pain, and treat bruises. Applying a cold compress helps to manage pain and minimize the effects of minor injuries.</string>
+    <string name="tweezers_description">Tweezers are used for removing splinters, foreign objects, and debris from wounds. They are precision tools that help in safely extracting small particles from the skin.</string>
+    <string name="safety_pins_description">Safety pins are versatile tools used for securing bandages, dressings, and other first aid supplies. They are helpful in holding materials in place during wound care.</string>
+    <string name="emergency_blanket_description">Emergency blankets provide warmth in critical situations, such as when exposed to cold weather or after shock. They are compact and essential for outdoor and survival situations.</string>
+    <string name="mask_description">Medical masks are used to protect against airborne particles and reduce the risk of infection. They are crucial for preventing the spread of respiratory illnesses and ensuring safety in medical environments.</string>
+
+    <string name="shop_now">Shop Now</string>
+    <string name="kit_image_desc">Description of the first aid kit image</string>
+    <string name="dialog_image_desc">Information icon</string>
+    <string name="topic_icon">Topic Icon</string>
+
+
+
+
+</resources>

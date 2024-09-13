@@ -1,0 +1,74 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme with ActionBar -->
+    <style name="Theme.FirstAidAndDisasterManagementApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/shadow2</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Other items -->
+
+        <!-- Set the ActionBar background color explicitly -->
+        <item name="actionBarStyle">@style/CustomActionBar</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+    </style>
+
+    <!-- Theme without ActionBar for Toolbar -->
+    <style name="Theme.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/shadow2</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Other items -->
+    </style>
+
+    <!-- Custom ActionBar style -->
+    <style name="CustomActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:background">@android:color/transparent</item> <!-- Transparent background -->
+        <item name="background">@android:color/transparent</item> <!-- Ensure transparency -->
+        <item name="displayOptions">homeAsUp</item> <!-- Show only the Up button -->
+        <item name="titleTextStyle">@style/HiddenTitleTextStyle</item> <!-- Hide the title text -->
+    </style>
+
+    <!-- Hidden Title Text Style -->
+    <style name="HiddenTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/transparent</item> <!-- Hide the text -->
+    </style>
+
+    <!-- Custom ActionBar style for navigation drawer -->
+    <style name="CustomActionBarRed" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/red</item> <!-- Specific color for navigation drawer -->
+    </style>
+
+    <!-- Style for selected item in BottomNavigationView -->
+    <style name="BottomNavItemSelected">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Style for unselected item in BottomNavigationView -->
+    <style name="BottomNavItemUnselected">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <!-- Custom RadioButton style -->
+    <style name="CustomRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">8dp</item>
+        <!-- Add more attributes if needed -->
+    </style>
+
+    <!-- Custom Spinner style -->
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:popupBackground">@android:color/white</item>
+        <item name="android:spinnerItemStyle">@style/CustomSpinnerItemStyle</item>
+    </style>
+
+    <style name="CustomSpinnerItemStyle">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".snakebite">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:background="@color/shadow"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageNumber1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/numberonenew"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                </ImageView>
+
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="310dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="What is A Snake Bite"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:fontFamily="serif"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.492"
+                    app:layout_constraintStart_toStartOf="@+id/imageNumber1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="A snakebite occurs when a snake punctures the skin with its fangs, injecting venom in some cases. Snakebites can vary widely in severity, depending on the species of snake, whether venom was injected, and the size or health of the person bitten. There are 2 types of Snake Bites:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Dry Bite"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="This occurs when a snake strikes but does not inject venom. Although painful and alarming, dry bites generally do not cause significant harm beyond localized pain or minor swelling."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Venomous Bite"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="These bites involve the injection of venom, which can have various effects depending on the snake's species. Venomous snakebites are more dangerous and require immediate medical attention."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:background="@color/shadow"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageNumber2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/numbertwonew"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="271dp"
+                    android:layout_height="56dp"
+                    android:gravity="center"
+                    android:text="Actions For each types of Bites"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:fontFamily="serif"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Dry Bite"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:text="@string/dry_bite"
+                android:gravity="left"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Venomous Bite"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:text="@string/venomous_bite"
+                android:gravity="left"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="The basic first-aid measures are generally the same: immobilize the person, keep calm, and seek medical attention immediately. Treatment at a hospital will depend on the specific snake and venom, often involving antivenom or supportive care. Never try to catch or kill the snake. Instead, if possible, take a photo or note its appearance for identification by medical professionals."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:background="@color/shadow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <WebView
+                android:id="@+id/webView1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout4" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- FloatingActionButton for saving the topic -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/saved"
+        app:fabSize="normal"
+        app:tint="@color/red"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

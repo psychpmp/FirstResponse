@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".splints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="755dp"
+                        android:background="@color/shadow"
+                        app:layout_constraintBottom_toTopOf="@id/webView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imageNumber1"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/numberonenew"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
+
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="WHAT IS A SPLINT?"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:fontFamily="serif"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView1">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="left"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="30dp"
+                        android:text="A splint is a supportive device used to keep in place any suspected fracture in one’s arm or leg.\n\nSplint is used to:\n\n■Provide pain relief of the fractured limb.\n\n■Support bone ends of the fracture site. Bones ends of the fracture site are very sharp. A splint helps prevent bone protruding through the skin, soft skin and tissue damage, as well as bleeding.\n\n■Facilitate safe and seamless causality transport.\n\nTypes of Splints:\n\n■Rigid Splint: Any rigid object, such as wood or plastic boards, broomstick, book or a rolled-out newspapers, which can be used to splint a fractured arm or leg.\n\n■Flexible Splint: Any flexible object, like a pillow or a bed sheet with several folds. This type is used for foot, ankle and joint fractures."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:fontFamily="serif"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+                    </TextView>
+
+                    <WebView
+                        android:id="@+id/webView"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:layout_constraintBottom_toTopOf="@id/imageView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textView2"
+                        app:layout_constraintVertical_bias="1.0" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="850dp"
+                        android:background="@color/shadow"
+                        app:layout_constraintBottom_toTopOf="@id/imageView3"
+                        app:layout_constraintTop_toBottomOf="@id/webView"
+                        tools:layout_editor_absoluteX="16dp">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imageNumber2"
+                        android:layout_width="49dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="15dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/numbertwonew"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/webView"
+                        app:layout_constraintVertical_bias="0.0">
+
+                    </ImageView>
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="22dp"
+                        android:paddingStart="5dp"
+                        android:text="HOW TO APPLY SPLINT?"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:fontFamily="serif"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/webView">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:textSize="18sp"
+                        android:gravity="left"
+                        android:text="Here are some general principles to be applied when splinting as follows:"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        app:fontFamily="serif"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="■Identify the fracture site."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        app:fontFamily="serif"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="■Stop the bleeding using bandages, but avoid pressing on the fractured painful and deformed site."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        app:fontFamily="serif"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="■In case of bone fractures where bone ends protrude through the skin, do not push these ends back in place as this will cause inflammation and acute bleeding."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:fontFamily="serif"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingBottom="20dp"
+                        android:text="■Keep the fractured bone (including the joints above and below the fracture site) motionless as indicated here under:\n
+1. If the lower-arm is fractured, keep the wrist and elbow joints motionless.\n
+2. If the upper-arm is fractured, keep the shoulder and elbow joints motionless.\n
+3. If the lower-leg is fractured, keep the knee and ankle joints motionless.\n
+4. If the upper-leg is fractured, keep the knee and femoral joints motionless.\n"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:fontFamily="serif"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="330dp"
+                        android:src="@drawable/splintsone"
+                        app:layout_constraintBottom_toTopOf="@id/imageView4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView2"
+                        tools:layout_editor_absoluteX="16dp">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:background="@color/shadow"
+                        app:layout_constraintBottom_toTopOf="@id/imageView5"
+                        app:layout_constraintTop_toBottomOf="@id/imageView3"
+                        tools:layout_editor_absoluteX="16dp">
+
+                    </ImageView>
+
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="■If the fractured limb is bent with a sharp bone end protruding through the skin, keep it motionless. Splint a limb as you find it to make it as comfortable to the patient as you possible."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        app:fontFamily="serif"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/imageView4">
+
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="■If an ambulance is called and is on its way, do not splint the fractured limb and wait for the ambulance team to use their specialized medical splints."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/black"
+                        app:fontFamily="serif"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.493"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+                    </TextView>
+
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="450dp"
+                        android:src="@drawable/splintstwo"
+                        app:layout_constraintBottom_toTopOf="@id/webView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView4"
+                        tools:layout_editor_absoluteX="16dp">
+
+                    </ImageView>
+
+                    <WebView
+                        android:id="@+id/webView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/imageView5"
+                        app:layout_constraintVertical_bias="1.0" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- FloatingActionButton for saving the topic -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/saved"
+            app:fabSize="normal"
+            app:tint="@color/red"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

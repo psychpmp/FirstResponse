@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sprain">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout2"
+                android:layout_width="match_parent"
+                android:background="@color/shadow"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageNumber1"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:src="@drawable/numberonenew"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                </ImageView>
+
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="310dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="What is A Sprain"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:fontFamily="serif"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.492"
+                    app:layout_constraintStart_toStartOf="@+id/imageNumber1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="A sprain is an injury to a ligament, which is the tissue that connects two bones in a joint. Sprains occur when a ligament is stretched or torn due to excessive force, such as twisting, falling, or an impact to the joint. The most common locations for sprains are the ankles, knees, wrists, and thumbs. There are levels of severity sprain has:"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@drawable/typeofsprains"
+                app:layout_constraintBottom_toTopOf="@id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView1"
+                app:layout_constraintVertical_bias="0.0"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Grade 1 (Mild Sprain)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="A Grade 1 sprain is the least severe form of a sprain, involving a slight overstretching or microscopic tearing of the ligament. The ligament remains intact, but it has been stretched beyond its normal range of motion."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Symptoms:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="Mild pain, swelling, and stiffness around the joint, but typically no instability. You can still bear weight on the joint, but it may be slightly uncomfortable."
+                android:textColor="@color/shadow3"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="left"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="20dp"
+                android:text="Grade 2 (Moderate Sprain)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="A Grade 2 sprain is more serious and involves a partial tear of the ligament. The fibers of the ligament are damaged but not completely torn, which results in some loss of joint function and stability."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Symptoms:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="Moderate to significant pain, swelling, and bruising around the joint. Joint mobility may be restricted, and the person may feel some instability or difficulty bearing weight on the joint."
+                android:textColor="@color/shadow3"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="left"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="20dp"
+                android:text="Grade 3 (Severe Sprain)"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="A Grade 3 sprain is the most severe type, involving a complete tear or rupture of the ligament. The ligament no longer provides any stability to the joint, and the joint may feel completely unstable or non-functional."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Symptoms:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="Severe pain (though sometimes less painful if the ligament is completely torn), significant swelling, bruising, and total loss of joint function. The person is typically unable to bear any weight on the joint, and the joint feels very unstable."
+                android:textColor="@color/shadow3"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:background="@color/shadow"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageNumber2"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/numbertwonew"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="271dp"
+                    android:layout_height="56dp"
+                    android:gravity="center"
+                    android:text="Actions For each Sprains"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    app:fontFamily="serif"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="100dp"
+                android:paddingLeft="20dp"
+                android:text="Grade 1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:text="@string/grade_1_sprain"
+                android:gravity="left"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="20dp"
+                android:text="Grade 2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:text="@string/grade_2_sprain"
+                android:gravity="left"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="20dp"
+                android:text="Grade 3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:fontFamily="serif"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:text="@string/grade_3_sprain"
+                android:gravity="left"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/shadow"
+                android:fontFamily="serif"
+                android:paddingTop="10dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textSize="18sp"
+                android:gravity="left"
+                android:text="Each grade requires different levels of care and recovery. While Grade 1 sprains often heal with simple first aid, Grade 2 and 3 sprains may need medical intervention and rehabilitation to ensure proper recovery."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/textView1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:background="@color/shadow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <WebView
+                android:id="@+id/webView1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintLayout4" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- FloatingActionButton for saving the topic -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/saved"
+        app:fabSize="normal"
+        app:tint="@color/red"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
