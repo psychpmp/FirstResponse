@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="SAVED TOPICS"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/red"
         android:layout_margin="26dp"
         android:layout_alignParentTop="true"

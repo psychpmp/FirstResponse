@@ -102,7 +102,7 @@
                             android:text="FIRST AID KITS YOU NEED"
                             android:textColor="@color/white"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            app:fontFamily="serif"
+                            android:fontFamily="@font/montserrat_bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageViewFirstAidKits"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -177,8 +177,8 @@
                                     android:text="BASIC FIRST AID"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold"
+                                    />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -225,8 +225,8 @@
                                     android:text="PSYCHOLOGICAL FIRST AID"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold"
+                                    />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -273,8 +273,8 @@
                                     android:text="DISASTER MANAGEMENT"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold"
+                                    />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -321,8 +321,8 @@
                                     android:text="BASIC SANITATION"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold"
+                                    />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -360,7 +360,7 @@
                             android:text="TEST YOUR KNOWLEDGE!"
                             android:textColor="@color/white"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            app:fontFamily="serif"
+                            android:fontFamily="@font/montserrat_bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageViewQuiz"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -403,12 +403,13 @@
 
                         <TextView
                             android:layout_width="170dp"
-                            android:layout_height="160dp"
+                            android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:text="SAFETY AND PREPAREDNESS"
+                            android:text="SAFETY AND \nPREPAREDNESS"
                             android:textColor="@color/white"
+                            android:textSize="19dp"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            app:fontFamily="serif"
+                            android:fontFamily="@font/montserrat_bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageViewSafetyPreparedness"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -484,8 +485,7 @@
                                     android:text="Our Lady of Perpetual Help"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold" />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -532,8 +532,7 @@
                                     android:text="Polangui RHU"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold" />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -580,8 +579,8 @@
                                     android:text="Perillo General Hospital"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold"
+                                    />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -628,8 +627,7 @@
                                     android:text="Isip General Hospital"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold" />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -676,8 +674,8 @@
                                     android:text="Oas District Hospital"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold"
+                                    />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -724,8 +722,7 @@
                                     android:text="Oas RHU"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold" />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -772,8 +769,7 @@
                                     android:text="Ligao City Hospital"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold" />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -820,8 +816,7 @@
                                     android:text="Ligao RHU"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"
-                                    app:fontFamily="serif" />
+                                    android:fontFamily="@font/montserrat_bold" />
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
@@ -861,7 +856,7 @@
                             android:text="WHAT'S WRONG?"
                             android:textColor="@color/white"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                            app:fontFamily="serif"
+                            android:fontFamily="@font/montserrat_bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/imageViewWhatsWrong"
                             app:layout_constraintTop_toTopOf="parent" />

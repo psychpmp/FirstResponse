@@ -19,6 +19,7 @@
         android:layout_marginTop="250dp"
         android:text="Quiz Levels"
         android:textSize="24sp"
+        android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/black"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LVL 1"
+            android:fontFamily="@font/montserrat_bold"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:background="@drawable/button_background"/>
@@ -74,6 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LVL 2"
+            android:fontFamily="@font/montserrat_bold"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:background="@drawable/button_background"/>
@@ -106,6 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LVL 3"
+            android:fontFamily="@font/montserrat_bold"
             android:textSize="18sp"
             android:textColor="@android:color/white"
             android:background="@drawable/button_background"/>
@@ -129,6 +133,7 @@
         android:layout_height="wrap_content"
         android:text="Complete previous level to unlock new one"
         android:textSize="14sp"
+        android:fontFamily="@font/montserrat_bold"
         android:textColor="@color/shadow"
         app:layout_constraintTop_toBottomOf="@id/containerLevel3"
         app:layout_constraintStart_toStartOf="parent"

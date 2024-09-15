@@ -13,5 +13,6 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:padding="16dp"
+        android:fontFamily="@font/montserrat_bold"
         android:layout_margin="8dp" />
 </androidx.cardview.widget.CardView>

@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="Question will appear here"
                 android:textSize="18sp"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@color/white"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +65,9 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/questionTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/opensans"
+                >
 
                 <!-- RadioButton items will be added programmatically -->
 
@@ -75,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submit"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@android:color/white"
                 android:background="@drawable/button_background"
                 app:layout_constraintTop_toBottomOf="@id/answersGroup"

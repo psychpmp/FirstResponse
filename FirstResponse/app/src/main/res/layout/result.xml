@@ -40,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your score will appear here"
+            android:fontFamily="@font/montserrat_bold"
             android:textSize="18sp"
             android:textColor="@android:color/black"
             android:padding="16dp"
@@ -53,6 +54,7 @@
             android:background="@drawable/button_background"
             android:padding="16dp"
             android:text="Retry Quiz"
+            android:fontFamily="@font/montserrat_bold"
             android:textColor="@android:color/white"
             android:layout_marginTop="8dp" />
 
@@ -64,6 +66,7 @@
             android:background="@drawable/button_background"
             android:padding="16dp"
             android:text="Back to Home"
+            android:fontFamily="@font/montserrat_bold"
             android:textColor="@android:color/white"
             android:layout_marginTop="8dp" />
     </LinearLayout>

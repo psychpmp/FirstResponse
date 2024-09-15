@@ -39,14 +39,16 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textAllCaps="true"
-            android:textStyle="bold" />
+            android:fontFamily="@font/montserrat_bold"
+            />
 
         <TextView
             android:id="@+id/kitDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/opensans"/>
 
         <Button
             android:id="@+id/kitButton"
@@ -55,6 +57,7 @@
             android:layout_marginTop="8dp"
             android:textColor="@color/white"
             app:backgroundTint="@color/red"
-            android:text="Shop Now" />
+            android:text="Shop Now"
+            android:fontFamily="@font/montserrat_bold" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

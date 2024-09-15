@@ -50,6 +50,7 @@
                 android:paddingBottom="16dp"
                 android:text="Question will appear here"
                 android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_bold"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@id/answersGroup"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:fontFamily="@font/opensans"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/clueTextView">
@@ -78,6 +80,7 @@
                 android:background="@drawable/button_background"
                 android:padding="16dp"
                 android:text="Submit"
+                android:fontFamily="@font/montserrat_bold"
                 android:textColor="@android:color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
