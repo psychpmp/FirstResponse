@@ -92,7 +92,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Bleeding refers to the loss of blood from the circulatory system, typically caused by injury to blood vessels. It can occur internally, where blood leaks from blood vessels inside the body, or externally through a break in the skin or other body openings like the mouth or nose. There are 3 types of bleeding:"
+                android:text="@string/bleeding"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -119,7 +119,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="This is the least severe form of bleeding, characterized by slow oozing of blood from small vessels (capillaries). It typically occurs from minor cuts and abrasions. It often stops on its own or with minimal first aid."
+                android:text="@string/bleeding1"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -146,7 +146,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="In this type, blood flows steadily and is darker in color due to its lower oxygen content. While it is usually less severe than arterial bleeding, it can still result in significant blood loss if not controlled promptly."
+                android:text="@string/bleeding2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -173,7 +173,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="This is the most severe type of bleeding, where blood spurts out forcefully in rhythm with the heartbeat. The blood is bright red due to its high oxygen content. Arterial bleeding can be life-threatening and requires immediate medical attention."
+                android:text="@string/bleeding3"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

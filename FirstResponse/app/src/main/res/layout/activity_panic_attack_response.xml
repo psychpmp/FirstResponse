@@ -81,7 +81,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A panic attack is a sudden, intense surge of fear or anxiety that triggers physical symptoms like a racing heart, shortness of breath, sweating, and dizziness. It often feels overwhelming, with a sense of impending doom or loss of control. These episodes typically peak within minutes and can happen unexpectedly, even without an obvious cause. While not dangerous, they can severely impact a person's well-being if not managed properly."
+                android:text="@string/panic_attack"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

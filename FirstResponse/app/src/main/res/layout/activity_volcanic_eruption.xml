@@ -79,7 +79,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A volcanic eruption occurs when magma, gases, and ash are expelled from a volcano. Eruptions can be explosive or relatively mild, depending on the type of volcano and the pressure of gases trapped beneath the surface. Volcanic eruptions can cause widespread damage through lava flows, ashfall, pyroclastic flows, and volcanic gases."
+                android:text="@string/volc_erupt"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -276,7 +276,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="By being prepared and following safety protocols, you can reduce the risks posed by volcanic eruptions. It’s essential to stay informed and follow the instructions of local authorities before, during, and after an eruption to ensure safety for yourself and your community."
+                android:text="@string/volc_erupt5"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />

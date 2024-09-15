@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="An allergic reaction occurs when the immune system mistakenly identifies a harmless substance (an allergen) as harmful and overreacts to it. Common allergens include pollen, food, insect stings, pet dander, medications, and latex. The reaction can range from mild to severe and can affect different parts of the body, such as the skin, respiratory system, and digestive system."
+                android:text="@string/allergic_reaction"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

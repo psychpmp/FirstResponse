@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Label at the top of the page -->
+    <TextView
+        android:id="@+id/resultsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:text="Search Results for (search input)"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/shadow2"/>
+
+    <!-- ListView with margin top -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_below="@id/resultsLabel"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="24dp"
+        android:clipToPadding="false"/>
+</RelativeLayout>

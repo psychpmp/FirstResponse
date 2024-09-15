@@ -163,6 +163,10 @@
         <activity
             android:name="com.example.android.firstresponse.WhatsWrongActivity"
             android:exported="true" />
+        <activity
+            android:name="com.example.android.firstresponse.SearchResultsActivity"
+            android:exported="true" />
+
 
     </application>
 </manifest>

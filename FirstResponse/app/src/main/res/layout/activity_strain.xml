@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A Strain is an injury to a muscle or tendon (the tissue that connects muscles to bones), usually caused by overstretching or tearing due to excessive force or overuse. Strains commonly occur in areas like the back, hamstrings, or shoulders and can happen during physical activities like lifting heavy objects, sports, or even sudden movements."
+                android:text="@string/strain"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -161,7 +161,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/strain"
+                android:text="@string/strain1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -178,7 +178,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Strains typically heal with rest and proper care, but more severe strains may require medical evaluation or even physical therapy to recover fully."
+                android:text="@string/strain2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

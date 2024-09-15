@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Heatwaves can lead to serious health risks like heat exhaustion, dehydration, and heatstroke, especially for vulnerable groups such as the elderly and children. Prolonged heat can worsen chronic conditions, strain energy supplies, and cause power outages, limiting access to cooling and clean water. Additionally, it impacts agriculture, reducing crop yields and increasing the risk of food shortages."
+                android:text="@string/heatwave"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -134,7 +134,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/heatwave"
+                android:text="@string/heatwave1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />

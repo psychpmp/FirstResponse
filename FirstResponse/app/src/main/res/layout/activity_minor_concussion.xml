@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A minor concussion is a mild form of traumatic brain injury that occurs when the brain is shaken inside the skull due to a blow or jolt to the head or body. While a minor concussion is less severe than other types of brain injuries, it still temporarily affects brain function. Symptoms can last for a few hours to several days."
+                android:text="@string/minor_concussion"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -174,7 +174,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/minor_concussion"
+                android:text="@string/minor_concussion1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -191,7 +191,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Call your Local Hotline if symptoms worsen over time, such as increasing headache or confusion, vomiting, seizure, or loss of consciousness occurs, significant drowsiness or inability to stay awake, difficulty speaking or walking, persistent or worsening symptoms after a few days. Even with a minor concussion, it’s important to take symptoms seriously, rest, and follow up with a healthcare provider to ensure complete recovery."
+                android:text="@string/minor_concussion2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

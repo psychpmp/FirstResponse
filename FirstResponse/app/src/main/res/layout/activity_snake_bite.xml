@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A snakebite occurs when a snake punctures the skin with its fangs, injecting venom in some cases. Snakebites can vary widely in severity, depending on the species of snake, whether venom was injected, and the size or health of the person bitten. There are 2 types of Snake Bites:"
+                android:text="@string/snake_bite"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -107,7 +107,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="This occurs when a snake strikes but does not inject venom. Although painful and alarming, dry bites generally do not cause significant harm beyond localized pain or minor swelling."
+                android:text="@string/dry_bite"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -134,7 +134,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="These bites involve the injection of venom, which can have various effects depending on the snake's species. Venomous snakebites are more dangerous and require immediate medical attention."
+                android:text="@string/dry_bite"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -199,7 +199,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/dry_bite"
+                android:text="@string/dry_bite1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -227,7 +227,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/venomous_bite"
+                android:text="@string/venomous_bite1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -243,7 +243,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="The basic first-aid measures are generally the same: immobilize the person, keep calm, and seek medical attention immediately. Treatment at a hospital will depend on the specific snake and venom, often involving antivenom or supportive care. Never try to catch or kill the snake. Instead, if possible, take a photo or note its appearance for identification by medical professionals."
+                android:text="@string/snake_bite1"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

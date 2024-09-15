@@ -71,7 +71,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
+                android:layout_height="wrap_content"
                 android:background="@color/shadow"
                 android:fontFamily="@font/opensans"
                 android:paddingTop="10dp"
@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Road safety is essential for reducing accidents, injuries, and fatalities, while promoting responsible driving and safer travel for all. It improves transportation efficiency, reduces economic and healthcare burdens, and enhances overall quality of life by ensuring safer, more reliable roads."
+                android:text="@string/road_safety"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

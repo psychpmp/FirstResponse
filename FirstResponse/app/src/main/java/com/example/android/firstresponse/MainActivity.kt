@@ -7,9 +7,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
-import android.widget.Button
-import android.widget.Toast
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -28,8 +30,45 @@ import android.graphics.drawable.ColorDrawable
 import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.LocationSettingsResponse
 import android.content.ActivityNotFoundException
-
+import android.widget.SearchView
+import android.view.Menu
 class MainActivity : AppCompatActivity() {
+    private val items = listOf(
+        "burns",
+        "choking",
+        "cpr",
+        "splints",
+        "seizures",
+        "shock",
+        "bleeding",
+        "snakebite",
+        "bruises",
+        "sprains",
+        "strains",
+        "nosebleeds",
+        "allergic reaction",
+        "headaches",
+        "minor concussions",
+        "muscle cramp",
+        "blister",
+        "anxiety management",
+        "panic attack response",
+        "trauma-informed care",
+        "grounding techniques",
+        "stress reduction",
+        "floods",
+        "acute grief",
+        "volcanic eruption",
+        "epidemic",
+        "earthquake",
+        // New additions
+        "water safety",
+        "road safety",
+        "daily food safety",
+        "emergency food safety",
+        "heatwave"
+    )
+
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
@@ -153,6 +192,31 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.action_bar_menu, menu)
+
+        val searchItem = menu?.findItem(R.id.action_search)
+        val searchView = searchItem?.actionView as androidx.appcompat.widget.SearchView // Correct casting
+
+        searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (query != null) {
+                    performSearch(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // Optionally handle text changes here
+                return true
+            }
+        })
+
+        return true
+    }
+
+
 
     override fun onResume() {
         super.onResume()
@@ -381,9 +445,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    private fun performSearch(query: String) {
+        val results = items.filter { it.contains(query, ignoreCase = true) }
 
-
-
+        if (results.isNotEmpty()) {
+            val intent = Intent(this, SearchResultsActivity::class.java).apply {
+                putExtra("searchQuery", query) // Correctly pass search query
+                putExtra("searchResults", results.toTypedArray())
+            }
+            startActivity(intent)
+        } else {
+            Toast.makeText(this, "No results found for: $query", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A bruise occurs when small blood vessels under the skin break due to an impact or injury, causing blood to leak into the surrounding tissue. This leads to the characteristic black, blue, or purple discoloration of the skin. Over time, the body reabsorbs the blood, and the bruise gradually fades, changing colors as it heals."
+                android:text="@string/bruise"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -134,7 +134,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/bruise"
+                android:text="@string/bruise1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -151,7 +151,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Bruises are usually harmless, but paying attention to their healing and treating them with care can help reduce discomfort and promote faster recovery."
+                android:text="@string/bruise2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Muscle cramps are sudden, involuntary contractions or spasms in one or more muscles, usually causing sharp pain. They often occur in the legs, particularly the calf muscles, but can also affect other parts of the body, like the hands, feet, and arms. Muscle cramps can last from a few seconds to several minutes and are common during exercise or at night."
+                android:text="@string/musclecramps"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -162,7 +162,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/musclecramps"
+                android:text="@string/musclecramps1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -179,7 +179,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Muscle cramps are usually harmless and can be managed with these steps, but if they happen frequently or are severe, it’s a good idea to consult a healthcare professional."
+                android:text="@string/musclecramps2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

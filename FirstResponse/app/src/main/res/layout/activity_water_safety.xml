@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Water safety is crucial for health, preventing waterborne diseases and reducing risks during floods.\nEnsuring access to clean drinking water and being prepared for floods helps protect against contamination. Prioritizing safe water practices and flood preparedness keeps individuals and families safe from water-related dangers."
+                android:text="@string/water_safety"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -134,7 +134,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/water_safety"
+                android:text="@string/water_safety1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />

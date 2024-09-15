@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Grounding techniques help individuals focus on the present moment by using their senses, such as through touch or sight, to manage anxiety or stress. These techniques are important because they reduce overwhelming emotions and restore a sense of control during moments of distress, helping individuals stay calm and clear-minded."
+                android:text="@string/grounding_techniques"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -134,7 +134,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/grounding_techniques"
+                android:text="@string/grounding_techniques1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />

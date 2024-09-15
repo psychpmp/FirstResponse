@@ -79,7 +79,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="An earthquake is a sudden shaking of Earth\'s surface caused by the movement of rocks deep underneath. Most quakes are unnoticeable by people on Earth\'s surface. Thousands of quakes occur every day but are too weak to be felt."
+                android:text="@string/earth_para1"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

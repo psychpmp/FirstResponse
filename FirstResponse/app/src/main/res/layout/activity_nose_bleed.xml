@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A nosebleed is the loss of blood from the tissue lining inside the nose. It can happen when the tiny blood vessels in the nose are broken due to trauma, irritation, dry air, or other causes. Nosebleeds are common and generally not serious."
+                android:text="@string/nose_bleed"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -145,7 +145,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/nose_bleed"
+                android:text="@string/nose_bleed1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -162,7 +162,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Call your Local Hotline or Seek for Professional Help if the bleeding lasts more than 20 minutes, happens frequently, or if it occurs after a head injury or due to a significant trauma."
+                android:text="@string/nose_bleed2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

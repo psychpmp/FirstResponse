@@ -81,7 +81,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Anxiety is a feeling of worry or fear that can range from mild unease to intense nervousness. It is a natural response to stress but can become overwhelming if persistent. Symptoms include restlessness, rapid heartbeat, and difficulty focusing. While normal in certain situations, chronic anxiety may interfere with daily life and could indicate an anxiety disorder if not managed."
+                android:text="@string/anxiety_management"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

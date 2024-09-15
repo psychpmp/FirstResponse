@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Daily food safety is essential for preventing foodborne illnesses, protecting public health, and ensuring the quality of what we consume. Proper hygiene, safe cooking, and correct food storage reduce contamination risks, safeguarding vulnerable groups and supporting overall well-being while minimizing healthcare burdens."
+                android:text="@string/daily_food_safety"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -134,7 +134,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/daily_food_safety"
+                android:text="@string/daily_food_safety1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />

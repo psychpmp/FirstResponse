@@ -81,7 +81,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Trauma-informed care is an approach that recognizes the impact of trauma and integrates this awareness into care practices. Its importance lies in creating a safe, supportive environment that prevents re-traumatization and fosters healing. By prioritizing trust, empowerment, and understanding, trauma-informed care improves outcomes and encourages individuals to engage in their recovery."
+                android:text="@string/trauma_informed_care"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -134,7 +134,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/trauma_informed_care"
+                android:text="@string/trauma_informed_care1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />

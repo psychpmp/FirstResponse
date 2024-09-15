@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A sprain is an injury to a ligament, which is the tissue that connects two bones in a joint. Sprains occur when a ligament is stretched or torn due to excessive force, such as twisting, falling, or an impact to the joint. The most common locations for sprains are the ankles, knees, wrists, and thumbs. There are levels of severity sprain has:"
+                android:text="@string/sprain"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -119,7 +119,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A Grade 1 sprain is the least severe form of a sprain, involving a slight overstretching or microscopic tearing of the ligament. The ligament remains intact, but it has been stretched beyond its normal range of motion."
+                android:text="@string/grade_1_sprain"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -147,7 +147,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="■Mild pain\n■Swelling\n■Stiffness around the joint, but typically no instability. You can still bear weight on the joint, but it may be slightly uncomfortable."
+                android:text="@string/grade_1_sprain_symptoms"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -174,7 +174,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A Grade 2 sprain is more serious and involves a partial tear of the ligament. The fibers of the ligament are damaged but not completely torn, which results in some loss of joint function and stability."
+                android:text="@string/grade_2_sprain"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -202,7 +202,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="■Moderate to significant pain\n■Swelling\n■Bruising around the joint. \n■Joint mobility may be restricted, and the person may feel some instability or difficulty bearing weight on the joint."
+                android:text="@string/grade_2_sprain_symptoms"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -229,7 +229,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A Grade 3 sprain is the most severe type, involving a complete tear or rupture of the ligament. The ligament no longer provides any stability to the joint, and the joint may feel completely unstable or non-functional."
+                android:text="@string/grade_3_sprain"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -256,10 +256,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="20dp"
                 android:paddingBottom="20dp"
-                android:text="■Severe pain (though sometimes less painful if the ligament is completely torn)
-                \n■Significant swelling
-                \n■Bruising
-                \n■Total loss of joint function (The person is typically unable to bear any weight on the joint, and the joint feels very unstable)."
+                android:text="@string/grade_3_sprain_symptoms"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -325,7 +322,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/grade_1_sprain"
+                android:text="@string/grade_1_sprain1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -353,7 +350,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/grade_2_sprain"
+                android:text="@string/grade_2_sprain1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -380,7 +377,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/grade_3_sprain"
+                android:text="@string/grade_3_sprain1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -396,7 +393,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Each grade requires different levels of care and recovery. While Grade 1 sprains often heal with simple first aid, Grade 2 and 3 sprains may need medical intervention and rehabilitation to ensure proper recovery."
+                android:text="@string/sprain1"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

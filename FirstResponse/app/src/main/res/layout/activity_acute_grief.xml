@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Acute grief is an intense emotional reaction that occurs soon after a significant loss, typically marked by deep sadness, longing, and distress. It can include physical symptoms like fatigue and sleep disturbances, and individuals often feel preoccupied with thoughts of the deceased. Though highly painful, it is a normal part of the grieving process and usually lasts for weeks to a few months as the person begins to adjust to life without their loved one."
+                android:text="@string/acute_grief_intro"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

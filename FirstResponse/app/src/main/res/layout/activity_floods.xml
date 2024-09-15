@@ -57,7 +57,7 @@
                 android:textSize="18sp"
                 android:gravity="left"
                 android:fontFamily="@font/opensans"
-                android:text="Floods are the most frequent type of natural disaster and occur when an overflow of water submerges land that is usually dry. Floods are often caused by heavy rainfall, rapid snow-melt or a storm surge from a tropical cyclone or tsunami in coastal areas."
+                android:text="@string/flood_para1"
                 android:textColor="@color/black" />
 
             <!-- Second Section -->

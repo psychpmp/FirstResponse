@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="An insect bite or sting occurs when an insect either bites to feed on blood (e.g., mosquitoes) or stings as a defense mechanism (e.g., bees or wasps). Most insect bites or stings cause mild reactions such as redness, itching, and swelling, but some people may have more severe allergic reactions."
+                android:text="@string/insectbite1"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -320,7 +320,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Most insect bites and stings can be treated with basic first aid, but in cases of severe allergic reactions or bites from disease-carrying insects, prompt medical attention is necessary."
+                android:text="@string/insectbite2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

@@ -80,7 +80,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="A blister is a small pocket of fluid that forms on the upper layers of the skin, typically due to friction, heat, or chemical exposure. Blisters act as a protective barrier, allowing the skin underneath to heal. The fluid inside is usually clear, but in some cases, it can contain blood if small blood vessels are damaged, or pus if the blister becomes infected."
+                android:text="@string/blister"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 
@@ -161,7 +161,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="18sp"
-                android:text="@string/blister"
+                android:text="@string/blister1"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
@@ -178,7 +178,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="Blisters usually heal on their own in a few days, but proper care can help speed recovery and prevent complications."
+                android:text="@string/blister2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

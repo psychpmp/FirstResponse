@@ -10,7 +10,7 @@
         android:layout_width="256dp"
         android:layout_height="110dp"
         android:layout_gravity="center"
-        android:background="@drawable/ircs_logo">
+        android:background="@drawable/fr_logo">
 
     </ImageView>
 
