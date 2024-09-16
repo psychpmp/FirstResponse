@@ -268,7 +268,7 @@
                 android:paddingRight="20dp"
                 android:textSize="18sp"
                 android:gravity="left"
-                android:text="It’s important to consult with a healthcare provider if you suspect allergies or experience frequent allergic reactions. In severe cases, a professional diagnosis and prescription medications may be necessary to manage the condition safely."
+                android:text="@string/allergic_reaction2"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />
 

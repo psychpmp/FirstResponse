@@ -6,8 +6,9 @@
     <string name="url">https://redcrosskarnataka.org/</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="choose_language">Choose Language</string>
+    <string name="choose_language">Pumili nin bibisaron</string>
 
+    <string name="seizure1">Ang epilepsy iyo isang kondisyon sa utok na nagiging sanhi kan pag-atake. Ini ang saro sa pinakakaraniwang mga karamdaman kan nervous system. May mga nagkakaibang uri kan mga pag-atake. Ang klase kan pag-atake nagadepende sa anong parte asin gaano ka dakol an utok an apektado asin an nangyayari sa panahon kan pag-atake. An 2 na pangunahin na kategorya kan epileptic seizures iyo ang <b>focal (partial) seizure</b> asin <b>generalized seizure</b>.</string>
     <string name="seizure2"> A seizure can be caused by many things. These can include:
         \n<b>■An imbalance of nerve-signaling brain chemicals (neurotransmitters),</b>
         \n<b>■Brain tumor</b>
@@ -16,17 +17,17 @@
         \nEpilepsy may be caused by a combination of these. In most cases, the cause of epilepsy can’t be found.</string>
 
     <string name="seizure3">"Your symptoms depend on the type of seizure. General symptoms or warning signs of a seizure can include:
-\n<b>■Staring</b>
-\n<b>■Jerking movements of the arms and legs</b>
-\n<b>■Stiffening of the body</b>
-\n<b>■Loss of consciousness</b>
-\n<b>■Breathing problems or stopping breathing</b>
-\n<b>■Loss of bowel or bladder control</b>
-\n<b>■Falling suddenly for no apparent reason,especially when associated with loss of consciousness</b>
-\n<b>■Not responding to noise or words for brief periods</b>
-\n<b>■Appearing confused or in a haze</b>
-\n<b>■Nodding your head rhythmically, when associated with loss of awareness or loss of consciousness</b>
-\n<b>■Periods of rapid eye blinking and staring"</b></string>
+    \n<b>■Staring</b>
+    \n<b>■Jerking movements of the arms and legs</b>
+    \n<b>■Stiffening of the body</b>
+    \n<b>■Loss of consciousness</b>
+    \n<b>■Breathing problems or stopping breathing</b>
+    \n<b>■Loss of bowel or bladder control</b>
+    \n<b>■Falling suddenly for no apparent reason,especially when associated with loss of consciousness</b>
+    \n<b>■Not responding to noise or words for brief periods</b>
+    \n<b>■Appearing confused or in a haze</b>
+    \n<b>■Nodding your head rhythmically, when associated with loss of awareness or loss of consciousness</b>
+    \n<b>■Periods of rapid eye blinking and staring"</b></string>
 
     <string name="seizure4">The goal of treatment is to control, stop, or reduce how often seizures occur. Treatment is most often done with medicine. There are many types of medicines used to treat epilepsy. Your healthcare provider will need to identify the type of seizure you are having. Medicines are selected based on the type of seizure, age of the person, side effects, cost, and ease of use.\n
         \n<b>1.Blood tests</b>
@@ -132,14 +133,7 @@
     <string name="water_safety">Water safety is crucial for health, preventing waterborne diseases and reducing risks during floods.\nEnsuring access to clean drinking water and being prepared for floods helps protect against contamination. Prioritizing safe water practices and flood preparedness keeps individuals and families safe from water-related dangers.
     </string>
 
-    <string name="water_safety1"><b>Use Clean Water Sources:</b> Drink only from trusted or treated sources.
-        \n<b>Boil or Purify Water:</b> Boil water for at least one minute or use purification methods if unsure of its quality.
-        \n<b>Clean Water Containers:</b> Regularly wash and seal containers to prevent contamination.
-        \n<b>Install Water Filters:</b> Use filters for added protection against bacteria and other impurities.
-        \n<b>Be Cautious with Ice and Street Food:</b> Ensure ice and food were prepared with clean water.
-        \n<b>Prepare for Floods:</b> Secure water supplies, avoid contact with floodwaters, and use bottled or purified water during emergencies.
-        \n<b>Stay Informed:</b> Follow local advisories on water safety, especially during natural disasters.
-    </string>
+    <string name="water_safety1">"<b>Use Clean Water Sources</b> – Drink only from trusted or treated sources. <b>Boil or Purify Water</b> – Boil water for at least one minute or use purification methods if unsure of its quality. <b>Clean Water Containers</b> – Regularly wash and seal containers to prevent contamination. <b>Install Water Filters</b> – Use filters for added protection against bacteria and other impurities. <b>Be Cautious with Ic</b>e and Street Food – Ensure ice and food were prepared with clean water. <b>Prepare for Floods</b> – Secure water supplies, avoid contact with floodwaters, and use bottled or purified water during emergencies. <b>Stay Informed</b> – Follow local advisories on water safety, especially during natural disasters.      "</string>
 
     <string name="road_safety">"Road safety is essential for reducing accidents, injuries, and fatalities, while promoting responsible driving and safer travel for all. It improves transportation efficiency, reduces economic and healthcare burdens, and enhances overall quality of life by ensuring safer, more reliable roads.     "</string>
 
@@ -370,10 +364,8 @@
     <string name="strain">A Strain is an injury to a muscle or tendon (the tissue that connects muscles to bones), usually caused by overstretching or tearing due to excessive force or overuse. Strains commonly occur in areas like the back, hamstrings, or shoulders and can happen during physical activities like lifting heavy objects, sports, or even sudden movements.
     </string>
 
-    <string name="strain_symptoms">"■Pain and tenderness in the affected muscle or tendon
-■Swelling, bruising, or redness
-■Muscle weakness or difficulty moving the affected area
-■Muscle spasms or cramping      "</string>
+    <string name="strain_symptoms">■Pain and tenderness in the affected muscle or tendon\n■Swelling, bruising, or redness\n■Muscle weakness or difficulty moving the affected area\n■Muscle spasms or cramping\n
+    </string>
 
     <string name="strain1"><b>Rest:</b> Avoid using the injured area to prevent further damage. Give the muscle or tendon time to heal by reducing activity, especially in the first 48 hours after the injury.\n<b>Ice:</b> Apply ice to the strained area for 15-20 minutes every 1-2 hours for the first 48 hours. This helps reduce swelling and numbs the pain. Use a cold pack or ice wrapped in a cloth to avoid direct contact with the skin.\n<b>Compression:</b> Wrap the injured area with an elastic bandage (like an Ace wrap) to limit swelling. Make sure the wrap is snug but not so tight that it restricts blood flow.\n<b>Elevation:</b> If possible, elevate the injured area above heart level to reduce swelling and inflammation. For example, if the strain is in your leg, prop it up on pillows.\n<b>Over-the-counter pain relief:</b> Non-steroidal anti-inflammatory drugs (NSAIDs), such as ibuprofen or aspirin, can help reduce pain and inflammation.\n<b>Gentle stretching and physical therapy:</b> After the initial inflammation subsides, gentle stretching and strengthening exercises may help restore muscle function. Consult a healthcare provider or physical therapist to ensure you are doing the appropriate exercises for your recovery.\n<b>Avoid strenuous activity:</b> Do not rush back into full activity too soon, as this can delay healing and lead to re-injury. Gradually return to your usual activities as the strain heals.\n
     </string>
@@ -522,19 +514,19 @@ Some forms of gastrointestinal and respiratory infections can cause serious comp
     <string name="burn5">Cover the burn with cling film. Lay the cling film over the burn, rather than wrapping it around a limb. A clean, clear plastic bag can be used for burns on your hand.
     </string>
 
-    <string name="burn6">Treat the pain from a burn with paracetamol or ibuprofen. Always check the manufacturer\'s instructions when using over-the-counter medication. Children under 16 years of age should not be given aspirin. Raise the affected area, if possible. This will help to reduce swelling.
+    <string name="burn6">Treat the pain from a burn with paracetamol or ibuprofen. Always check the manufacturer\'s instructions when using over-the-counter medication. Children under 16 years of age should not be given aspirin. Raise the affected area, if possible. This will help to reduce swelling
     </string>
 
     <string name="burn7">Once you have taken these steps, you\'ll need to decide whether further medical treatment is necessary.
     </string>
 
-    <string name="burn8">Large burns bigger than the size of the affected person\'s hand deep burns of any size that cause white or charred skin.
+    <string name="burn8">Large burns bigger than the size of the affected person\'s hand deep burns of any size that cause white or charred skin
     </string>
 
-    <string name="burn9">Burns on the face, neck, hands, feet, any joints, or genitals all chemical and electrical burns any other injuries that need treating.
+    <string name="burn9">Burns on the face, neck, hands, feet, any joints, or genitals all chemical and electrical burns any other injuries that need treating"
     </string>
 
-    <string name="burn10">Any signs of shock – symptoms include cold, clammy skin, sweating, rapid, shallow breathing, and weakness or dizziness.
+    <string name="burn10">Any signs of shock – symptoms include cold, clammy skin, sweating, rapid, shallow breathing, and weakness or dizziness
     </string>
 
     <string name="choking1">Step 1: If someone is choking, encourage them to cough.
@@ -577,9 +569,6 @@ Some forms of gastrointestinal and respiratory infections can cause serious comp
     </string>
 
     <string name="choking14">Continue with cycles of back blows and chest thrusts until the blockage dislodges, help arrives or the baby becomes unresponsive. If you can’t call your local hotline; get someone else to do it.
-    </string>
-
-    <string name="cpr">CPR: Cardiopulmonary Resuscitation is an emergency lifesaving procedure performed when the heart stops beating. Immediate CPR can double or triple chances of survival after cardiac arrest.
     </string>
 
     <string name="cpr1">Step 1.Call an Ambulance (Dial your Local Hotline)
@@ -811,7 +800,6 @@ Act to break the contact between the casualty and the electrical supply. If poss
     <string name="dialog_image_desc">Information icon</string>
     <string name="topic_icon">Topic Icon</string>
     <string name="volc_erupt">"A volcanic eruption occurs when magma, gases, and ash are expelled from a volcano. Eruptions can be explosive or relatively mild, depending on the type of volcano and the pressure of gases trapped beneath the surface. Volcanic eruptions can cause widespread damage through lava flows, ashfall, pyroclastic flows, and volcanic gases.     "</string>
-    <string name="seizure1">" Epilepsy is a brain condition that causes a person to have seizures. It is one of the most common disorders of the nervous system. There are different types of seizures. The type of seizure depends on which part and how much of the brain is affected and what happens during the seizure. The 2 main categories of epileptic seizures are <b>focal (partial) seizure</b> and <b>generalized seizure</b>."</string>
 
 
 </resources>
