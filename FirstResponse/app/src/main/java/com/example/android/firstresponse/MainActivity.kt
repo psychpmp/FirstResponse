@@ -32,7 +32,7 @@ import com.google.android.gms.location.LocationSettingsResponse
 import android.content.ActivityNotFoundException
 import android.widget.SearchView
 import android.view.Menu
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private val items = listOf(
         "burns",
         "choking",

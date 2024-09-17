@@ -8,7 +8,7 @@ import android.webkit.WebViewClient
 import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 
-class DrugsPrevention : AppCompatActivity() {
+class DrugsPrevention : BaseActivity() {
     private lateinit var webView1: WebView
     private lateinit var webView2: WebView
     private lateinit var webView3: WebView

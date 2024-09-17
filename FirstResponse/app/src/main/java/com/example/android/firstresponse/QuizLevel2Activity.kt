@@ -11,7 +11,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class QuizLevel2Activity : AppCompatActivity() {
+class QuizLevel2Activity : BaseActivity() {
     private lateinit var questionTextView: TextView
     private lateinit var answersGroup: RadioGroup
     private lateinit var submitButton: Button

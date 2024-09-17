@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import androidx.core.content.ContextCompat
 
-class WhatsWrongActivity : AppCompatActivity() {
+class WhatsWrongActivity : BaseActivity() {
 
     private lateinit var questionTextView: TextView
     private lateinit var optionsSpinner: Spinner

@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class nosebleed : AppCompatActivity() {
+class nosebleed : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var fabSave: FloatingActionButton

@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class AcuteGrief : AppCompatActivity() {
+class AcuteGrief : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var fabSave: FloatingActionButton

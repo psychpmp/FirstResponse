@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class splints : AppCompatActivity() {
+class splints : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var webView2: WebView

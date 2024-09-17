@@ -10,7 +10,7 @@ import androidx.core.content.ContextCompat
 import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class burns : AppCompatActivity() {
+class burns : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var fabSave: FloatingActionButton

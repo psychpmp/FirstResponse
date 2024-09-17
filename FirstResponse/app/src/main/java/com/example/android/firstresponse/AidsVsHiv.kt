@@ -6,7 +6,7 @@ import android.view.MenuItem
 import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 
-class AidsVsHiv : AppCompatActivity() {
+class AidsVsHiv : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aids_vs_hiv)

@@ -8,7 +8,7 @@ import android.webkit.WebViewClient
 import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 
-class MythsAndReality : AppCompatActivity() {
+class MythsAndReality : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var webView2: WebView

@@ -9,7 +9,7 @@ import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
-class QuizLevel3Activity : AppCompatActivity() {
+class QuizLevel3Activity : BaseActivity() {
 
     private lateinit var clueTextView: TextView
     private lateinit var injuryClueTextView: TextView

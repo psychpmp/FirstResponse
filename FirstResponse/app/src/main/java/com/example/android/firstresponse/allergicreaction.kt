@@ -13,7 +13,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.widget.Button
 
-class allergicreaction : AppCompatActivity() {
+class allergicreaction : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var fabSave: FloatingActionButton

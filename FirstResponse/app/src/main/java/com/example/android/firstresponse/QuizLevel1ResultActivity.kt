@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
 
-class QuizLevel1ResultActivity : AppCompatActivity() {
+class QuizLevel1ResultActivity : BaseActivity() {
     private lateinit var resultTextView: TextView
     private lateinit var retryButton: Button
     private lateinit var homeButton: Button

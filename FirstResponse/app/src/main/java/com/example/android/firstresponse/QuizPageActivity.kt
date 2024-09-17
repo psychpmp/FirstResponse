@@ -3,7 +3,6 @@ package com.example.android.firstresponse
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
@@ -14,7 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
-class QuizPage : AppCompatActivity() {
+class QuizPageActivity : BaseActivity() {
     private lateinit var buttonLevel1: Button
     private lateinit var buttonLevel2: Button
     private lateinit var buttonLevel3: Button

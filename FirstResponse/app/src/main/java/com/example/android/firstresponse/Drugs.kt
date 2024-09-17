@@ -7,7 +7,7 @@ import android.widget.Button
 import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 
-class Drugs : AppCompatActivity() {
+class Drugs : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drugs)

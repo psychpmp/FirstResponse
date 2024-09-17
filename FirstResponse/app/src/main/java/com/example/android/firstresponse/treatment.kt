@@ -6,7 +6,7 @@ import android.view.MenuItem
 import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 
-class treatment : AppCompatActivity() {
+class treatment : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_treatment)

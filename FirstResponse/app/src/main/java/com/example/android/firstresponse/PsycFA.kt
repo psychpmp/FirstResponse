@@ -10,7 +10,7 @@ import android.widget.ImageButton
 import androidx.core.content.ContextCompat
 
 
-class PsycFA : AppCompatActivity() {
+class PsycFA : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_psycfa)

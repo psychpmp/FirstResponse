@@ -9,7 +9,7 @@ import android.webkit.WebViewClient
 import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 
-class headache : AppCompatActivity() {
+class headache : BaseActivity() {
 
     private lateinit var webView1: WebView
 

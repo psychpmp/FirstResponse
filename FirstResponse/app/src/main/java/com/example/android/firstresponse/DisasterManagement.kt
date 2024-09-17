@@ -8,7 +8,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageButton
 
 
-class DisasterManagement : AppCompatActivity() {
+class DisasterManagement : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_disaster_management)

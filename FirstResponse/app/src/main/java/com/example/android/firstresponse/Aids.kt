@@ -8,7 +8,7 @@ import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 
 
-class Aids : AppCompatActivity() {
+class Aids : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_aids)

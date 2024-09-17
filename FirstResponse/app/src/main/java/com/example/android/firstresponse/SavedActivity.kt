@@ -12,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class SavedActivity : AppCompatActivity() {
+class SavedActivity : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var noSavedTopicsTextView: TextView
     private lateinit var emptyAnimationView: LottieAnimationView
     private lateinit var savedTopicsAdapter: SavedTopicsAdapter
-    private var savedTopicsList: List<SavedTopic> = listOf()
+    private var savedTopicsList: MutableList<SavedTopic> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +54,6 @@ class SavedActivity : AppCompatActivity() {
                 emptyAnimationView.visibility = View.GONE
             }
 
-
             val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
             bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
                 when (menuItem.itemId) {
@@ -88,13 +87,16 @@ class SavedActivity : AppCompatActivity() {
     private fun loadSavedTopics() {
         try {
             val sharedPref = getSharedPreferences("SavedTopics", MODE_PRIVATE)
-            val savedTopicsSet = sharedPref.getStringSet("savedTopics", mutableSetOf()) ?: mutableSetOf()
+            val savedTopicsSet = sharedPref.getStringSet("savedTopics", emptySet())?.toMutableSet() ?: mutableSetOf()
+
+            Log.d("SavedActivity", "Loaded topics from preferences: $savedTopicsSet")
 
             // Convert saved topic IDs into SavedTopic objects
             savedTopicsList = savedTopicsSet.map { id ->
-                // Create SavedTopic objects using the ID as the title
                 SavedTopic(id, id)
-            }
+            }.toMutableList()
+
+            Log.d("SavedActivity", "Converted to saved topics list: $savedTopicsList")
 
         } catch (e: Exception) {
             Log.e("SavedActivity", "Error loading saved topics", e)
@@ -102,8 +104,91 @@ class SavedActivity : AppCompatActivity() {
         }
     }
 
+    private fun saveTopicsToPreferences() {
+        try {
+            val sharedPref = getSharedPreferences("SavedTopics", MODE_PRIVATE)
+            val editor = sharedPref.edit()
+
+            // Convert the list of SavedTopic IDs into a Set of Strings
+            val savedTopicsSet = savedTopicsList.map { it.id }.toMutableSet()
+
+            Log.d("SavedActivity", "Saving topics to preferences: $savedTopicsSet")
+
+            // Save the set in SharedPreferences
+            editor.putStringSet("savedTopics", savedTopicsSet)
+
+            // Use commit() to ensure changes are saved synchronously
+            if (editor.commit()) {
+                Log.d("SavedActivity", "Topics saved successfully")
+            } else {
+                Log.e("SavedActivity", "Failed to save topics")
+            }
+        } catch (e: Exception) {
+            Log.e("SavedActivity", "Error saving topics", e)
+            Toast.makeText(this, "An error occurred while saving topics: ${e.message}", Toast.LENGTH_LONG).show()
+        }
+    }
+
+
+    private fun addTopicToSavedList(topicId: String) {
+        try {
+            val sharedPref = getSharedPreferences("SavedTopics", MODE_PRIVATE)
+            val savedTopicsSet = sharedPref.getStringSet("savedTopics", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
+
+            Log.d("SavedActivity", "Current saved topics before adding: $savedTopicsSet")
+
+            // Add the new topic to the existing set
+            if (savedTopicsSet.add(topicId)) {
+                // Save the updated set to SharedPreferences
+                val editor = sharedPref.edit()
+                editor.putStringSet("savedTopics", savedTopicsSet)
+
+                // Use commit() to ensure changes are saved synchronously
+                if (editor.commit()) {
+                    Log.d("SavedActivity", "Added and saved topic: $topicId")
+                } else {
+                    Log.e("SavedActivity", "Failed to save after adding topic: $topicId")
+                }
+            }
+
+            // Update the local list after saving
+            savedTopicsList = savedTopicsSet.map { SavedTopic(it, it) }.toMutableList()
+        } catch (e: Exception) {
+            Log.e("SavedActivity", "Error adding topic", e)
+            Toast.makeText(this, "An error occurred while adding the topic: ${e.message}", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun removeTopicFromSavedList(topicId: String) {
+        try {
+            val sharedPref = getSharedPreferences("SavedTopics", MODE_PRIVATE)
+            val savedTopicsSet = sharedPref.getStringSet("savedTopics", mutableSetOf())?.toMutableSet() ?: mutableSetOf()
+
+            Log.d("SavedActivity", "Current saved topics before removing: $savedTopicsSet")
+
+            // Remove the topic from the set
+            if (savedTopicsSet.remove(topicId)) {
+                // Save the updated set back to SharedPreferences
+                val editor = sharedPref.edit()
+                editor.putStringSet("savedTopics", savedTopicsSet)
+
+                // Use commit() to ensure changes are saved synchronously
+                if (editor.commit()) {
+                    Log.d("SavedActivity", "Removed and saved topic: $topicId")
+                } else {
+                    Log.e("SavedActivity", "Failed to save after removing topic: $topicId")
+                }
+            }
+
+            // Update the local list after removing
+            savedTopicsList = savedTopicsSet.map { SavedTopic(it, it) }.toMutableList()
+        } catch (e: Exception) {
+            Log.e("SavedActivity", "Error removing topic", e)
+            Toast.makeText(this, "An error occurred while removing the topic: ${e.message}", Toast.LENGTH_LONG).show()
+        }
+    }
+
     private fun navigateToTopic(topicId: String) {
-        // Define a map of topic IDs to their corresponding activity classes
         val activityMap = mapOf(
             "burns" to burns::class.java,
             "choking" to choking::class.java,
@@ -117,33 +202,31 @@ class SavedActivity : AppCompatActivity() {
             "sprains" to sprain::class.java,
             "strains" to strain::class.java,
             "nosebleeds" to nosebleed::class.java,
-            "allergic reaction" to allergicreaction::class.java,
+            "allergic_reaction" to allergicreaction::class.java,
             "headaches" to headache::class.java,
-            "minor concussions" to minorconcussion::class.java,
-            "muscle cramp" to musclecramps::class.java,
-            "blister" to blister::class.java,
-            "anxiety management" to AnxietyManagement::class.java,
-            "panic attack response" to PanicAttackResponse::class.java,
-            "trauma-informed care" to TraumaInformedCare::class.java,
-            "grounding techniques" to GroundingTechniques::class.java,
-            "stress reduction" to StressReduction::class.java,
+            "minor_concussions" to minorconcussion::class.java,
+            "muscle_cramps" to musclecramps::class.java,
+            "blisters" to blister::class.java,
+            "anxiety_management" to AnxietyManagement::class.java,
+            "panic_attack_response" to PanicAttackResponse::class.java,
+            "trauma_informed_care" to TraumaInformedCare::class.java,
+            "grounding_techniques" to GroundingTechniques::class.java,
+            "stress_reduction" to StressReduction::class.java,
             "floods" to Floods::class.java,
-            "acute grief" to AcuteGrief::class.java,
-            "volcanic eruption" to VolcanicEruption::class.java,
+            "acute_grief" to AcuteGrief::class.java,
+            "volcanic_eruption" to VolcanicEruption::class.java,
             "epidemic" to Epidemic::class.java,
             "earthquake" to Earthquake::class.java,
             // New additions
-            "water safety" to WaterSafety::class.java,
-            "road safety" to RoadSafety::class.java,
-            "daily food safety" to DailyFoodSafety::class.java,
-            "emergency food safety" to EmergencyFoodSafety::class.java,
+            "water_safety" to WaterSafety::class.java,
+            "road_safety" to RoadSafety::class.java,
+            "daily_food_safety" to DailyFoodSafety::class.java,
+            "emergency_food_safety" to EmergencyFoodSafety::class.java,
             "heatwave" to Heatwave::class.java
         )
 
-        // Find the activity class for the given topic ID
         val activityClass = activityMap[topicId]
 
-        // If the activity class is found, start the activity
         if (activityClass != null) {
             val intent = Intent(this, activityClass)
             startActivity(intent)

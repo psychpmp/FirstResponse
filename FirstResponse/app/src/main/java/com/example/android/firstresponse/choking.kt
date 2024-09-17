@@ -13,7 +13,7 @@ import android.widget.Toast
 import android.widget.Button
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class choking : AppCompatActivity() {
+class choking : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var webView2: WebView

@@ -10,8 +10,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
-class Epidemic : AppCompatActivity() {
-
+class Epidemic : BaseActivity() {
     private lateinit var webView1: WebView
     private lateinit var fabSave: FloatingActionButton
     private val topicId = "epidemic" // Unique ID for the topic

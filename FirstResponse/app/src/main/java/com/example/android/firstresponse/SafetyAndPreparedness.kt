@@ -1,16 +1,14 @@
 package com.example.android.firstresponse
 
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.MenuItem // Import MenuItem
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 
-class SafetyAndPreparedness : AppCompatActivity() {
+class SafetyAndPreparedness : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_safety_and_preparedness)
