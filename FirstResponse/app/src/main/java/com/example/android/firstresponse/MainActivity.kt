@@ -32,6 +32,7 @@ import com.google.android.gms.location.LocationSettingsResponse
 import android.content.ActivityNotFoundException
 import android.widget.SearchView
 import android.view.Menu
+
 class MainActivity : BaseActivity() {
     private val items = listOf(
         "burns",
@@ -115,6 +116,39 @@ class MainActivity : BaseActivity() {
         findViewById<Button>(R.id.button4).setOnClickListener {
             startActivity(Intent(this, BasicSanitation::class.java))
         }
+
+        // Additional buttons for health facilities
+        val buttonPolanguiRhu: Button = findViewById(R.id.buttonPolanguiRhu)
+        val buttonOasRhu: Button = findViewById(R.id.buttonOasRhu)
+        val buttonLigaoCityHospital: Button = findViewById(R.id.buttonZone)
+        val buttonLigaoRhu: Button = findViewById(R.id.buttonLigaoRhu)
+        val buttonDuran: Button = findViewById(R.id.buttonDuran)
+
+        buttonPolanguiRhu.setOnClickListener {
+            val intent = Intent(this, PolanguiRhuActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonOasRhu.setOnClickListener {
+            val intent = Intent(this, OasRhuActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonLigaoCityHospital.setOnClickListener {
+            val intent = Intent(this, LigaoCityHospitalActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonLigaoRhu.setOnClickListener {
+            val intent = Intent(this, LigaoRhuActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonDuran.setOnClickListener {
+            val intent = Intent(this, DuranHospitalActivity::class.java)
+            startActivity(intent)
+        }
+
 
         buttonQuiz = findViewById(R.id.buttonQuiz)
         buttonQuiz.setOnClickListener {

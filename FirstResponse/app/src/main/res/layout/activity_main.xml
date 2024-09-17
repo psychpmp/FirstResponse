@@ -442,53 +442,6 @@
                         android:orientation="horizontal"
                         android:gravity="center">
 
-                        <!-- Card 1: Our Lady of Perpetual Help Diagnostic and Dialysis Center -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardViewPerpetualHelp"
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"
-                            android:layout_margin="10dp"
-                            app:cardCornerRadius="20dp"
-                            app:cardBackgroundColor="@android:color/white"
-                            app:cardElevation="4dp">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <!-- Background Image -->
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/polangui_rhu_background"
-                                    android:scaleType="centerCrop" />
-
-                                <!-- Red Fading Overlay -->
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/overlay_red" />
-
-                                <!-- Transparent Button -->
-                                <Button
-                                    android:id="@+id/buttonPerpetualHelp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@android:color/transparent" />
-
-                                <!-- Text Overlay -->
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom|start"
-                                    android:layout_margin="8dp"
-                                    android:text="Our Lady of Perpetual Help"
-                                    android:textSize="14dp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat_bold" />
-                            </FrameLayout>
-                        </androidx.cardview.widget.CardView>
-
                         <!-- Card 2: Polangui Rural Health Unit -->
                         <androidx.cardview.widget.CardView
                             android:id="@+id/cardViewPolanguiRhu"
@@ -507,7 +460,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:src="@drawable/polangui_rhu_background"
+                                    android:src="@drawable/polrhumain"
                                     android:scaleType="centerCrop" />
 
                                 <!-- Red Fading Overlay -->
@@ -536,148 +489,6 @@
                             </FrameLayout>
                         </androidx.cardview.widget.CardView>
 
-                        <!-- Card 3: Perillo General Hospital -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardViewPerilloHospital"
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"
-                            android:layout_margin="10dp"
-                            app:cardCornerRadius="20dp"
-                            app:cardBackgroundColor="@android:color/white"
-                            app:cardElevation="4dp">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <!-- Background Image -->
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/polangui_rhu_background"
-                                    android:scaleType="centerCrop" />
-
-                                <!-- Red Fading Overlay -->
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/overlay_red" />
-
-                                <!-- Transparent Button -->
-                                <Button
-                                    android:id="@+id/buttonPerilloHospital"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@android:color/transparent" />
-
-                                <!-- Text Overlay -->
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom|start"
-                                    android:layout_margin="8dp"
-                                    android:text="Perillo General Hospital"
-                                    android:textSize="14dp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    />
-                            </FrameLayout>
-                        </androidx.cardview.widget.CardView>
-
-                        <!-- Card 4: Isip General Hospital -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardViewIsipHospital"
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"
-                            android:layout_margin="10dp"
-                            app:cardCornerRadius="20dp"
-                            app:cardBackgroundColor="@android:color/white"
-                            app:cardElevation="4dp">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <!-- Background Image -->
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/polangui_rhu_background"
-                                    android:scaleType="centerCrop" />
-
-                                <!-- Red Fading Overlay -->
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/overlay_red" />
-
-                                <!-- Transparent Button -->
-                                <Button
-                                    android:id="@+id/buttonIsipHospital"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@android:color/transparent" />
-
-                                <!-- Text Overlay -->
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom|start"
-                                    android:layout_margin="8dp"
-                                    android:text="Isip General Hospital"
-                                    android:textSize="14dp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat_bold" />
-                            </FrameLayout>
-                        </androidx.cardview.widget.CardView>
-
-                        <!-- Card 5: Oas District Hospital -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/cardViewOasDistrictHospital"
-                            android:layout_width="160dp"
-                            android:layout_height="160dp"
-                            android:layout_margin="10dp"
-                            app:cardCornerRadius="20dp"
-                            app:cardBackgroundColor="@android:color/white"
-                            app:cardElevation="4dp">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <!-- Background Image -->
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/polangui_rhu_background"
-                                    android:scaleType="centerCrop" />
-
-                                <!-- Red Fading Overlay -->
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@drawable/overlay_red" />
-
-                                <!-- Transparent Button -->
-                                <Button
-                                    android:id="@+id/buttonOasDistrictHospital"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:background="@android:color/transparent" />
-
-                                <!-- Text Overlay -->
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom|start"
-                                    android:layout_margin="8dp"
-                                    android:text="Oas District Hospital"
-                                    android:textSize="14dp"
-                                    android:textColor="@color/white"
-                                    android:fontFamily="@font/montserrat_bold"
-                                    />
-                            </FrameLayout>
-                        </androidx.cardview.widget.CardView>
 
                         <!-- Card 6: Oas Rural Health Unit -->
                         <androidx.cardview.widget.CardView
@@ -697,7 +508,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:src="@drawable/oas_rhu_background"
+                                    android:src="@drawable/oasrhumain"
                                     android:scaleType="centerCrop" />
 
                                 <!-- Red Fading Overlay -->
@@ -744,7 +555,7 @@
                                 <ImageView
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
-                                    android:src="@drawable/polangui_rhu_background"
+                                    android:src="@drawable/zonemain"
                                     android:scaleType="centerCrop" />
 
                                 <!-- Red Fading Overlay -->
@@ -755,7 +566,7 @@
 
                                 <!-- Transparent Button -->
                                 <Button
-                                    android:id="@+id/buttonLigaoCityHospital"
+                                    android:id="@+id/buttonZone"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="@android:color/transparent" />
@@ -766,7 +577,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="bottom|start"
                                     android:layout_margin="8dp"
-                                    android:text="Ligao City Hospital"
+                                    android:text="Zone Medical and Intervention Hospital"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
                                     android:fontFamily="@font/montserrat_bold" />
@@ -814,6 +625,53 @@
                                     android:layout_gravity="bottom|start"
                                     android:layout_margin="8dp"
                                     android:text="Ligao RHU"
+                                    android:textSize="14dp"
+                                    android:textColor="@color/white"
+                                    android:fontFamily="@font/montserrat_bold" />
+                            </FrameLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <!-- Card 8: Ligao Rural Health Unit -->
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardViewDuran"
+                            android:layout_width="160dp"
+                            android:layout_height="160dp"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="20dp"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardElevation="4dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <!-- Background Image -->
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/duranmain"
+                                    android:scaleType="centerCrop" />
+
+                                <!-- Red Fading Overlay -->
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/overlay_red" />
+
+                                <!-- Transparent Button -->
+                                <Button
+                                    android:id="@+id/buttonDuran"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@android:color/transparent" />
+
+                                <!-- Text Overlay -->
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom|start"
+                                    android:layout_margin="8dp"
+                                    android:text="Josefina Belmonte Duran Albay Provincial Hospital"
                                     android:textSize="14dp"
                                     android:textColor="@color/white"
                                     android:fontFamily="@font/montserrat_bold" />

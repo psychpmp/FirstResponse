@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.android.firstresponse">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Permissions required by the app -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -166,6 +165,21 @@
             android:exported="true" />
         <activity
             android:name="com.example.android.firstresponse.SearchResultsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.android.firstresponse.PolanguiRhuActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.android.firstresponse.OasRhuActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.android.firstresponse.LigaoCityHospitalActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.android.firstresponse.LigaoRhuActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.android.firstresponse.DuranHospitalActivity"
             android:exported="true" />
 
 

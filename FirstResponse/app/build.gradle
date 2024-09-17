@@ -22,6 +22,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -29,10 +30,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    // Add this line
+    namespace 'com.example.android.firstresponse'
 }
 
 dependencies {
-
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.4.0'
@@ -50,7 +53,4 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation "com.google.android.material:material:1.9.0"
     implementation 'androidx.cardview:cardview:1.0.0'
-
-
-
 }

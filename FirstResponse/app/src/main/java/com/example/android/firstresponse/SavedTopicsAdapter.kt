@@ -48,29 +48,32 @@ class SavedTopicsAdapter(
             "sprains" -> R.drawable.sprain
             "strains" -> R.drawable.strains
             "nosebleeds" -> R.drawable.nosebleeds
-            "allergic_reaction" -> R.drawable.allergic_reactions
+            "allergic reaction" -> R.drawable.allergic_reactions
             "headaches" -> R.drawable.headaches
-            "minor_concussions" -> R.drawable.minor_concussions
-            "muscle_cramps" -> R.drawable.cramp
+            "minor concussions" -> R.drawable.minor_concussions
+            "muscle cramps" -> R.drawable.cramp
             "blisters" -> R.drawable.blisters
-            "anxiety_management" -> R.drawable.anxiety_management
-            "panic_attack_response" -> R.drawable.panic_attack_response
-            "trauma_informed_care" -> R.drawable.trauma_informed_care
-            "grounding_techniques" -> R.drawable.grounding_techniques
-            "stress_reduction" -> R.drawable.stress_reduction
+            "acute grief" -> R.drawable.acute_grief
+            "trauma informed care" -> R.drawable.trauma_informed_care
+            "panic attack response" -> R.drawable.panic_attack_response
+            "grounding techniques" -> R.drawable.grounding_techniques
+            "stress reduction" -> R.drawable.stress_reduction
             "floods" -> R.drawable.floods
-            "acute_grief" -> R.drawable.acute_grief
-            "volcanic_eruption" -> R.drawable.volcanic
+            "anxiety management" -> R.drawable.anxiety_management
+            "volcanic eruption" -> R.drawable.volcanic
             "epidemic" -> R.drawable.epidemic
             "earthquake" -> R.drawable.earthquake
             // New additions
-            "water_safety" -> R.drawable.watersafety
-            "road_safety" -> R.drawable.roadsafety
-            "daily_food_safety" -> R.drawable.dailyfood
-            "emergency_food_safety" -> R.drawable.emergency
+            "water safety" -> R.drawable.watersafety
+            "road safety" -> R.drawable.roadsafety
+            "daily food safety" -> R.drawable.dailyfood
+            "emergency food safety" -> R.drawable.emergency
             "heatwave" -> R.drawable.heatwave
             else -> R.drawable.ic_default // Fallback icon
         }
+
+
+
 
         holder.topicIcon.setImageResource(iconResId)
     }

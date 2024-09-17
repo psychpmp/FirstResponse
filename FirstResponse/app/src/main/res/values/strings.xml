@@ -814,4 +814,13 @@ Act to break the contact between the casualty and the electrical supply. If poss
     <string name="seizure1">" Epilepsy is a brain condition that causes a person to have seizures. It is one of the most common disorders of the nervous system. There are different types of seizures. The type of seizure depends on which part and how much of the brain is affected and what happens during the seizure. The 2 main categories of epileptic seizures are <b>focal (partial) seizure</b> and <b>generalized seizure</b>."</string>
 
 
+    <string name="polangui_rhu_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
+    <string name="oas_rhu_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
+    <string name="ligao_city_hospital_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
+    <string name="duran_hospital_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
+    <string name="ligao_rhu_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
+
+
+
+
 </resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <!-- Title Section -->
+    <TextView
+        android:id="@+id/title_duran_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Josefina Belmonte Duran Albay Provincial Hospital"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- Text, Image, and Information Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="24dp">
+
+        <!-- Information Text Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <!-- Address -->
+            <TextView
+                android:id="@+id/address_duran_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address:"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <TextView
+                android:id="@+id/address_details_duran_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="789 Hospital Rd, Albay"
+                android:textColor="#000000"
+                android:fontFamily="@font/opensans"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Date of Establishment -->
+            <TextView
+                android:id="@+id/established_duran_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date of Establishment:"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <TextView
+                android:id="@+id/established_details_duran_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="January 15, 1980"
+                android:textColor="#000000"
+                android:fontFamily="@font/opensans"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Head Facilitator -->
+            <TextView
+                android:id="@+id/head_facilitator_duran_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Head Facilitator:"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/montserrat_bold" />
+
+            <TextView
+                android:id="@+id/head_facilitator_details_duran_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Maria Lopez"
+                android:textColor="#000000"
+                android:fontFamily="@font/opensans" />
+        </LinearLayout>
+
+        <!-- Logo Image -->
+        <ImageView
+            android:id="@+id/logo_duran_hospital"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:contentDescription="Duran Hospital Logo"
+            android:src="@drawable/qrtpol" />
+    </LinearLayout>
+
+    <!-- Content Section (After Image and Information) -->
+    <TextView
+        android:id="@+id/content_duran_hospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/duran_hospital_content"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000"
+        android:fontFamily="@font/opensans" />
+
+    <!-- Buttons Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button_get_directions_duran_hospital"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Get Directions"
+            android:textSize="10sp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/white_button_background"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/montserrat_bold"
+            android:drawableLeft="@drawable/directions"
+            android:drawablePadding="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/button_contact_duran_hospital"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:textSize="10sp"
+            android:text="Contact Them"
+            android:background="@drawable/white_button_background"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/montserrat_bold"
+            android:drawableLeft="@drawable/phone_call"
+            android:drawablePadding="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Distance Information -->
+    <TextView
+        android:id="@+id/distance_text_view_duran_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance will be shown here"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:fontFamily="@font/opensans" />
+</LinearLayout>
