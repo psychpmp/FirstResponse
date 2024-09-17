@@ -197,7 +197,7 @@
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:textSize="17sp"
-                android:text="@string/mild_symptoms1"
+                android:text="@string/insectbite_mild2"
                 android:gravity="left"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView1" />

@@ -25,60 +25,67 @@ class HelplineActivity : BaseActivity() {
             repeatCount = LottieDrawable.INFINITE // Optional: loop animation
         }
 
-        // Phone numbers for the health facilities
-        val phoneNumbers = mapOf(
-            R.id.buttonOurLadyOfPerpetualHelp to "09123456789",
-            R.id.buttonPolanguiRhu to "09123456789",
-            R.id.buttonPerilloGeneralHospital to "09123456789",
-            R.id.buttonIsipGeneralHospital to "09123456789",
-            R.id.buttonOasDistrictHospital to "09123456789",
-            R.id.buttonOasRhu to "09123456789",
-            R.id.buttonLigaoCityHospital to "09123456789",
-            R.id.buttonLigaoRhu to "09123456789"
-        )
-
-        // Initialize buttons and set click listeners
-        val buttonOurLadyOfPerpetualHelp = findViewById<Button>(R.id.buttonOurLadyOfPerpetualHelp)
-        val buttonPolanguiRhu = findViewById<Button>(R.id.buttonPolanguiRhu)
-        val buttonPerilloGeneralHospital = findViewById<Button>(R.id.buttonPerilloGeneralHospital)
-        val buttonIsipGeneralHospital = findViewById<Button>(R.id.buttonIsipGeneralHospital)
-        val buttonOasDistrictHospital = findViewById<Button>(R.id.buttonOasDistrictHospital)
-        val buttonOasRhu = findViewById<Button>(R.id.buttonOasRhu)
-        val buttonLigaoCityHospital = findViewById<Button>(R.id.buttonLigaoCityHospital)
-        val buttonLigaoRhu = findViewById<Button>(R.id.buttonLigaoRhu)
-
-        buttonOurLadyOfPerpetualHelp.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonOurLadyOfPerpetualHelp]!!)
+        // Button for POLANGUI EMS QRT
+        val buttonPOLANGUIEMS: Button = findViewById(R.id.buttonPOLANGUIEMS)
+        buttonPOLANGUIEMS.setOnClickListener {
+            makeCall("0987654321") // Replace with actual phone number
         }
 
-        buttonPolanguiRhu.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonPolanguiRhu]!!)
+
+        // Initialize buttons and set their click listeners
+        val buttonMDRRMOPOL: Button = findViewById(R.id.buttonMDRRMOPOL)
+        buttonMDRRMOPOL.setOnClickListener {
+            makeCall("0123456789") // Replace with actual phone number
         }
 
-        buttonPerilloGeneralHospital.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonPerilloGeneralHospital]!!)
+        val buttonPolanguiRHU: Button = findViewById(R.id.button_polangui_rhu)
+        buttonPolanguiRHU.setOnClickListener {
+            makeCall("0123456789") // Replace with actual phone number
         }
 
-        buttonIsipGeneralHospital.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonIsipGeneralHospital]!!)
+        // Button for OAS Emergency Response Team
+        val buttonOAS: Button = findViewById(R.id.buttonOAS)
+        buttonOAS.setOnClickListener {
+            makeCall("2233445566") // Replace with actual phone number
         }
 
-        buttonOasDistrictHospital.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonOasDistrictHospital]!!)
+        val buttonMDRRMOOAS: Button = findViewById(R.id.button_mdrmmo_oas)
+        buttonMDRRMOOAS.setOnClickListener {
+            makeCall("0123456789") // Replace with actual phone number
         }
 
-        buttonOasRhu.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonOasRhu]!!)
+        val buttonOASRHU: Button = findViewById(R.id.button_oas_rhu)
+        buttonOASRHU.setOnClickListener {
+            makeCall("0123456789") // Replace with actual phone number
         }
 
-        buttonLigaoCityHospital.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonLigaoCityHospital]!!)
+        // Button for CDRRMO EQRT LIGAO CITY
+        val buttonCDRRMO: Button = findViewById(R.id.buttonCDRRMO)
+        buttonCDRRMO.setOnClickListener {
+            makeCall("1122334455") // Replace with actual phone number
         }
 
+        val buttonMDRRMOLIGAO: Button = findViewById(R.id.button_mdrmmo_ligao)
+        buttonMDRRMOLIGAO.setOnClickListener {
+            makeCall("0123456789") // Replace with actual phone number
+        }
+
+        val buttonZoneMedical: Button = findViewById(R.id.button_zone_medical)
+        buttonZoneMedical.setOnClickListener {
+            makeCall("0123456789") // Replace with actual phone number
+        }
+
+        val buttonLigaoRhu: Button = findViewById(R.id.buttonLigaoRhu)
         buttonLigaoRhu.setOnClickListener {
-            dialPhoneNumber(phoneNumbers[R.id.buttonLigaoRhu]!!)
+            makeCall("0123456789") // Replace with actual phone number
         }
 
+        val buttonDuran: Button = findViewById(R.id.buttonduranbel)
+        buttonDuran.setOnClickListener {
+            makeCall("0123456789") // Replace with actual phone number
+        }
+
+        // Initialize BottomNavigationView
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -108,7 +115,7 @@ class HelplineActivity : BaseActivity() {
         bottomNavigationView.menu.findItem(R.id.bottomHelpline).isChecked = true
     }
 
-    private fun dialPhoneNumber(phoneNumber: String) {
+    private fun makeCall(phoneNumber: String) {
         val intent = Intent(Intent.ACTION_DIAL).apply {
             data = Uri.parse("tel:$phoneNumber")
         }

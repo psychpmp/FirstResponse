@@ -14,7 +14,7 @@
             android:id="@+id/location"
             android:icon="@drawable/ic_baseline_location_on_24" />
 
-        <item android:title="Settings"
+        <item android:title="Language Settings"
             android:id="@+id/settings"
             android:icon="@drawable/ic_baseline_settings_24" />
 

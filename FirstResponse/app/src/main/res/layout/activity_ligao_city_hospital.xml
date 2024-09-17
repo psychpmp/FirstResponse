@@ -101,7 +101,7 @@
             android:layout_height="150dp"
             android:layout_marginStart="16dp"
             android:contentDescription="Ligao City Hospital Logo"
-            android:src="@drawable/qrtpol" />
+            android:src="@drawable/zone" />
     </LinearLayout>
 
     <!-- Content Section (After Image and Information) -->

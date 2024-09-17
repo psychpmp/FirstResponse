@@ -100,7 +100,7 @@
             android:layout_height="150dp"
             android:layout_marginStart="16dp"
             android:contentDescription="Duran Hospital Logo"
-            android:src="@drawable/qrtpol" />
+            android:src="@drawable/duran" />
     </LinearLayout>
 
     <!-- Content Section (After Image and Information) -->

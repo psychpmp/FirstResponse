@@ -34,7 +34,8 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <!-- Our Lady of Perpetual Help Diagnostic and Dialysis Center CardView -->
+
+            <!-- POLANGUI EMS QRT CardView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,31 +49,84 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/image_logo_perpetual_help"
+                        android:id="@+id/image_logo_polanguieemsqrt"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/qrtpol"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/mdrrmopol"
-                        android:contentDescription="Our Lady of Perpetual Help Diagnostic and Dialysis Center Logo" />
+                        app:layout_constraintEnd_toStartOf="@+id/polanguieemsqrt_text"
+                        android:contentDescription="POLANGUI EMS QRT Logo" />
 
                     <TextView
-                        android:id="@+id/mdrrmopol"
+                        android:id="@+id/polanguieemsqrt_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="POLANGUI EMS-QRT"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_polanguieemsqrt"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/buttonPOLANGUIEMS" />
+
+                    <Button
+                        android:id="@+id/buttonPOLANGUIEMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:backgroundTint="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- MDRRMO Polangui CardView -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/red"
+                app:cardCornerRadius="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/image_logo_mdrmopolangui"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/qrtpol"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/mdrrmopolangui_text"
+                        android:contentDescription="MDRRMO Polangui Logo" />
+
+                    <TextView
+                        android:id="@+id/mdrrmopolangui_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="MDRRMO Polangui"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_perpetual_help"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_mdrmopolangui"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/buttonOurLadyOfPerpetualHelp" />
+                        app:layout_constraintEnd_toStartOf="@+id/buttonMDRRMOPOL" />
 
                     <Button
-                        android:id="@+id/buttonOurLadyOfPerpetualHelp"
+                        android:id="@+id/buttonMDRRMOPOL"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Call"
@@ -86,7 +140,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Polangui Rural Health Unit CardView -->
+
+            <!-- Polangui RHU CardView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -100,32 +155,31 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/image_logo_polangui_rural"
+                        android:id="@+id/image_logo_polangui_rhu"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/qrtpol"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/text_qrt_polangui_rural"
-                        android:contentDescription="Polangui Rural Health Unit Logo" />
+                        app:layout_constraintEnd_toStartOf="@+id/text_polangui_rhu"
+                        android:contentDescription="Polangui RHU Logo" />
 
                     <TextView
-                        android:id="@+id/text_qrt_polangui_rural"
+                        android:id="@+id/text_polangui_rhu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Polangui Rural
-                        Health Unit"
+                        android:text="Polangui Rural Health Unit"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_polangui_rural"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_polangui_rhu"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/buttonPolanguiRhu" />
+                        app:layout_constraintEnd_toStartOf="@+id/button_polangui_rhu" />
 
                     <Button
-                        android:id="@+id/buttonPolanguiRhu"
+                        android:id="@+id/button_polangui_rhu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Call"
@@ -139,7 +193,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Perillo General Hospital CardView -->
+
+            <!-- OAS Emergency Response Team CardView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,31 +208,31 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/image_logo_perillo"
+                        android:id="@+id/image_logo_oas"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/qrtpol"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/text_qrt_perillo"
-                        android:contentDescription="Perillo General Hospital Logo" />
+                        app:layout_constraintEnd_toStartOf="@+id/oas_text"
+                        android:contentDescription="OAS Emergency Response Team Logo" />
 
                     <TextView
-                        android:id="@+id/text_qrt_perillo"
+                        android:id="@+id/oas_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Perillo General Hospital"
+                        android:text="OAS Emergency Response Team"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_perillo"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_oas"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/buttonPerilloGeneralHospital" />
+                        app:layout_constraintEnd_toStartOf="@+id/buttonOAS" />
 
                     <Button
-                        android:id="@+id/buttonPerilloGeneralHospital"
+                        android:id="@+id/buttonOAS"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Call"
@@ -191,7 +246,9 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Isip General Hospital CardView -->
+
+
+            <!-- MDRRMO OAS CardView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -205,83 +262,31 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/image_logo_isip"
+                        android:id="@+id/image_logo_mdrmmo_oas"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/qrtpol"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/text_qrt_isip"
-                        android:contentDescription="Isip General Hospital Logo" />
+                        app:layout_constraintEnd_toStartOf="@+id/text_mdrmmo_oas"
+                        android:contentDescription="MDRRMO OAS Logo" />
 
                     <TextView
-                        android:id="@+id/text_qrt_isip"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Isip General Hospital"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_isip"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/buttonIsipGeneralHospital" />
-
-                    <Button
-                        android:id="@+id/buttonIsipGeneralHospital"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Call"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:backgroundTint="@color/black"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- OAS District Hospital CardView -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/red"
-                app:cardCornerRadius="16dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:id="@+id/image_logo_oas_district"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/qrtpol"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/mdrrmooas"
-                        android:contentDescription="OAS District Hospital Logo" />
-
-                    <TextView
-                        android:id="@+id/mdrrmooas"
+                        android:id="@+id/text_mdrmmo_oas"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="MDRRMO Oas"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_oas_district"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_mdrmmo_oas"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/buttonOasDistrictHospital" />
+                        app:layout_constraintEnd_toStartOf="@+id/button_mdrmmo_oas" />
 
                     <Button
-                        android:id="@+id/buttonOasDistrictHospital"
+                        android:id="@+id/button_mdrmmo_oas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Call"
@@ -295,7 +300,8 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- OAS Rural Health Unit CardView -->
+
+            <!-- OAS RHU CardView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -309,31 +315,31 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/image_logo_oas_rural"
+                        android:id="@+id/image_logo_oas_rhu"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/qrtpol"
+                        android:src="@drawable/oasrhu"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/text_qrt_oas_rural"
-                        android:contentDescription="OAS Rural Health Unit Logo" />
+                        app:layout_constraintEnd_toStartOf="@+id/text_oas_rhu"
+                        android:contentDescription="OAS RHU Logo" />
 
                     <TextView
-                        android:id="@+id/text_qrt_oas_rural"
+                        android:id="@+id/text_oas_rhu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:text="OAS Rural Health Unit"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_oas_rural"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_oas_rhu"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/buttonOasRhu" />
+                        app:layout_constraintEnd_toStartOf="@+id/button_oas_rhu" />
 
                     <Button
-                        android:id="@+id/buttonOasRhu"
+                        android:id="@+id/button_oas_rhu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Call"
@@ -347,7 +353,9 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Ligao City Hospital CardView -->
+
+
+            <!-- CDRRMO EQRT LIGAO CITY CardView -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -361,31 +369,31 @@
                     android:padding="16dp">
 
                     <ImageView
-                        android:id="@+id/image_logo_ligao_city"
+                        android:id="@+id/image_logo_cdrmoleg"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:src="@drawable/qrtpol"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/mdrrmoligao"
-                        android:contentDescription="Ligao City Hospital Logo" />
+                        app:layout_constraintEnd_toStartOf="@+id/cdrmoleg_text"
+                        android:contentDescription="CDRRMO EQRT LIGAO CITY Logo" />
 
                     <TextView
-                        android:id="@+id/mdrrmoligao"
+                        android:id="@+id/cdrmoleg_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="MDRRMO Ligao"
+                        android:text="CDRRMO EQRT LIGAO CITY"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_ligao_city"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_cdrmoleg"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/buttonLigaoCityHospital" />
+                        app:layout_constraintEnd_toStartOf="@+id/buttonCDRRMO" />
 
                     <Button
-                        android:id="@+id/buttonLigaoCityHospital"
+                        android:id="@+id/buttonCDRRMO"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Call"
@@ -398,6 +406,114 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+
+
+            <!-- MDRRMO LIGAO CardView -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/red"
+                app:cardCornerRadius="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/image_logo_mdrmmo_ligao"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/qrtpol"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/text_mdrmmo_ligao"
+                        android:contentDescription="MDRRMO Ligao Logo" />
+
+                    <TextView
+                        android:id="@+id/text_mdrmmo_ligao"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="MDRRMO Ligao"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_mdrmmo_ligao"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/button_mdrmmo_ligao" />
+
+                    <Button
+                        android:id="@+id/button_mdrmmo_ligao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:backgroundTint="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Zone Medical and Intervention Hospital CardView -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/red"
+                app:cardCornerRadius="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/image_logo_zone_medical"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/zone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/text_zone_medical"
+                        android:contentDescription="Zone Medical and Intervention Hospital Logo" />
+
+                    <TextView
+                        android:id="@+id/text_zone_medical"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Zone Medical and Intervention Hospital"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_zone_medical"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/button_zone_medical" />
+
+                    <Button
+                        android:id="@+id/button_zone_medical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:backgroundTint="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
 
             <!-- Ligao Rural Health Unit CardView -->
             <androidx.cardview.widget.CardView
@@ -450,6 +566,60 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/red"
+                app:cardCornerRadius="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/image_logo_duran"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/duran"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/text_duran"
+                        android:contentDescription="Josefina Belmonte Duran Albay Provincial Hospital Logo" />
+
+                    <TextView
+                        android:id="@+id/text_duran"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Josefina Belmonte Duran Albay Provincial Hospital"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/montserrat_bold"
+                        app:layout_constraintStart_toEndOf="@+id/image_logo_duran"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/buttonduranbel" />
+
+                    <Button
+                        android:id="@+id/buttonduranbel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Call"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/montserrat_bold"
+                        android:backgroundTint="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
 
         </LinearLayout>
 

@@ -5,48 +5,63 @@
     android:padding="16dp"
     android:background="@color/white">
 
-    <!-- Title -->
-    <TextView
-        android:id="@+id/titleText"
-        android:layout_width="wrap_content"
+    <!-- Container for Title and Language Selection -->
+    <LinearLayout
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="@string/choose_language"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:fontFamily="@font/montserrat_bold"
-        android:layout_alignParentTop="true"
-        android:layout_marginBottom="16dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:background="@drawable/radio_group_background"
+        android:padding="16dp"
+        android:elevation="4dp"
+        android:translationZ="4dp">
 
-    <!-- Language Selection -->
-    <RadioGroup
-        android:id="@+id/languageGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/titleText"
-        android:layout_marginTop="20dp">
-
-        <RadioButton
-            android:id="@+id/radioEnglish"
+        <!-- Title -->
+        <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="English"
+            android:text="@string/choose_language"
+            android:textSize="24sp"
+            android:textColor="@color/black"
             android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/black"/>
+            android:layout_marginBottom="24dp"/>
 
-        <RadioButton
-            android:id="@+id/radioFilipino"
-            android:layout_width="wrap_content"
+        <!-- Language Selection RadioGroup -->
+        <RadioGroup
+            android:id="@+id/languageGroup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Filipino"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/black"/>
+            android:background="@drawable/radio_group_background"
+            android:padding="16dp">
 
-        <RadioButton
-            android:id="@+id/radioBicol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bicol"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/black"/>
-    </RadioGroup>
+            <!-- Language Options -->
+            <RadioButton
+                android:id="@+id/radioEnglish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioFilipino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filipino"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioBicol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bicol"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/black"/>
+        </RadioGroup>
+    </LinearLayout>
 </RelativeLayout>
