@@ -4,25 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".seizures">
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:contentInsetStartWithNavigation="0dp"
+        android:layout_marginTop="8dp"
+        app:navigationIcon="@drawable/back"
+        app:titleTextAppearance="@style/CustomToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"/>
+
+
+    <!-- FloatingActionButton for saving the topic -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/saved"
+        app:fabSize="normal"
+        app:tint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
+        app:layout_constraintStart_toStartOf="parent">
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -36,6 +67,7 @@
                 <ImageView
                     android:id="@+id/imageNumber1"
                     android:layout_width="65dp"
+                    android:layout_marginTop="8dp"
                     android:layout_height="65dp"
                     android:src="@drawable/numberonenew"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -95,8 +127,8 @@
 
                 <ImageView
                     android:id="@+id/imageNumber2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:src="@drawable/numbertwonew"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -110,12 +142,12 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="218dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="11dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="16dp"
                     android:gravity="center"
-                    android:text="Causes of a seizure"
+                    android:text="Causes of a Seizure"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -155,8 +187,8 @@
 
                 <ImageView
                     android:id="@+id/imageNumber3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:src="@drawable/numberthreenew"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -174,7 +206,7 @@
                     android:layout_height="49dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Symptoms of a seizure"
+                    android:text="Symptoms of Seizure"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -213,8 +245,8 @@
 
                 <ImageView
                     android:id="@+id/imageNumber4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:src="@drawable/numberfour"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -229,10 +261,10 @@
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="How are seizures treated?"
+                    android:text="How are seizures \ntreated?"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -275,17 +307,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- FloatingActionButton for saving the topic -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/saved"
-        app:fabSize="normal"
-        app:tint="@color/red"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

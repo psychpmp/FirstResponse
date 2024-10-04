@@ -4,28 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CPR">
+    android:background="@android:color/white">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutMain"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:contentInsetStartWithNavigation="0dp"
+        android:layout_marginTop="8dp"
+        app:navigationIcon="@drawable/back"
+        app:titleTextAppearance="@style/CustomToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"/>
 
 
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+    <!-- FloatingActionButton for saving the topic -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/saved"
+        app:fabSize="normal"
+        app:tint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
+                android:padding="16dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -57,6 +83,7 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:paddingRight="10dp"
+                        android:layout_marginTop="8dp"
                         android:src="@drawable/numberonenew"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -126,8 +153,8 @@
 
                     <ImageView
                         android:id="@+id/imageNumber2"
-                        android:layout_width="49dp"
-                        android:layout_height="50dp"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
                         android:layout_marginTop="15dp"
                         android:paddingRight="10dp"
                         android:src="@drawable/numbertwonew"
@@ -146,6 +173,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="30dp"
                         android:paddingBottom="10dp"
+                        android:layout_marginTop="8dp"
                         android:gravity="center"
                         android:text="HOW TO PERFORM \nCPR ?"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -188,6 +216,7 @@
                         android:background="@drawable/white_button_background"
                         android:drawableLeft="@drawable/phone_call"
                         android:drawablePadding="8dp"
+                        android:fontFamily="@font/montserrat_bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -432,21 +461,4 @@
 
             </LinearLayout>
         </ScrollView>
-
-        <!-- FloatingActionButton for saving the topic -->
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@drawable/saved"
-            app:fabSize="normal"
-            app:tint="@color/red"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,7 +24,7 @@
         android:layout_height="79dp"
         android:layout_marginBottom="224dp"
         android:background="@drawable/white_button_background"
-        android:text="Start"
+        android:text="@string/start_text"
         android:fontFamily="@font/montserrat_bold"
         android:textColor="@android:color/white"
         android:textSize="18sp"

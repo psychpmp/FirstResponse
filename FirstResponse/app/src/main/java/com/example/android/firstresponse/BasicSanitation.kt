@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.graphics.drawable.ColorDrawable
+import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 
 class BasicSanitation : BaseActivity() {
@@ -16,12 +17,36 @@ class BasicSanitation : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_sanitation)
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.shadow2)))
 
-        getSupportActionBar()?.setTitle("BASIC SANITATION");
+        // Load animations
+        val pressAnim = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val releaseAnim = AnimationUtils.loadAnimation(this, R.anim.button_release)
+
+        // Initialize custom toolbar
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.customToolbar)
+        setSupportActionBar(toolbar)
+
+        // Set the title for the Toolbar
+        supportActionBar?.title = getString(R.string.basic_sanitation_t)
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.red))
+
+        // Show back button on the Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationIcon(R.drawable.back)
+
+        // Set up back button click listener with animation
+        toolbar.setNavigationOnClickListener {
+            it.startAnimation(pressAnim)
+            it.postDelayed({
+                it.startAnimation(releaseAnim)
+                finish()
+            }, pressAnim.duration)
+        }
 
 
-        //to show back button on action bar
+
+
+    //to show back button on action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         //webview

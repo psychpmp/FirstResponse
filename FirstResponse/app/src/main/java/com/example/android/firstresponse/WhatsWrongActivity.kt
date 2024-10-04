@@ -1,19 +1,16 @@
 package com.example.android.firstresponse
 
-import android.content.Context
-import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import android.util.Log
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import android.os.Handler
+import android.os.Looper
+import android.view.animation.AnimationUtils
 
 class WhatsWrongActivity : BaseActivity() {
 
@@ -27,1464 +24,1465 @@ class WhatsWrongActivity : BaseActivity() {
     private var currentQuestions: List<Pair<String, List<String>>> = emptyList()
     private val answersSelected = mutableMapOf<String, String>()
 
-    // Define questions and conditions for each pain location
-    private val stages = listOf(
-        "When did the symptom start?",
-        "Where does the pain or discomfort originate?",
-        // Add more stages if needed
-    )
-
-    val painLocationQuestions = mapOf(
-        "Head" to listOf(
-            "Do you have a headache?" to listOf("Yes", "No"),
-            "Is the pain localized or diffuse?" to listOf("Localized", "Diffuse"),
-            "Do you experience nausea?" to listOf("Yes", "No"),
-            "Do you have sensitivity to light?" to listOf("Yes", "No"),
-            "Is the headache severe?" to listOf("Yes", "No"),
-            "Does the pain get worse with activity?" to listOf("Yes", "No"),
-            "Have you had similar headaches before?" to listOf("Yes", "No"),
-            "Are you experiencing any vision changes?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No"),
-            "Is there a family history of headaches?" to listOf("Yes", "No")
-        ),
-        "Chest" to listOf(
-            "Do you have chest pain?" to listOf("Yes", "No"),
-            "Is the pain sharp or dull?" to listOf("Sharp", "Dull"),
-            "Does the pain radiate to other areas?" to listOf("Yes", "No"),
-            "Do you have difficulty breathing?" to listOf("Yes", "No"),
-            "Is the pain constant or intermittent?" to listOf("Constant", "Intermittent"),
-            "Do you experience nausea?" to listOf("Yes", "No"),
-            "Is the pain related to physical activity?" to listOf("Yes", "No"),
-            "Do you have a history of any chronic health conditions?" to listOf("Yes", "No"),
-            "Are you experiencing sweating/bloating/wheezing/tenderness?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Abdomen" to listOf(
-            "Do you have abdominal pain?" to listOf("Yes", "No"),
-            "Is the pain localized or diffuse?" to listOf("Localized", "Diffuse"),
-            "Is the pain cramping or sharp?" to listOf("Cramping", "Sharp"),
-            "Do you have nausea or vomiting?" to listOf("Yes", "No"),
-            "Do you experience bloating?" to listOf("Yes", "No"),
-            "Is there any change in bowel movements?" to listOf("Yes", "No"),
-            "Is there blood in the stool?" to listOf("Yes", "No"),
-            "Do you have a fever?" to listOf("Yes", "No"),
-            "Do you feel better after eating?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Back" to listOf(
-            "Do you have back pain?" to listOf("Yes", "No"),
-            "Is the pain in the upper or lower back?" to listOf("Upper", "Lower"),
-            "Is the pain sharp or dull?" to listOf("Sharp", "Dull"),
-            "Does the pain radiate to the legs?" to listOf("Yes", "No"),
-            "Do you have any weakness in the legs?" to listOf("Yes", "No"),
-            "Do you have difficulty walking?" to listOf("Yes", "No"),
-            "Is the pain worse when standing or sitting?" to listOf("Standing", "Sitting"),
-            "Do you have a history of back problems?" to listOf("Yes", "No"),
-            "Do you experience tingling or numbness?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Legs" to listOf(
-            "Do you have leg pain?" to listOf("Yes", "No"),
-            "Is the pain in one or both legs?" to listOf("One", "Both"),
-            "Is the pain sharp or dull?" to listOf("Sharp", "Dull"),
-            "Do you have swelling in the legs?" to listOf("Yes", "No"),
-            "Do you experience cramping?" to listOf("Yes", "No"),
-            "Is the pain worse when walking?" to listOf("Yes", "No"),
-            "Do you have a history of leg injuries?" to listOf("Yes", "No"),
-            "Do you experience tingling or numbness?" to listOf("Yes", "No"),
-            "Is there any change in skin color?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Arms" to listOf(
-            "Do you have arm pain?" to listOf("Yes", "No"),
-            "Is the pain in one or both arms?" to listOf("One", "Both"),
-            "Is the pain sharp or dull?" to listOf("Sharp", "Dull"),
-            "Do you have weakness in the arms?" to listOf("Yes", "No"),
-            "Do you experience tingling or numbness?" to listOf("Yes", "No"),
-            "Is the pain related to physical activity?" to listOf("Yes", "No"),
-            "Do you have swelling in the arms?" to listOf("Yes", "No"),
-            "Do you experience muscle cramps?" to listOf("Yes", "No"),
-            "Do you have difficulty moving the arms?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Joints" to listOf(
-            "Do you have joint pain?" to listOf("Yes", "No"),
-            "Is the pain in one or multiple joints?" to listOf("One", "Multiple"),
-            "Is there any swelling in the joints?" to listOf("Yes", "No"),
-            "Do you have stiffness in the joints?" to listOf("Yes", "No"),
-            "Is the pain constant or intermittent?" to listOf("Constant", "Intermittent"),
-            "Is there redness around the joints?" to listOf("Yes", "No"),
-            "Do you have a history of arthritis?" to listOf("Yes", "No"),
-            "Does the pain worsen with activity?" to listOf("Yes", "No"),
-            "Do you have difficulty moving the joint?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Feet" to listOf(
-            "Do you have foot pain?" to listOf("Yes", "No"),
-            "Is the pain in one or both feet?" to listOf("One", "Both"),
-            "Do you have swelling in the feet?" to listOf("Yes", "No"),
-            "Do you experience tingling or numbness?" to listOf("Yes", "No"),
-            "Is the pain sharp or dull?" to listOf("Sharp", "Dull"),
-            "Do you have difficulty walking?" to listOf("Yes", "No"),
-            "Do you have a history of foot injuries?" to listOf("Yes", "No"),
-            "Is there any redness around the pain area?" to listOf("Yes", "No"),
-            "Do you experience burning sensation?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Neck" to listOf(
-            "Do you have neck pain?" to listOf("Yes", "No"),
-            "Is the pain sharp or dull?" to listOf("Sharp", "Dull"),
-            "Is the pain worse with movement?" to listOf("Yes", "No"),
-            "Do you experience stiffness in the neck?" to listOf("Yes", "No"),
-            "Do you have a history of neck injuries?" to listOf("Yes", "No"),
-            "Do you experience tingling in the arms?" to listOf("Yes", "No"),
-            "Is there any swelling in the neck?" to listOf("Yes", "No"),
-            "Is the pain related to posture?" to listOf("Yes", "No"),
-            "Do you experience headaches with neck pain?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Hands" to listOf(
-            "Do you have hand pain?" to listOf("Yes", "No"),
-            "Is the pain in one or both hands?" to listOf("One", "Both"),
-            "Do you experience tingling or numbness?" to listOf("Yes", "No"),
-            "Is there any swelling in the hands?" to listOf("Yes", "No"),
-            "Is the pain sharp or dull?" to listOf("Sharp", "Dull"),
-            "Do you have difficulty gripping objects?" to listOf("Yes", "No"),
-            "Do you experience cramps in the hands?" to listOf("Yes", "No"),
-            "Is there any redness around the pain area?" to listOf("Yes", "No"),
-            "Do you have a history of hand injuries?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        ),
-        "Stomach" to listOf(
-            "Do you have stomach pain?" to listOf("Yes", "No"),
-            "Is the pain sharp or cramping?" to listOf("Sharp", "Cramping"),
-            "Do you experience nausea or vomiting?" to listOf("Yes", "No"),
-            "Is the pain constant or intermittent?" to listOf("Constant", "Intermittent"),
-            "Do you have a fever?" to listOf("Yes", "No"),
-            "Do you have any changes in appetite?" to listOf("Yes", "No"),
-            "Is there bloating?" to listOf("Yes", "No"),
-            "Do you experience diarrhea or constipation?" to listOf("Yes", "No"),
-            "Is there any tenderness to touch?" to listOf("Yes", "No"),
-            "Do you have any other symptoms?" to listOf("Yes", "No")
-        )
-    )
-
-
-    private val diagnosis = mapOf(
-        "Head" to listOf(
-            listOf(
-                "Do you have a headache?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Do you experience nausea?" to "Yes",
-                "Do you have sensitivity to light?" to "Yes",
-                "Is the headache severe?" to "Yes",
-                "Does the pain get worse with activity?" to "Yes",
-                "Have you had similar headaches before?" to "Yes",
-                "Are you experiencing any vision changes?" to "No",
-                "Do you have any other symptoms?" to "No",
-                "Is there a family history of headaches?" to "Yes"
-            ) to "Migraine",
-            listOf(
-                "Do you have a headache?" to "Yes",
-                "Is the pain localized or diffuse?" to "Diffuse",
-                "Do you experience nausea?" to "No",
-                "Do you have sensitivity to light?" to "No",
-                "Is the headache severe?" to "No",
-                "Does the pain get worse with stress?" to "Yes",
-                "Have you had similar headaches before?" to "Yes",
-                "Are you experiencing any vision changes?" to "No",
-                "Do you have any other symptoms?" to "No",
-                "Is there a family history of headaches?" to "No"
-            ) to "Tension Headache",
-            listOf(
-                "Do you have a headache?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Do you experience nausea?" to "No",
-                "Do you have sensitivity to light?" to "No",
-                "Is the headache severe?" to "Yes",
-                "Does the pain get worse with lying down?" to "Yes",
-                "Have you had similar headaches before?" to "No",
-                "Are you experiencing any vision changes?" to "Yes",
-                "Do you have any other symptoms?" to "Yes",
-                "Is there a family history of headaches?" to "Yes"
-            ) to "Concussion",
-            listOf(
-                "Do you have a headache?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Do you experience nausea?" to "No",
-                "Do you have sensitivity to light?" to "Yes",
-                "Is the headache severe?" to "Yes",
-                "Does the pain get worse with movement?" to "Yes",
-                "Have you had similar headaches before?" to "No",
-                "Are you experiencing any vision changes?" to "Yes",
-                "Do you have any other symptoms?" to "Yes",
-                "Is there a family history of headaches?" to "Yes"
-            ) to "Meningitis",
-            listOf(
-                "Do you have a headache?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Do you experience nausea?" to "Yes",
-                "Do you have sensitivity to light?" to "No",
-                "Is the headache severe?" to "Yes",
-                "Does the pain get worse with physical activity?" to "No",
-                "Have you had similar headaches before?" to "No",
-                "Are you experiencing any vision changes?" to "Yes",
-                "Do you have any other symptoms?" to "Yes",
-                "Is there a family history of headaches?" to "Yes"
-            ) to "Stroke"
-        ),
-        "Chest" to listOf(
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to other areas?" to "Yes",
-                "Do you have difficulty breathing?" to "No",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Do you experience nausea?" to "No",
-                "Is the pain related to physical activity?" to "Yes",
-                "Do you have a history of any chronic health conditions?" to "No",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Angina",
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to other areas?" to "Yes",
-                "Do you have difficulty breathing?" to "Yes",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Do you experience nausea?" to "Yes",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have a history of any chronic health conditions?" to "Yes",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Heart Attack",
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to other areas?" to "No",
-                "Do you have difficulty breathing?" to "Yes",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Do you experience nausea?" to "No",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have a history of any chronic health conditions?" to "No",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Gastroesophageal Reflux Disease (GERD)",
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to other areas?" to "No",
-                "Do you have difficulty breathing?" to "No",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Do you experience nausea?" to "Yes",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have a history of any chronic health conditions?" to "No",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Panic Attack",
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to other areas?" to "Yes",
-                "Do you have difficulty breathing?" to "Yes",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Do you experience nausea?" to "No",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have a history of any chronic health conditions?" to "No",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Pulmonary Embolism",
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to other areas?" to "No",
-                "Do you have difficulty breathing?" to "No",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Do you experience nausea?" to "No",
-                "Is the pain related to eating?" to "Yes",
-                "Do you have a history of any chronic health conditions?" to "Yes",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Peptic Ulcer",
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to other areas?" to "No",
-                "Do you have difficulty breathing?" to "Yes",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Do you experience shortness of breath?" to "Yes",
-                "Is the pain related to cold weather?" to "Yes",
-                "Do you have a history of any chronic health conditions?" to "Yes",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Asthma",
-            listOf(
-                "Do you have chest pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to other areas?" to "Yes",
-                "Do you have difficulty breathing?" to "No",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Do you experience nausea?" to "No",
-                "Is the pain related to physical activity?" to "Yes",
-                "Do you have a history of any chronic health conditions?" to "Yes",
-                "Are you experiencing sweating/bloating/wheezing/tenderness?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Muscle Strain"
-        ),
-        "Abdomen" to listOf(
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Is the pain cramping or sharp?" to "Cramping",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "Yes",
-                "Is there any change in bowel movements?" to "Yes",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "No",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Gastritis",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Diffuse",
-                "Is the pain cramping or sharp?" to "Sharp",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "Yes",
-                "Is there any change in bowel movements?" to "No",
-                "Is there blood in the stool?" to "Yes",
-                "Do you have a fever?" to "Yes",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Appendicitis",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Is the pain cramping or sharp?" to "Cramping",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "Yes",
-                "Is there any change in bowel movements?" to "Yes",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "No",
-                "Do you feel better after eating?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Irritable Bowel Syndrome (IBS)",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Diffuse",
-                "Is the pain cramping or sharp?" to "Sharp",
-                "Do you have nausea or vomiting?" to "No",
-                "Do you experience bloating?" to "Yes",
-                "Is there any change in bowel movements?" to "No",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "No",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Peptic Ulcer Disease",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Is the pain cramping or sharp?" to "Sharp",
-                "Do you have nausea or vomiting?" to "No",
-                "Do you experience bloating?" to "No",
-                "Is there any change in bowel movements?" to "Yes",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "Yes",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Diverticulitis",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Diffuse",
-                "Is the pain cramping or sharp?" to "Cramping",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "Yes",
-                "Is there any change in bowel movements?" to "No",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "No",
-                "Do you feel better after eating?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Constipation",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Is the pain cramping or sharp?" to "Cramping",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "Yes",
-                "Is there any change in bowel movements?" to "Yes",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "Yes",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Food Poisoning",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Diffuse",
-                "Is the pain cramping or sharp?" to "Sharp",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "No",
-                "Is there any change in bowel movements?" to "Yes",
-                "Is there blood in the stool?" to "Yes",
-                "Do you have a fever?" to "Yes",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Inflammatory Bowel Disease (IBD)",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Is the pain cramping or sharp?" to "Cramping",
-                "Do you have nausea or vomiting?" to "No",
-                "Do you experience bloating?" to "No",
-                "Is there any change in bowel movements?" to "Yes",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "No",
-                "Do you feel better after eating?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Functional Dyspepsia",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Diffuse",
-                "Is the pain cramping or sharp?" to "Sharp",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "Yes",
-                "Is there any change in bowel movements?" to "No",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "No",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Celiac Disease",
-            listOf(
-                "Do you have abdominal pain?" to "Yes",
-                "Is the pain localized or diffuse?" to "Localized",
-                "Is the pain cramping or sharp?" to "Cramping",
-                "Do you have nausea or vomiting?" to "Yes",
-                "Do you experience bloating?" to "No",
-                "Is there any change in bowel movements?" to "Yes",
-                "Is there blood in the stool?" to "No",
-                "Do you have a fever?" to "Yes",
-                "Do you feel better after eating?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Lactose Intolerance"
-        ),
-        "Back" to listOf(
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Lower",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to the legs?" to "Yes",
-                "Do you have any weakness in the legs?" to "No",
-                "Do you have difficulty walking?" to "Yes",
-                "Is the pain worse when standing or sitting?" to "Standing",
-                "Do you have a history of back problems?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Herniated Disc",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Upper",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to the legs?" to "No",
-                "Do you have any weakness in the legs?" to "No",
-                "Do you have difficulty walking?" to "No",
-                "Is the pain worse when standing or sitting?" to "Sitting",
-                "Do you have a history of back problems?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Muscle Strain",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Lower",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to the legs?" to "Yes",
-                "Do you have any weakness in the legs?" to "Yes",
-                "Do you have difficulty walking?" to "Yes",
-                "Is the pain worse when standing or sitting?" to "Standing",
-                "Do you have a history of back problems?" to "No",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Spinal Stenosis",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Upper",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to the legs?" to "No",
-                "Do you have any weakness in the legs?" to "No",
-                "Do you have difficulty walking?" to "No",
-                "Is the pain worse when standing or sitting?" to "Sitting",
-                "Do you have a history of back problems?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Postural Issues",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Lower",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to the legs?" to "Yes",
-                "Do you have any weakness in the legs?" to "Yes",
-                "Do you have difficulty walking?" to "No",
-                "Is the pain worse when standing or sitting?" to "Standing",
-                "Do you have a history of back problems?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Sciatica",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Lower",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to the legs?" to "No",
-                "Do you have any weakness in the legs?" to "No",
-                "Do you have difficulty walking?" to "No",
-                "Is the pain worse when standing or sitting?" to "Standing",
-                "Do you have a history of back problems?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Kidney Stones",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Upper",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to the legs?" to "No",
-                "Do you have any weakness in the legs?" to "No",
-                "Do you have difficulty walking?" to "No",
-                "Is the pain worse when standing or sitting?" to "Sitting",
-                "Do you have a history of back problems?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Thoracic Outlet Syndrome",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Lower",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to the legs?" to "Yes",
-                "Do you have any weakness in the legs?" to "Yes",
-                "Do you have difficulty walking?" to "Yes",
-                "Is the pain worse when standing or sitting?" to "Standing",
-                "Do you have a history of back problems?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Degenerative Disc Disease",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Upper",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Does the pain radiate to the legs?" to "No",
-                "Do you have any weakness in the legs?" to "No",
-                "Do you have difficulty walking?" to "No",
-                "Is the pain worse when standing or sitting?" to "Sitting",
-                "Do you have a history of back problems?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Upper Back Pain",
-            listOf(
-                "Do you have back pain?" to "Yes",
-                "Is the pain in the upper or lower back?" to "Lower",
-                "Is the pain sharp or dull?" to "Dull",
-                "Does the pain radiate to the legs?" to "No",
-                "Do you have any weakness in the legs?" to "No",
-                "Do you have difficulty walking?" to "No",
-                "Is the pain worse when standing or sitting?" to "Standing",
-                "Do you have a history of back problems?" to "No",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Muscle Spasm"
-        ),
-        "Legs" to listOf(
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "One",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have swelling in the legs?" to "Yes",
-                "Do you experience cramping?" to "No",
-                "Is the pain worse when walking?" to "Yes",
-                "Do you have a history of leg injuries?" to "No",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any change in skin color?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Deep Vein Thrombosis (DVT)",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "Both",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have swelling in the legs?" to "Yes",
-                "Do you experience cramping?" to "Yes",
-                "Is the pain worse when walking?" to "No",
-                "Do you have a history of leg injuries?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any change in skin color?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Peripheral Artery Disease (PAD)",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "One",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have swelling in the legs?" to "No",
-                "Do you experience cramping?" to "No",
-                "Is the pain worse when walking?" to "Yes",
-                "Do you have a history of leg injuries?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any change in skin color?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Muscle Strain",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "Both",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have swelling in the legs?" to "Yes",
-                "Do you experience cramping?" to "Yes",
-                "Is the pain worse when walking?" to "Yes",
-                "Do you have a history of leg injuries?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any change in skin color?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Varicose Veins",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "One",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have swelling in the legs?" to "No",
-                "Do you experience cramping?" to "Yes",
-                "Is the pain worse when walking?" to "No",
-                "Do you have a history of leg injuries?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any change in skin color?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Sciatica",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "Both",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have swelling in the legs?" to "No",
-                "Do you experience cramping?" to "No",
-                "Is the pain worse when walking?" to "Yes",
-                "Do you have a history of leg injuries?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any change in skin color?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Cellulitis",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "One",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have swelling in the legs?" to "Yes",
-                "Do you experience cramping?" to "No",
-                "Is the pain worse when walking?" to "No",
-                "Do you have a history of leg injuries?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any change in skin color?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Chronic Venous Insufficiency",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "Both",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have swelling in the legs?" to "Yes",
-                "Do you experience cramping?" to "Yes",
-                "Is the pain worse when walking?" to "Yes",
-                "Do you have a history of leg injuries?" to "No",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any change in skin color?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Deep Vein Thrombosis (DVT)",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "One",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have swelling in the legs?" to "No",
-                "Do you experience cramping?" to "No",
-                "Is the pain worse when walking?" to "No",
-                "Do you have a history of leg injuries?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any change in skin color?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Muscle Strain",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "Both",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have swelling in the legs?" to "Yes",
-                "Do you experience cramping?" to "Yes",
-                "Is the pain worse when walking?" to "Yes",
-                "Do you have a history of leg injuries?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any change in skin color?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Peripheral Artery Disease (PAD)",
-            listOf(
-                "Do you have leg pain?" to "Yes",
-                "Is the pain in one or both legs?" to "Both",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have swelling in the legs?" to "No",
-                "Do you experience cramping?" to "Yes",
-                "Is the pain worse when walking?" to "No",
-                "Do you have a history of leg injuries?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any change in skin color?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Varicose Veins"
-        ),
-        "Arms" to listOf(
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "One",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have weakness in the arms?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have swelling in the arms?" to "No",
-                "Do you experience muscle cramps?" to "No",
-                "Do you have difficulty moving the arms?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Muscle Strain",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "Both",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have weakness in the arms?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain related to physical activity?" to "Yes",
-                "Do you have swelling in the arms?" to "Yes",
-                "Do you experience muscle cramps?" to "No",
-                "Do you have difficulty moving the arms?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Tendinitis",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "One",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have weakness in the arms?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have swelling in the arms?" to "No",
-                "Do you experience muscle cramps?" to "Yes",
-                "Do you have difficulty moving the arms?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Overuse Syndrome",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "Both",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have weakness in the arms?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain related to physical activity?" to "Yes",
-                "Do you have swelling in the arms?" to "Yes",
-                "Do you experience muscle cramps?" to "No",
-                "Do you have difficulty moving the arms?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Carpal Tunnel Syndrome",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "One",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have weakness in the arms?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have swelling in the arms?" to "Yes",
-                "Do you experience muscle cramps?" to "No",
-                "Do you have difficulty moving the arms?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Bursitis",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "Both",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have weakness in the arms?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have swelling in the arms?" to "Yes",
-                "Do you experience muscle cramps?" to "Yes",
-                "Do you have difficulty moving the arms?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Swelling",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "One",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have weakness in the arms?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain related to physical activity?" to "Yes",
-                "Do you have swelling in the arms?" to "No",
-                "Do you experience muscle cramps?" to "No",
-                "Do you have difficulty moving the arms?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Nerve Compression",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "Both",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have weakness in the arms?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have swelling in the arms?" to "Yes",
-                "Do you experience muscle cramps?" to "No",
-                "Do you have difficulty moving the arms?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Frozen Shoulder",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "One",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have weakness in the arms?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain related to physical activity?" to "Yes",
-                "Do you have swelling in the arms?" to "No",
-                "Do you experience muscle cramps?" to "No",
-                "Do you have difficulty moving the arms?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Tendinitis",
-            listOf(
-                "Do you have arm pain?" to "Yes",
-                "Is the pain in one or both arms?" to "Both",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have weakness in the arms?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain related to physical activity?" to "No",
-                "Do you have swelling in the arms?" to "Yes",
-                "Do you experience muscle cramps?" to "Yes",
-                "Do you have difficulty moving the arms?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Myopathy"
-        ),
-        "Joints" to listOf(
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "One",
-                "Is there any swelling in the joints?" to "Yes",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Is there redness around the joints?" to "No",
-                "Do you have a history of arthritis?" to "Yes",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Osteoarthritis",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "Multiple",
-                "Is there any swelling in the joints?" to "Yes",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Is there redness around the joints?" to "Yes",
-                "Do you have a history of arthritis?" to "Yes",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Rheumatoid Arthritis",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "One",
-                "Is there any swelling in the joints?" to "No",
-                "Do you have stiffness in the joints?" to "No",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Is there redness around the joints?" to "No",
-                "Do you have a history of arthritis?" to "No",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Tendinitis",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "Multiple",
-                "Is there any swelling in the joints?" to "Yes",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Is there redness around the joints?" to "Yes",
-                "Do you have a history of arthritis?" to "No",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Gout",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "One",
-                "Is there any swelling in the joints?" to "Yes",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Is there redness around the joints?" to "No",
-                "Do you have a history of arthritis?" to "Yes",
-                "Does the pain worsen with activity?" to "No",
-                "Do you have difficulty moving the joint?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Bursitis",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "Multiple",
-                "Is there any swelling in the joints?" to "No",
-                "Do you have stiffness in the joints?" to "No",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Is there redness around the joints?" to "Yes",
-                "Do you have a history of arthritis?" to "Yes",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Psoriatic Arthritis",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "One",
-                "Is there any swelling in the joints?" to "No",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Is there redness around the joints?" to "No",
-                "Do you have a history of arthritis?" to "No",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Ligament Sprain",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "Multiple",
-                "Is there any swelling in the joints?" to "Yes",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Is there redness around the joints?" to "Yes",
-                "Do you have a history of arthritis?" to "No",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Reactive Arthritis",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "One",
-                "Is there any swelling in the joints?" to "No",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Is there redness around the joints?" to "No",
-                "Do you have a history of arthritis?" to "Yes",
-                "Does the pain worsen with activity?" to "No",
-                "Do you have difficulty moving the joint?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Scleroderma",
-            listOf(
-                "Do you have joint pain?" to "Yes",
-                "Is the pain in one or multiple joints?" to "Multiple",
-                "Is there any swelling in the joints?" to "Yes",
-                "Do you have stiffness in the joints?" to "Yes",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Is there redness around the joints?" to "Yes",
-                "Do you have a history of arthritis?" to "No",
-                "Does the pain worsen with activity?" to "Yes",
-                "Do you have difficulty moving the joint?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Systemic Lupus Erythematosus"
-        ),
-        "Feet" to listOf(
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "One",
-                "Do you have swelling in the feet?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "No",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Plantar Fasciitis",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "Both",
-                "Do you have swelling in the feet?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "No",
-                "Is there any redness around the pain area?" to "No",
-                "Do you experience burning sensation?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Peripheral Neuropathy",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "One",
-                "Do you have swelling in the feet?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty walking?" to "No",
-                "Do you have a history of foot injuries?" to "Yes",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Foot Sprain",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "Both",
-                "Do you have swelling in the feet?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "No",
-                "Is there any redness around the pain area?" to "No",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Gout",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "One",
-                "Do you have swelling in the feet?" to "No",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "No",
-                "Is there any redness around the pain area?" to "No",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Morton's Neuroma",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "Both",
-                "Do you have swelling in the feet?" to "No",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty walking?" to "No",
-                "Do you have a history of foot injuries?" to "No",
-                "Is there any redness around the pain area?" to "No",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Flat Feet",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "One",
-                "Do you have swelling in the feet?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "Yes",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Tendinitis",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "Both",
-                "Do you have swelling in the feet?" to "Yes",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "No",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Diabetic Foot",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "One",
-                "Do you have swelling in the feet?" to "No",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "No",
-                "Is there any redness around the pain area?" to "No",
-                "Do you experience burning sensation?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Nerve Compression",
-            listOf(
-                "Do you have foot pain?" to "Yes",
-                "Is the pain in one or both feet?" to "Both",
-                "Do you have swelling in the feet?" to "Yes",
-                "Do you experience tingling or numbness?" to "No",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty walking?" to "Yes",
-                "Do you have a history of foot injuries?" to "Yes",
-                "Is there any redness around the pain area?" to "No",
-                "Do you experience burning sensation?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Arthritis"
-        ),
-        "Neck" to listOf(
-            listOf(
-                "Do you have neck pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Is the pain worse with movement?" to "Yes",
-                "Do you experience stiffness in the neck?" to "Yes",
-                "Do you have a history of neck injuries?" to "No",
-                "Do you experience tingling in the arms?" to "No",
-                "Is there any swelling in the neck?" to "Yes",
-                "Is the pain related to posture?" to "No",
-                "Do you experience headaches with neck pain?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Cervical Strain",
-            listOf(
-                "Do you have neck pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Is the pain worse with movement?" to "No",
-                "Do you experience stiffness in the neck?" to "Yes",
-                "Do you have a history of neck injuries?" to "Yes",
-                "Do you experience tingling in the arms?" to "Yes",
-                "Is there any swelling in the neck?" to "No",
-                "Is the pain related to posture?" to "Yes",
-                "Do you experience headaches with neck pain?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Herniated Disc",
-            listOf(
-                "Do you have neck pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Is the pain worse with movement?" to "Yes",
-                "Do you experience stiffness in the neck?" to "No",
-                "Do you have a history of neck injuries?" to "No",
-                "Do you experience tingling in the arms?" to "No",
-                "Is there any swelling in the neck?" to "No",
-                "Is the pain related to posture?" to "No",
-                "Do you experience headaches with neck pain?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Muscle Strain",
-            listOf(
-                "Do you have neck pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Is the pain worse with movement?" to "No",
-                "Do you experience stiffness in the neck?" to "Yes",
-                "Do you have a history of neck injuries?" to "Yes",
-                "Do you experience tingling in the arms?" to "No",
-                "Is there any swelling in the neck?" to "Yes",
-                "Is the pain related to posture?" to "Yes",
-                "Do you experience headaches with neck pain?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Spinal Stenosis",
-            listOf(
-                "Do you have neck pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Is the pain worse with movement?" to "Yes",
-                "Do you experience stiffness in the neck?" to "Yes",
-                "Do you have a history of neck injuries?" to "No",
-                "Do you experience tingling in the arms?" to "Yes",
-                "Is there any swelling in the neck?" to "No",
-                "Is the pain related to posture?" to "No",
-                "Do you experience headaches with neck pain?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Nerve Compression",
-            listOf(
-                "Do you have neck pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Is the pain worse with movement?" to "No",
-                "Do you experience stiffness in the neck?" to "No",
-                "Do you have a history of neck injuries?" to "Yes",
-                "Do you experience tingling in the arms?" to "No",
-                "Is there any swelling in the neck?" to "No",
-                "Is the pain related to posture?" to "Yes",
-                "Do you experience headaches with neck pain?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Osteoarthritis",
-            listOf(
-                "Do you have neck pain?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Is the pain worse with movement?" to "Yes",
-                "Do you experience stiffness in the neck?" to "Yes",
-                "Do you have a history of neck injuries?" to "Yes",
-                "Do you experience tingling in the arms?" to "No",
-                "Is there any swelling in the neck?" to "Yes",
-                "Is the pain related to posture?" to "No",
-                "Do you experience headaches with neck pain?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Rheumatoid Arthritis"
-        ),
-        "Hands" to listOf(
-            listOf(
-                "Do you have hand pain?" to "Yes",
-                "Is the pain in one or both hands?" to "One",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any swelling in the hands?" to "No",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty gripping objects?" to "Yes",
-                "Do you experience cramps in the hands?" to "No",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you have a history of hand injuries?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Carpal Tunnel Syndrome",
-            listOf(
-                "Do you have hand pain?" to "Yes",
-                "Is the pain in one or both hands?" to "Both",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any swelling in the hands?" to "Yes",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty gripping objects?" to "No",
-                "Do you experience cramps in the hands?" to "Yes",
-                "Is there any redness around the pain area?" to "No",
-                "Do you have a history of hand injuries?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Rheumatoid Arthritis",
-            listOf(
-                "Do you have hand pain?" to "Yes",
-                "Is the pain in one or both hands?" to "One",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any swelling in the hands?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty gripping objects?" to "Yes",
-                "Do you experience cramps in the hands?" to "No",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you have a history of hand injuries?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "Gout",
-            listOf(
-                "Do you have hand pain?" to "Yes",
-                "Is the pain in one or both hands?" to "Both",
-                "Do you experience tingling or numbness?" to "No",
-                "Is there any swelling in the hands?" to "No",
-                "Is the pain sharp or dull?" to "Dull",
-                "Do you have difficulty gripping objects?" to "No",
-                "Do you experience cramps in the hands?" to "Yes",
-                "Is there any redness around the pain area?" to "No",
-                "Do you have a history of hand injuries?" to "Yes",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Tendonitis",
-            listOf(
-                "Do you have hand pain?" to "Yes",
-                "Is the pain in one or both hands?" to "One",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any swelling in the hands?" to "No",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty gripping objects?" to "Yes",
-                "Do you experience cramps in the hands?" to "No",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you have a history of hand injuries?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Osteoarthritis",
-            listOf(
-                "Do you have hand pain?" to "Yes",
-                "Is the pain in one or both hands?" to "Both",
-                "Do you experience tingling or numbness?" to "Yes",
-                "Is there any swelling in the hands?" to "Yes",
-                "Is the pain sharp or dull?" to "Sharp",
-                "Do you have difficulty gripping objects?" to "Yes",
-                "Do you experience cramps in the hands?" to "Yes",
-                "Is there any redness around the pain area?" to "Yes",
-                "Do you have a history of hand injuries?" to "No",
-                "Do you have any other symptoms?" to "No"
-            ) to "De Quervain's Tenosynovitis"
-        ),
-        "Stomach" to listOf(
-            listOf(
-                "Do you have stomach pain?" to "Yes",
-                "Is the pain sharp or cramping?" to "Sharp",
-                "Do you experience nausea or vomiting?" to "Yes",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Do you have a fever?" to "No",
-                "Do you have any changes in appetite?" to "No",
-                "Is there bloating?" to "Yes",
-                "Do you experience diarrhea or constipation?" to "No",
-                "Is there any tenderness to touch?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Gastritis",
-            listOf(
-                "Do you have stomach pain?" to "Yes",
-                "Is the pain sharp or cramping?" to "Cramping",
-                "Do you experience nausea or vomiting?" to "No",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Do you have a fever?" to "Yes",
-                "Do you have any changes in appetite?" to "Yes",
-                "Is there bloating?" to "Yes",
-                "Do you experience diarrhea or constipation?" to "Yes",
-                "Is there any tenderness to touch?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Irritable Bowel Syndrome",
-            listOf(
-                "Do you have stomach pain?" to "Yes",
-                "Is the pain sharp or cramping?" to "Sharp",
-                "Do you experience nausea or vomiting?" to "Yes",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Do you have a fever?" to "No",
-                "Do you have any changes in appetite?" to "No",
-                "Is there bloating?" to "No",
-                "Do you experience diarrhea or constipation?" to "No",
-                "Is there any tenderness to touch?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Peptic Ulcer",
-            listOf(
-                "Do you have stomach pain?" to "Yes",
-                "Is the pain sharp or cramping?" to "Cramping",
-                "Do you experience nausea or vomiting?" to "No",
-                "Is the pain constant or intermittent?" to "Intermittent",
-                "Do you have a fever?" to "No",
-                "Do you have any changes in appetite?" to "Yes",
-                "Is there bloating?" to "Yes",
-                "Do you experience diarrhea or constipation?" to "Yes",
-                "Is there any tenderness to touch?" to "No",
-                "Do you have any other symptoms?" to "Yes"
-            ) to "Constipation",
-            listOf(
-                "Do you have stomach pain?" to "Yes",
-                "Is the pain sharp or cramping?" to "Cramping",
-                "Do you experience nausea or vomiting?" to "No",
-                "Is the pain constant or intermittent?" to "Constant",
-                "Do you have a fever?" to "Yes",
-                "Do you have any changes in appetite?" to "No",
-                "Is there bloating?" to "Yes",
-                "Do you experience diarrhea or constipation?" to "No",
-                "Is there any tenderness to touch?" to "Yes",
-                "Do you have any other symptoms?" to "No"
-            ) to "Gastroenteritis"
-        )
-    )
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_whats_wrong)
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.shadow2)))
 
-        // Change title of action bar
-        supportActionBar?.title = "WATER SAFETY"
+        // Initialize toolbar
+        setupToolbar()
 
-        // Show back button on action bar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-
+        // Initialize views
         questionTextView = findViewById(R.id.questionTextView)
         optionsSpinner = findViewById(R.id.optionsSpinner)
         nextButton = findViewById(R.id.nextButton)
         resultTextView = findViewById(R.id.resultTextView)
 
+        // Set up button click listener
         nextButton.setOnClickListener {
             handleNextButtonClick()
         }
 
+        // Start by asking where the pain is located
         updateStage()
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            android.R.id.home -> {
-                // Handle the home button press
-                onBackPressed() // Or use finish() if you want to close the activity
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
+    private fun setupToolbar() {
+        val toolbar: Toolbar = findViewById(R.id.customToolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title = getString(R.string.whats_wrong)
+        val pressAnim = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val releaseAnim = AnimationUtils.loadAnimation(this, R.anim.button_release)
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.red))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationIcon(R.drawable.back)
+
+        toolbar.setNavigationOnClickListener {
+            it.startAnimation(pressAnim)
+            it.postDelayed({
+                it.startAnimation(releaseAnim)
+                finish()
+            }, pressAnim.duration)
         }
     }
 
-
     private fun handleNextButtonClick() {
-        val selectedOption = optionsSpinner.selectedItem.toString()
-        if (selectedOption != "Select an option") {
-            if (currentStage == 0) {
-                answersSelected["When did the symptom start?"] = selectedOption
-                currentStage++
-                updateStage()
-            } else if (currentStage == 1) {
+        val selectedOption = optionsSpinner.selectedItem?.toString() ?: return
+
+        when (currentStage) {
+            0 -> {
                 painLocation = selectedOption
-                currentQuestions = painLocationQuestions[painLocation] ?: emptyList()
-                currentStage++
-                updateStage()
-            } else if (currentQuestions.isNotEmpty()) {
-                val questionPair = currentQuestions.getOrNull(currentStage - 2)
-                if (questionPair != null) {
-                    answersSelected[questionPair.first] = selectedOption
+                if (painLocation != getString(R.string.select_an_option)) {
                     currentStage++
                     updateStage()
                 } else {
-                    handleResults()
+                    Toast.makeText(this, getString(R.string.select_option_message), Toast.LENGTH_SHORT).show()
                 }
             }
-        } else {
-            Toast.makeText(this, "Please select an option.", Toast.LENGTH_SHORT).show()
+            else -> {
+                val currentQuestion = currentQuestions.getOrNull(currentStage - 1)
+                if (currentQuestion != null && selectedOption != getString(R.string.select_an_option)) {
+                    answersSelected[currentQuestion.first] = selectedOption
+                    if (currentStage < currentQuestions.size) {
+                        currentStage++
+                        updateStage()
+                    } else {
+                        handleResults()
+                    }
+                } else {
+                    Toast.makeText(this, getString(R.string.select_option_message), Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 
     private fun updateStage() {
         when (currentStage) {
             0 -> {
-                questionTextView.text = stages[currentStage]
+                questionTextView.text = getString(R.string.where_pain_originate)
                 setupSpinner(
                     listOf(
-                        "Select an option",
-                        "Less than 24 hours",
-                        "1-3 days",
-                        "More than 3 days"
+                        getString(R.string.select_an_option),
+                        getString(R.string.head),
+                        getString(R.string.chest),
+                        getString(R.string.abdomen),
+                        getString(R.string.back),
+                        getString(R.string.legs),
+                        getString(R.string.arms),
+                        getString(R.string.joints),
+                        getString(R.string.feet),
+                        getString(R.string.neck),
+                        getString(R.string.hands),
+                        getString(R.string.stomach)
                     )
                 )
             }
-
-            1 -> {
-                questionTextView.text = stages[currentStage]
-                setupSpinner(
-                    listOf(
-                        "Select an option",
-                        "Head",
-                        "Chest",
-                        "Abdomen",
-                        "Back",
-                        "Legs",
-                        "Arms",
-                        "Joints",
-                        "Feet",
-                        "Neck",
-                        "Hands",
-                        "Stomach"
-                    )
-                )
-            }
-
-            in 2 until 2 + currentQuestions.size -> {
-                val questionPair = currentQuestions.getOrNull(currentStage - 2)
+            else -> {
+                currentQuestions = getQuestionsForLocation(painLocation)
+                val questionPair = currentQuestions.getOrNull(currentStage - 1)
                 if (questionPair != null) {
                     questionTextView.text = questionPair.first
                     setupSpinner(questionPair.second)
                 } else {
-                    handleResults()
+                    handleResults() // Proceed to results if no more questions
                 }
-            }
-
-            else -> {
-                handleResults()
             }
         }
     }
 
+    private fun getQuestionsForLocation(location: String): List<Pair<String, List<String>>> {
+        return when (location) {
+            getString(R.string.head) -> listOf(
+                getString(R.string.head_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_2) to listOf(getString(R.string.localized), getString(R.string.diffuse)),
+                getString(R.string.head_question_3) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_5) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.head_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.chest) -> listOf(
+                getString(R.string.chest_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.chest_question_2) to listOf(getString(R.string.sharp), getString(R.string.dull)),
+                getString(R.string.chest_question_3) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.chest_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.chest_question_5) to listOf(getString(R.string.constant), getString(R.string.intermittent)),
+                getString(R.string.chest_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.chest_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.chest_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.chest_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.chest_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.abdomen) -> listOf(
+                getString(R.string.abdomen_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.abdomen_question_2) to listOf(getString(R.string.localized), getString(R.string.diffuse)),
+                getString(R.string.abdomen_question_3) to listOf(getString(R.string.cramping), getString(R.string.sharp)),
+                getString(R.string.abdomen_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.abdomen_question_5) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.abdomen_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.abdomen_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.abdomen_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.abdomen_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.abdomen_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.back) -> listOf(
+                getString(R.string.back_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.back_question_2) to listOf(getString(R.string.upper), getString(R.string.lower)),
+                getString(R.string.back_question_3) to listOf(getString(R.string.sharp), getString(R.string.dull)),
+                getString(R.string.back_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.back_question_5) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.back_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.back_question_7) to listOf(getString(R.string.standing), getString(R.string.sitting)),
+                getString(R.string.back_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.back_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.back_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.legs) -> listOf(
+                getString(R.string.legs_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.legs_question_2) to listOf(getString(R.string.one), getString(R.string.both)),
+                getString(R.string.legs_question_3) to listOf(getString(R.string.sharp), getString(R.string.dull)),
+                getString(R.string.legs_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.legs_question_5) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.legs_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.legs_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.legs_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.legs_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.legs_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.arms) -> listOf(
+                getString(R.string.arms_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.arms_question_2) to listOf(getString(R.string.one), getString(R.string.both)),
+                getString(R.string.arms_question_3) to listOf(getString(R.string.sharp), getString(R.string.dull)),
+                getString(R.string.arms_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.arms_question_5) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.arms_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.arms_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.arms_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.arms_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.arms_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.joints) -> listOf(
+                getString(R.string.joints_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.joints_question_2) to listOf(getString(R.string.one), getString(R.string.multiple)),
+                getString(R.string.joints_question_3) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.joints_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.joints_question_5) to listOf(getString(R.string.constant), getString(R.string.intermittent)),
+                getString(R.string.joints_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.joints_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.joints_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.joints_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.joints_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.feet) -> listOf(
+                getString(R.string.feet_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.feet_question_2) to listOf(getString(R.string.one), getString(R.string.both)),
+                getString(R.string.feet_question_3) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.feet_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.feet_question_5) to listOf(getString(R.string.sharp), getString(R.string.dull)),
+                getString(R.string.feet_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.feet_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.feet_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.feet_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.feet_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.neck) -> listOf(
+                getString(R.string.neck_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_2) to listOf(getString(R.string.sharp), getString(R.string.dull)),
+                getString(R.string.neck_question_3) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_5) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.neck_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.hands) -> listOf(
+                getString(R.string.hands_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.hands_question_2) to listOf(getString(R.string.one), getString(R.string.both)),
+                getString(R.string.hands_question_3) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.hands_question_4) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.hands_question_5) to listOf(getString(R.string.sharp), getString(R.string.dull)),
+                getString(R.string.hands_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.hands_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.hands_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.hands_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.hands_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            getString(R.string.stomach) -> listOf(
+                getString(R.string.stomach_question_1) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.stomach_question_2) to listOf(getString(R.string.sharp), getString(R.string.cramping)),
+                getString(R.string.stomach_question_3) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.stomach_question_4) to listOf(getString(R.string.constant), getString(R.string.intermittent)),
+                getString(R.string.stomach_question_5) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.stomach_question_6) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.stomach_question_7) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.stomach_question_8) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.stomach_question_9) to listOf(getString(R.string.yes), getString(R.string.no)),
+                getString(R.string.stomach_question_10) to listOf(getString(R.string.yes), getString(R.string.no))
+            )
+            else -> emptyList()
+        }
+    }
+
     private fun setupSpinner(options: List<String>) {
-        val adapter = ArrayAdapter(this, R.layout.spinner_item, options)
-        adapter.setDropDownViewResource(R.layout.spinner_item) // Apply custom layout to dropdown
+        val adapter = ArrayAdapter(this, R.layout.spinner_dropdown_item, options)
+        adapter.setDropDownViewResource(R.layout.spinner_dropdown_item)
         optionsSpinner.adapter = adapter
     }
 
-
-
     private fun handleResults() {
-        // Evaluate possible conditions
-        val possibleConditions = diagnosis[painLocation]?.map { (criteria, condition) ->
-            val totalCriteria = criteria.size
-            var matchingCriteria = 0
+        val possibleConditions = calculateDiagnosis()
 
-            // Count the number of criteria that match the selected answers
-            criteria.forEach { (question, answer) ->
-                if (answersSelected[question] == answer) {
-                    matchingCriteria++
-                }
-            }
-
-            // Calculate confidence percentage
-            val confidencePercentage = if (totalCriteria > 0) {
-                (matchingCriteria.toDouble() / totalCriteria * 100).toInt()
-            } else {
-                0
-            }
-
-            condition to confidencePercentage
-        } ?: emptyList()
-
-        // Find the best match condition
-        val bestMatch = possibleConditions.maxByOrNull { it.second } ?: "Unknown Condition" to 0
-
-        // Display the result
-        val result = "Possible Condition: ${bestMatch.first} (Confidence: ${bestMatch.second}%)"
-        resultTextView.text = result
+        resultTextView.text = possibleConditions
         resultTextView.visibility = View.VISIBLE
 
-        // Hide other UI elements
         questionTextView.visibility = View.GONE
         optionsSpinner.visibility = View.GONE
         nextButton.visibility = View.GONE
-        nextButton.isEnabled = false
 
-        // Show alert after a short delay
         Handler(Looper.getMainLooper()).postDelayed({
             showAlert()
-        }, 1000) // 1 second delay
+        }, 1000)
+    }
+
+    private fun calculateDiagnosis(): String {
+        val diagnosisOptions = mapOf(
+            getString(R.string.head) to listOf(
+                listOf(
+                    getString(R.string.head_question_1) to getString(R.string.yes),
+                    getString(R.string.head_question_2) to getString(R.string.localized),
+                    getString(R.string.head_question_3) to getString(R.string.yes),
+                    getString(R.string.head_question_4) to getString(R.string.yes),
+                    getString(R.string.head_question_5) to getString(R.string.yes),
+                    getString(R.string.head_question_6) to getString(R.string.yes),
+                    getString(R.string.head_question_7) to getString(R.string.yes),
+                    getString(R.string.head_question_8) to getString(R.string.no),
+                    getString(R.string.head_question_9) to getString(R.string.no),
+                    getString(R.string.head_question_10) to getString(R.string.yes)
+                ) to getString(R.string.migraine),
+                listOf(
+                    getString(R.string.head_question_1) to getString(R.string.yes),
+                    getString(R.string.head_question_2) to getString(R.string.diffuse),
+                    getString(R.string.head_question_3) to getString(R.string.no),
+                    getString(R.string.head_question_4) to getString(R.string.no),
+                    getString(R.string.head_question_5) to getString(R.string.no),
+                    getString(R.string.head_question_6) to getString(R.string.yes),
+                    getString(R.string.head_question_7) to getString(R.string.yes),
+                    getString(R.string.head_question_8) to getString(R.string.no),
+                    getString(R.string.head_question_9) to getString(R.string.no),
+                    getString(R.string.head_question_10) to getString(R.string.no)
+                ) to getString(R.string.tension_headache),
+                listOf(
+                    getString(R.string.head_question_1) to getString(R.string.yes),
+                    getString(R.string.head_question_2) to getString(R.string.localized),
+                    getString(R.string.head_question_3) to getString(R.string.no),
+                    getString(R.string.head_question_4) to getString(R.string.no),
+                    getString(R.string.head_question_5) to getString(R.string.yes),
+                    getString(R.string.head_question_6) to getString(R.string.yes),
+                    getString(R.string.head_question_7) to getString(R.string.no),
+                    getString(R.string.head_question_8) to getString(R.string.yes),
+                    getString(R.string.head_question_9) to getString(R.string.yes),
+                    getString(R.string.head_question_10) to getString(R.string.yes)
+                ) to getString(R.string.concussion),
+                listOf(
+                    getString(R.string.head_question_1) to getString(R.string.yes),
+                    getString(R.string.head_question_2) to getString(R.string.localized),
+                    getString(R.string.head_question_3) to getString(R.string.no),
+                    getString(R.string.head_question_4) to getString(R.string.yes),
+                    getString(R.string.head_question_5) to getString(R.string.yes),
+                    getString(R.string.head_question_6) to getString(R.string.yes),
+                    getString(R.string.head_question_7) to getString(R.string.no),
+                    getString(R.string.head_question_8) to getString(R.string.yes),
+                    getString(R.string.head_question_9) to getString(R.string.yes),
+                    getString(R.string.head_question_10) to getString(R.string.yes)
+                ) to getString(R.string.meningitis),
+                listOf(
+                    getString(R.string.head_question_1) to getString(R.string.yes),
+                    getString(R.string.head_question_2) to getString(R.string.localized),
+                    getString(R.string.head_question_3) to getString(R.string.yes),
+                    getString(R.string.head_question_4) to getString(R.string.no),
+                    getString(R.string.head_question_5) to getString(R.string.yes),
+                    getString(R.string.head_question_6) to getString(R.string.no),
+                    getString(R.string.head_question_7) to getString(R.string.no),
+                    getString(R.string.head_question_8) to getString(R.string.yes),
+                    getString(R.string.head_question_9) to getString(R.string.yes),
+                    getString(R.string.head_question_10) to getString(R.string.yes)
+                ) to getString(R.string.stroke)
+            ),
+            getString(R.string.chest) to listOf(
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.chest_question_3) to getString(R.string.yes), // "Does the pain radiate to other areas?" to "Yes"
+                    getString(R.string.chest_question_4) to getString(R.string.no), // "Do you have difficulty breathing?" to "No"
+                    getString(R.string.chest_question_5) to getString(R.string.constant), // "Is the pain constant or intermittent?" to "Constant"
+                    getString(R.string.chest_question_6) to getString(R.string.no), // "Do you experience nausea?" to "No"
+                    getString(R.string.chest_question_7) to getString(R.string.yes), // "Is the pain related to physical activity?" to "Yes"
+                    getString(R.string.chest_question_8) to getString(R.string.no), // "Do you have a history of any chronic health conditions?" to "No"
+                    getString(R.string.chest_question_9) to getString(R.string.no), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "No"
+                    getString(R.string.chest_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.angina), // "Angina"
+
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.chest_question_3) to getString(R.string.yes), // "Does the pain radiate to other areas?" to "Yes"
+                    getString(R.string.chest_question_4) to getString(R.string.yes), // "Do you have difficulty breathing?" to "Yes"
+                    getString(R.string.chest_question_5) to getString(R.string.constant), // "Is the pain constant or intermittent?" to "Constant"
+                    getString(R.string.chest_question_6) to getString(R.string.yes), // "Do you experience nausea?" to "Yes"
+                    getString(R.string.chest_question_7) to getString(R.string.no), // "Is the pain related to physical activity?" to "No"
+                    getString(R.string.chest_question_8) to getString(R.string.yes), // "Do you have a history of any chronic health conditions?" to "Yes"
+                    getString(R.string.chest_question_9) to getString(R.string.yes), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes"
+                    getString(R.string.chest_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.heart_attack), // "Heart Attack"
+
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.dull), // "Is the pain sharp or dull?" to "Dull"
+                    getString(R.string.chest_question_3) to getString(R.string.no), // "Does the pain radiate to other areas?" to "No"
+                    getString(R.string.chest_question_4) to getString(R.string.yes), // "Do you have difficulty breathing?" to "Yes"
+                    getString(R.string.chest_question_5) to getString(R.string.intermittent), // "Is the pain constant or intermittent?" to "Intermittent"
+                    getString(R.string.chest_question_6) to getString(R.string.no), // "Do you experience nausea?" to "No"
+                    getString(R.string.chest_question_7) to getString(R.string.no), // "Is the pain related to physical activity?" to "No"
+                    getString(R.string.chest_question_8) to getString(R.string.no), // "Do you have a history of any chronic health conditions?" to "No"
+                    getString(R.string.chest_question_9) to getString(R.string.no), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "No"
+                    getString(R.string.chest_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.gerd), // "Gastroesophageal Reflux Disease (GERD)"
+
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.chest_question_3) to getString(R.string.no), // "Does the pain radiate to other areas?" to "No"
+                    getString(R.string.chest_question_4) to getString(R.string.no), // "Do you have difficulty breathing?" to "No"
+                    getString(R.string.chest_question_5) to getString(R.string.constant), // "Is the pain constant or intermittent?" to "Constant"
+                    getString(R.string.chest_question_6) to getString(R.string.yes), // "Do you experience nausea?" to "Yes"
+                    getString(R.string.chest_question_7) to getString(R.string.no), // "Is the pain related to physical activity?" to "No"
+                    getString(R.string.chest_question_8) to getString(R.string.no), // "Do you have a history of any chronic health conditions?" to "No"
+                    getString(R.string.chest_question_9) to getString(R.string.yes), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes"
+                    getString(R.string.chest_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.panic_attack), // "Panic Attack"
+
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.dull), // "Is the pain sharp or dull?" to "Dull"
+                    getString(R.string.chest_question_3) to getString(R.string.yes), // "Does the pain radiate to other areas?" to "Yes"
+                    getString(R.string.chest_question_4) to getString(R.string.yes), // "Do you have difficulty breathing?" to "Yes"
+                    getString(R.string.chest_question_5) to getString(R.string.intermittent), // "Is the pain constant or intermittent?" to "Intermittent"
+                    getString(R.string.chest_question_6) to getString(R.string.no), // "Do you experience nausea?" to "No"
+                    getString(R.string.chest_question_7) to getString(R.string.no), // "Is the pain related to physical activity?" to "No"
+                    getString(R.string.chest_question_8) to getString(R.string.no), // "Do you have a history of any chronic health conditions?" to "No"
+                    getString(R.string.chest_question_9) to getString(R.string.yes), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes"
+                    getString(R.string.chest_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.pulmonary_embolism), // "Pulmonary Embolism"
+
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.dull), // "Is the pain sharp or dull?" to "Dull"
+                    getString(R.string.chest_question_3) to getString(R.string.no), // "Does the pain radiate to other areas?" to "No"
+                    getString(R.string.chest_question_4) to getString(R.string.no), // "Do you have difficulty breathing?" to "No"
+                    getString(R.string.chest_question_5) to getString(R.string.constant), // "Is the pain constant or intermittent?" to "Constant"
+                    getString(R.string.chest_question_6) to getString(R.string.no), // "Do you experience nausea?" to "No"
+                    getString(R.string.chest_question_7) to getString(R.string.yes), // "Is the pain related to eating?" to "Yes"
+                    getString(R.string.chest_question_8) to getString(R.string.yes), // "Do you have a history of any chronic health conditions?" to "Yes"
+                    getString(R.string.chest_question_9) to getString(R.string.yes), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes"
+                    getString(R.string.chest_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.peptic_ulcer), // "Peptic Ulcer"
+
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.chest_question_3) to getString(R.string.no), // "Does the pain radiate to other areas?" to "No"
+                    getString(R.string.chest_question_4) to getString(R.string.yes), // "Do you have difficulty breathing?" to "Yes"
+                    getString(R.string.chest_question_5) to getString(R.string.intermittent), // "Is the pain constant or intermittent?" to "Intermittent"
+                    getString(R.string.chest_question_6) to getString(R.string.yes), // "Do you experience shortness of breath?" to "Yes"
+                    getString(R.string.chest_question_7) to getString(R.string.yes), // "Is the pain related to cold weather?" to "Yes"
+                    getString(R.string.chest_question_8) to getString(R.string.yes), // "Do you have a history of any chronic health conditions?" to "Yes"
+                    getString(R.string.chest_question_9) to getString(R.string.yes), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "Yes"
+                    getString(R.string.chest_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.asthma), // "Asthma"
+
+                listOf(
+                    getString(R.string.chest_question_1) to getString(R.string.yes), // "Do you have chest pain?" to "Yes"
+                    getString(R.string.chest_question_2) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.chest_question_3) to getString(R.string.yes), // "Does the pain radiate to other areas?" to "Yes"
+                    getString(R.string.chest_question_4) to getString(R.string.no), // "Do you have difficulty breathing?" to "No"
+                    getString(R.string.chest_question_5) to getString(R.string.intermittent), // "Is the pain constant or intermittent?" to "Intermittent"
+                    getString(R.string.chest_question_6) to getString(R.string.no), // "Do you experience nausea?" to "No"
+                    getString(R.string.chest_question_7) to getString(R.string.yes), // "Is the pain related to physical activity?" to "Yes"
+                    getString(R.string.chest_question_8) to getString(R.string.yes), // "Do you have a history of any chronic health conditions?" to "Yes"
+                    getString(R.string.chest_question_9) to getString(R.string.no), // "Are you experiencing sweating/bloating/wheezing/tenderness?" to "No"
+                    getString(R.string.chest_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.muscle_strain) // "Muscle Strain"
+            ),
+            getString(R.string.abdomen) to listOf(
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.localized), // "Is the pain localized or diffuse?" to "Localized"
+                    getString(R.string.abdomen_question_3) to getString(R.string.cramping), // "Is the pain cramping or sharp?" to "Cramping"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.yes), // "Do you experience bloating?" to "Yes"
+                    getString(R.string.abdomen_question_6) to getString(R.string.no), // "Is there any change in bowel movements?" to "No"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.no), // "Do you have a fever?" to "No"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.gastritis), // "Gastritis"
+
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.diffuse), // "Is the pain localized or diffuse?" to "Diffuse"
+                    getString(R.string.abdomen_question_3) to getString(R.string.sharp), // "Is the pain cramping or sharp?" to "Sharp"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.yes), // "Do you experience bloating?" to "Yes"
+                    getString(R.string.abdomen_question_6) to getString(R.string.yes), // "Is there any change in bowel movements?" to "Yes"
+                    getString(R.string.abdomen_question_7) to getString(R.string.yes), // "Is there blood in the stool?" to "Yes"
+                    getString(R.string.abdomen_question_8) to getString(R.string.yes), // "Do you have a fever?" to "Yes"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.appendicitis), // "Appendicitis"
+
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.localized), // "Is the pain localized or diffuse?" to "Localized"
+                    getString(R.string.abdomen_question_3) to getString(R.string.cramping), // "Is the pain cramping or sharp?" to "Cramping"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.no), // "Do you experience bloating?" to "No"
+                    getString(R.string.abdomen_question_6) to getString(R.string.no), // "Is there any change in bowel movements?" to "No"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.no), // "Do you have a fever?" to "No"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.ibs), // "Irritable Bowel Syndrome (IBS)"
+
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.localized), // "Is the pain localized or diffuse?" to "Localized"
+                    getString(R.string.abdomen_question_3) to getString(R.string.sharp), // "Is the pain cramping or sharp?" to "Sharp"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.yes), // "Do you experience bloating?" to "Yes"
+                    getString(R.string.abdomen_question_6) to getString(R.string.yes), // "Is there any change in bowel movements?" to "Yes"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.no), // "Do you have a fever?" to "No"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.peptic_ulcer), // "Peptic Ulcer Disease"
+
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.diffuse), // "Is the pain localized or diffuse?" to "Diffuse"
+                    getString(R.string.abdomen_question_3) to getString(R.string.cramping), // "Is the pain cramping or sharp?" to "Cramping"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.yes), // "Do you experience bloating?" to "Yes"
+                    getString(R.string.abdomen_question_6) to getString(R.string.yes), // "Is there any change in bowel movements?" to "Yes"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.yes), // "Do you have a fever?" to "Yes"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.diverticulitis), // "Diverticulitis"
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.diffuse), // "Is the pain localized or diffuse?" to "Diffuse"
+                    getString(R.string.abdomen_question_3) to getString(R.string.cramping), // "Is the pain cramping or sharp?" to "Cramping"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.yes), // "Do you experience bloating?" to "Yes"
+                    getString(R.string.abdomen_question_6) to getString(R.string.no), // "Is there any change in bowel movements?" to "No"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.no), // "Do you have a fever?" to "No"
+                    getString(R.string.abdomen_question_9) to getString(R.string.yes), // "Do you feel better after eating?" to "Yes"
+                    getString(R.string.abdomen_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.constipation), // "Constipation"
+
+                // Food Poisoning
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.localized), // "Is the pain localized or diffuse?" to "Localized"
+                    getString(R.string.abdomen_question_3) to getString(R.string.cramping), // "Is the pain cramping or sharp?" to "Cramping"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.yes), // "Do you experience bloating?" to "Yes"
+                    getString(R.string.abdomen_question_6) to getString(R.string.yes), // "Is there any change in bowel movements?" to "Yes"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.yes), // "Do you have a fever?" to "Yes"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.food_poisoning), // "Food Poisoning"
+
+                // Inflammatory Bowel Disease (IBD)
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.diffuse), // "Is the pain localized or diffuse?" to "Diffuse"
+                    getString(R.string.abdomen_question_3) to getString(R.string.sharp), // "Is the pain cramping or sharp?" to "Sharp"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.no), // "Do you experience bloating?" to "No"
+                    getString(R.string.abdomen_question_6) to getString(R.string.yes), // "Is there any change in bowel movements?" to "Yes"
+                    getString(R.string.abdomen_question_7) to getString(R.string.yes), // "Is there blood in the stool?" to "Yes"
+                    getString(R.string.abdomen_question_8) to getString(R.string.yes), // "Do you have a fever?" to "Yes"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.ibd), // "Inflammatory Bowel Disease (IBD)"
+
+                // Functional Dyspepsia
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.localized), // "Is the pain localized or diffuse?" to "Localized"
+                    getString(R.string.abdomen_question_3) to getString(R.string.cramping), // "Is the pain cramping or sharp?" to "Cramping"
+                    getString(R.string.abdomen_question_4) to getString(R.string.no), // "Do you have nausea or vomiting?" to "No"
+                    getString(R.string.abdomen_question_5) to getString(R.string.no), // "Do you experience bloating?" to "No"
+                    getString(R.string.abdomen_question_6) to getString(R.string.yes), // "Is there any change in bowel movements?" to "Yes"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.no), // "Do you have a fever?" to "No"
+                    getString(R.string.abdomen_question_9) to getString(R.string.yes), // "Do you feel better after eating?" to "Yes"
+                    getString(R.string.abdomen_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.functional_dyspepsia), // "Functional Dyspepsia"
+                // Celiac Disease
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.diffuse), // "Is the pain localized or diffuse?" to "Diffuse"
+                    getString(R.string.abdomen_question_3) to getString(R.string.sharp), // "Is the pain cramping or sharp?" to "Sharp"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.yes), // "Do you experience bloating?" to "Yes"
+                    getString(R.string.abdomen_question_6) to getString(R.string.no), // "Is there any change in bowel movements?" to "No"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.no), // "Do you have a fever?" to "No"
+                    getString(R.string.abdomen_question_9) to getString(R.string.no), // "Do you feel better after eating?" to "No"
+                    getString(R.string.abdomen_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.celiac_disease), // "Celiac Disease"
+
+                // Lactose Intolerance
+                listOf(
+                    getString(R.string.abdomen_question_1) to getString(R.string.yes), // "Do you have abdominal pain?" to "Yes"
+                    getString(R.string.abdomen_question_2) to getString(R.string.localized), // "Is the pain localized or diffuse?" to "Localized"
+                    getString(R.string.abdomen_question_3) to getString(R.string.cramping), // "Is the pain cramping or sharp?" to "Cramping"
+                    getString(R.string.abdomen_question_4) to getString(R.string.yes), // "Do you have nausea or vomiting?" to "Yes"
+                    getString(R.string.abdomen_question_5) to getString(R.string.no), // "Do you experience bloating?" to "No"
+                    getString(R.string.abdomen_question_6) to getString(R.string.yes), // "Is there any change in bowel movements?" to "Yes"
+                    getString(R.string.abdomen_question_7) to getString(R.string.no), // "Is there blood in the stool?" to "No"
+                    getString(R.string.abdomen_question_8) to getString(R.string.no), // "Do you have a fever?" to "No"
+                    getString(R.string.abdomen_question_9) to getString(R.string.yes), // "Do you feel better after eating?" to "Yes"
+                    getString(R.string.abdomen_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.lactose_intolerance)
+            ),
+            getString(R.string.back) to listOf(
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes), // "Do you have back pain?" to "Yes"
+                    getString(R.string.back_question_2) to getString(R.string.lower), // "Is the pain in the upper or lower back?" to "Lower"
+                    getString(R.string.back_question_3) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.back_question_4) to getString(R.string.yes), // "Does the pain radiate to the legs?" to "Yes"
+                    getString(R.string.back_question_5) to getString(R.string.no), // "Do you have any weakness in the legs?" to "No"
+                    getString(R.string.back_question_6) to getString(R.string.yes), // "Do you have difficulty walking?" to "Yes"
+                    getString(R.string.back_question_7) to getString(R.string.standing), // "Is the pain worse when standing or sitting?" to "Standing"
+                    getString(R.string.back_question_8) to getString(R.string.yes), // "Do you have a history of back problems?" to "Yes"
+                    getString(R.string.back_question_9) to getString(R.string.yes), // "Do you experience tingling or numbness?" to "Yes"
+                    getString(R.string.back_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.herniated_disc), // "Herniated Disc"
+
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.upper), // "Is the pain in the upper or lower back?" to "Upper"
+                    getString(R.string.back_question_3) to getString(R.string.dull), // "Is the pain sharp or dull?" to "Dull"
+                    getString(R.string.back_question_4) to getString(R.string.no), // "Does the pain radiate to the legs?" to "No"
+                    getString(R.string.back_question_5) to getString(R.string.no), // "Do you have any weakness in the legs?" to "No"
+                    getString(R.string.back_question_6) to getString(R.string.no), // "Do you have difficulty walking?" to "No"
+                    getString(R.string.back_question_7) to getString(R.string.sitting), // "Is the pain worse when standing or sitting?" to "Sitting"
+                    getString(R.string.back_question_8) to getString(R.string.yes), // "Do you have a history of back problems?" to "Yes"
+                    getString(R.string.back_question_9) to getString(R.string.no), // "Do you experience tingling or numbness?" to "No"
+                    getString(R.string.back_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.muscle_strain), // "Muscle Strain"
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.lower),
+                    getString(R.string.back_question_3) to getString(R.string.sharp),
+                    getString(R.string.back_question_4) to getString(R.string.yes),
+                    getString(R.string.back_question_5) to getString(R.string.yes),
+                    getString(R.string.back_question_6) to getString(R.string.yes),
+                    getString(R.string.back_question_7) to getString(R.string.standing),
+                    getString(R.string.back_question_8) to getString(R.string.no),
+                    getString(R.string.back_question_9) to getString(R.string.yes),
+                    getString(R.string.back_question_10) to getString(R.string.yes)
+                ) to getString(R.string.spinal_stenosis), // "Spinal Stenosis"
+
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.upper),
+                    getString(R.string.back_question_3) to getString(R.string.sharp),
+                    getString(R.string.back_question_4) to getString(R.string.no),
+                    getString(R.string.back_question_5) to getString(R.string.no),
+                    getString(R.string.back_question_6) to getString(R.string.no),
+                    getString(R.string.back_question_7) to getString(R.string.sitting),
+                    getString(R.string.back_question_8) to getString(R.string.no),
+                    getString(R.string.back_question_9) to getString(R.string.no),
+                    getString(R.string.back_question_10) to getString(R.string.yes)
+                ) to getString(R.string.postural_issues), // "Postural Issues"
+
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.lower),
+                    getString(R.string.back_question_3) to getString(R.string.sharp),
+                    getString(R.string.back_question_4) to getString(R.string.yes),
+                    getString(R.string.back_question_5) to getString(R.string.yes),
+                    getString(R.string.back_question_6) to getString(R.string.no),
+                    getString(R.string.back_question_7) to getString(R.string.standing),
+                    getString(R.string.back_question_8) to getString(R.string.yes),
+                    getString(R.string.back_question_9) to getString(R.string.no),
+                    getString(R.string.back_question_10) to getString(R.string.no)
+                ) to getString(R.string.sciatica), // "Sciatica"
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.lower),
+                    getString(R.string.back_question_3) to getString(R.string.dull),
+                    getString(R.string.back_question_4) to getString(R.string.no),
+                    getString(R.string.back_question_5) to getString(R.string.no),
+                    getString(R.string.back_question_6) to getString(R.string.no),
+                    getString(R.string.back_question_7) to getString(R.string.standing),
+                    getString(R.string.back_question_8) to getString(R.string.no),
+                    getString(R.string.back_question_9) to getString(R.string.yes),
+                    getString(R.string.back_question_10) to getString(R.string.yes)
+                ) to getString(R.string.kidney_stones), // "Kidney Stones"
+
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.upper),
+                    getString(R.string.back_question_3) to getString(R.string.sharp),
+                    getString(R.string.back_question_4) to getString(R.string.no),
+                    getString(R.string.back_question_5) to getString(R.string.no),
+                    getString(R.string.back_question_6) to getString(R.string.no),
+                    getString(R.string.back_question_7) to getString(R.string.sitting),
+                    getString(R.string.back_question_8) to getString(R.string.yes),
+                    getString(R.string.back_question_9) to getString(R.string.no),
+                    getString(R.string.back_question_10) to getString(R.string.no)
+                ) to getString(R.string.thoracic_outlet_syndrome), // "Thoracic Outlet Syndrome"
+
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.lower),
+                    getString(R.string.back_question_3) to getString(R.string.dull),
+                    getString(R.string.back_question_4) to getString(R.string.yes),
+                    getString(R.string.back_question_5) to getString(R.string.yes),
+                    getString(R.string.back_question_6) to getString(R.string.yes),
+                    getString(R.string.back_question_7) to getString(R.string.standing),
+                    getString(R.string.back_question_8) to getString(R.string.yes),
+                    getString(R.string.back_question_9) to getString(R.string.yes),
+                    getString(R.string.back_question_10) to getString(R.string.yes)
+                ) to getString(R.string.degenerative_disc_disease), // "Degenerative Disc Disease"
+
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.upper),
+                    getString(R.string.back_question_3) to getString(R.string.sharp),
+                    getString(R.string.back_question_4) to getString(R.string.no),
+                    getString(R.string.back_question_5) to getString(R.string.no),
+                    getString(R.string.back_question_6) to getString(R.string.no),
+                    getString(R.string.back_question_7) to getString(R.string.sitting),
+                    getString(R.string.back_question_8) to getString(R.string.no),
+                    getString(R.string.back_question_9) to getString(R.string.no),
+                    getString(R.string.back_question_10) to getString(R.string.no)
+                ) to getString(R.string.upper_back_pain), // "Upper Back Pain"
+
+                listOf(
+                    getString(R.string.back_question_1) to getString(R.string.yes),
+                    getString(R.string.back_question_2) to getString(R.string.lower),
+                    getString(R.string.back_question_3) to getString(R.string.dull),
+                    getString(R.string.back_question_4) to getString(R.string.no),
+                    getString(R.string.back_question_5) to getString(R.string.no),
+                    getString(R.string.back_question_6) to getString(R.string.no),
+                    getString(R.string.back_question_7) to getString(R.string.standing),
+                    getString(R.string.back_question_8) to getString(R.string.no),
+                    getString(R.string.back_question_9) to getString(R.string.yes),
+                    getString(R.string.back_question_10) to getString(R.string.no)
+                ) to getString(R.string.muscle_spasm) // "Muscle Spasm"
+            ),
+            getString(R.string.legs) to listOf(
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes), // "Do you have leg pain?" to "Yes"
+                    getString(R.string.legs_question_2) to getString(R.string.one), // "Is the pain in one or both legs?" to "One"
+                    getString(R.string.legs_question_3) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.legs_question_4) to getString(R.string.yes), // "Do you have swelling in the legs?" to "Yes"
+                    getString(R.string.legs_question_5) to getString(R.string.no), // "Do you experience cramping?" to "No"
+                    getString(R.string.legs_question_6) to getString(R.string.yes), // "Is the pain worse when walking?" to "Yes"
+                    getString(R.string.legs_question_7) to getString(R.string.no), // "Do you have a history of leg injuries?" to "No"
+                    getString(R.string.legs_question_8) to getString(R.string.yes), // "Do you experience tingling or numbness?" to "Yes"
+                    getString(R.string.legs_question_9) to getString(R.string.no), // "Is there any change in skin color?" to "No"
+                    getString(R.string.legs_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.deep_vein_thrombosis), // "Deep Vein Thrombosis (DVT)"
+
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes),
+                    getString(R.string.legs_question_2) to getString(R.string.both), // "Is the pain in one or both legs?" to "Both"
+                    getString(R.string.legs_question_3) to getString(R.string.dull), // "Is the pain sharp or dull?" to "Dull"
+                    getString(R.string.legs_question_4) to getString(R.string.yes),
+                    getString(R.string.legs_question_5) to getString(R.string.yes),
+                    getString(R.string.legs_question_6) to getString(R.string.no), // "Is the pain worse when walking?" to "No"
+                    getString(R.string.legs_question_7) to getString(R.string.no),
+                    getString(R.string.legs_question_8) to getString(R.string.no),
+                    getString(R.string.legs_question_9) to getString(R.string.yes), // "Is there any change in skin color?" to "Yes"
+                    getString(R.string.legs_question_10) to getString(R.string.yes) // "Do you have any other symptoms?" to "Yes"
+                ) to getString(R.string.peripheral_artery_disease), // "Peripheral Artery Disease (PAD)"
+
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes),
+                    getString(R.string.legs_question_2) to getString(R.string.one),
+                    getString(R.string.legs_question_3) to getString(R.string.sharp),
+                    getString(R.string.legs_question_4) to getString(R.string.no),
+                    getString(R.string.legs_question_5) to getString(R.string.no),
+                    getString(R.string.legs_question_6) to getString(R.string.yes),
+                    getString(R.string.legs_question_7) to getString(R.string.yes),
+                    getString(R.string.legs_question_8) to getString(R.string.yes),
+                    getString(R.string.legs_question_9) to getString(R.string.no),
+                    getString(R.string.legs_question_10) to getString(R.string.no)
+                ) to getString(R.string.muscle_strain), // "Muscle Strain"
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes),
+                    getString(R.string.legs_question_2) to getString(R.string.both),
+                    getString(R.string.legs_question_3) to getString(R.string.dull),
+                    getString(R.string.legs_question_4) to getString(R.string.yes),
+                    getString(R.string.legs_question_5) to getString(R.string.yes),
+                    getString(R.string.legs_question_6) to getString(R.string.yes),
+                    getString(R.string.legs_question_7) to getString(R.string.no),
+                    getString(R.string.legs_question_8) to getString(R.string.no),
+                    getString(R.string.legs_question_9) to getString(R.string.no),
+                    getString(R.string.legs_question_10) to getString(R.string.no)
+                ) to getString(R.string.varicose_veins),
+
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes),
+                    getString(R.string.legs_question_2) to getString(R.string.one),
+                    getString(R.string.legs_question_3) to getString(R.string.dull),
+                    getString(R.string.legs_question_4) to getString(R.string.no),
+                    getString(R.string.legs_question_5) to getString(R.string.yes),
+                    getString(R.string.legs_question_6) to getString(R.string.no),
+                    getString(R.string.legs_question_7) to getString(R.string.yes),
+                    getString(R.string.legs_question_8) to getString(R.string.yes),
+                    getString(R.string.legs_question_9) to getString(R.string.no),
+                    getString(R.string.legs_question_10) to getString(R.string.yes)
+                ) to getString(R.string.sciatica),
+
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes),
+                    getString(R.string.legs_question_2) to getString(R.string.both),
+                    getString(R.string.legs_question_3) to getString(R.string.sharp),
+                    getString(R.string.legs_question_4) to getString(R.string.no),
+                    getString(R.string.legs_question_5) to getString(R.string.no),
+                    getString(R.string.legs_question_6) to getString(R.string.yes),
+                    getString(R.string.legs_question_7) to getString(R.string.no),
+                    getString(R.string.legs_question_8) to getString(R.string.no),
+                    getString(R.string.legs_question_9) to getString(R.string.yes),
+                    getString(R.string.legs_question_10) to getString(R.string.no)
+                ) to getString(R.string.cellulitis),
+
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes),
+                    getString(R.string.legs_question_2) to getString(R.string.one),
+                    getString(R.string.legs_question_3) to getString(R.string.dull),
+                    getString(R.string.legs_question_4) to getString(R.string.yes),
+                    getString(R.string.legs_question_5) to getString(R.string.no),
+                    getString(R.string.legs_question_6) to getString(R.string.no),
+                    getString(R.string.legs_question_7) to getString(R.string.yes),
+                    getString(R.string.legs_question_8) to getString(R.string.no),
+                    getString(R.string.legs_question_9) to getString(R.string.yes),
+                    getString(R.string.legs_question_10) to getString(R.string.yes)
+                ) to getString(R.string.chronic_venous_insufficiency),
+                listOf(
+                    getString(R.string.legs_question_1) to getString(R.string.yes),
+                    getString(R.string.legs_question_2) to getString(R.string.both),
+                    getString(R.string.legs_question_3) to getString(R.string.dull),
+                    getString(R.string.legs_question_4) to getString(R.string.no),
+                    getString(R.string.legs_question_5) to getString(R.string.yes),
+                    getString(R.string.legs_question_6) to getString(R.string.no),
+                    getString(R.string.legs_question_7) to getString(R.string.no),
+                    getString(R.string.legs_question_8) to getString(R.string.no),
+                    getString(R.string.legs_question_9) to getString(R.string.yes),
+                    getString(R.string.legs_question_10) to getString(R.string.no)
+                ) to getString(R.string.varicose_veins)
+            ),
+            getString(R.string.arms) to listOf(
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes), // "Do you have arm pain?" to "Yes"
+                    getString(R.string.arms_question_2) to getString(R.string.one), // "Is the pain in one or both arms?" to "One"
+                    getString(R.string.arms_question_3) to getString(R.string.sharp), // "Is the pain sharp or dull?" to "Sharp"
+                    getString(R.string.arms_question_4) to getString(R.string.yes), // "Do you have weakness in the arms?" to "Yes"
+                    getString(R.string.arms_question_5) to getString(R.string.yes), // "Do you experience tingling or numbness?" to "Yes"
+                    getString(R.string.arms_question_6) to getString(R.string.no), // "Is the pain related to physical activity?" to "No"
+                    getString(R.string.arms_question_7) to getString(R.string.no), // "Do you have swelling in the arms?" to "No"
+                    getString(R.string.arms_question_8) to getString(R.string.no), // "Do you experience muscle cramps?" to "No"
+                    getString(R.string.arms_question_9) to getString(R.string.no), // "Do you have difficulty moving the arms?" to "No"
+                    getString(R.string.arms_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.muscle_strain), // "Muscle Strain"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.both), // "Is the pain in one or both arms?" to "Both"
+                    getString(R.string.arms_question_3) to getString(R.string.dull), // "Is the pain sharp or dull?" to "Dull"
+                    getString(R.string.arms_question_4) to getString(R.string.yes),
+                    getString(R.string.arms_question_5) to getString(R.string.yes),
+                    getString(R.string.arms_question_6) to getString(R.string.yes), // "Is the pain related to physical activity?" to "Yes"
+                    getString(R.string.arms_question_7) to getString(R.string.yes), // "Do you have swelling in the arms?" to "Yes"
+                    getString(R.string.arms_question_8) to getString(R.string.no),
+                    getString(R.string.arms_question_9) to getString(R.string.yes), // "Do you have difficulty moving the arms?" to "Yes"
+                    getString(R.string.arms_question_10) to getString(R.string.no) // "Do you have any other symptoms?" to "No"
+                ) to getString(R.string.tendinitis), // "Tendinitis"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.one),
+                    getString(R.string.arms_question_3) to getString(R.string.sharp),
+                    getString(R.string.arms_question_4) to getString(R.string.no),
+                    getString(R.string.arms_question_5) to getString(R.string.no),
+                    getString(R.string.arms_question_6) to getString(R.string.no),
+                    getString(R.string.arms_question_7) to getString(R.string.yes), // "Do you have swelling in the arms?" to "Yes"
+                    getString(R.string.arms_question_8) to getString(R.string.yes), // "Do you experience muscle cramps?" to "Yes"
+                    getString(R.string.arms_question_9) to getString(R.string.no),
+                    getString(R.string.arms_question_10) to getString(R.string.no)
+                ) to getString(R.string.overuse_syndrome), // "Overuse Syndrome"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.both),
+                    getString(R.string.arms_question_3) to getString(R.string.dull),
+                    getString(R.string.arms_question_4) to getString(R.string.yes),
+                    getString(R.string.arms_question_5) to getString(R.string.yes),
+                    getString(R.string.arms_question_6) to getString(R.string.yes),
+                    getString(R.string.arms_question_7) to getString(R.string.no),
+                    getString(R.string.arms_question_8) to getString(R.string.no),
+                    getString(R.string.arms_question_9) to getString(R.string.yes),
+                    getString(R.string.arms_question_10) to getString(R.string.no)
+                ) to getString(R.string.carpal_tunnel_syndrome), // "Carpal Tunnel Syndrome"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.one),
+                    getString(R.string.arms_question_3) to getString(R.string.sharp),
+                    getString(R.string.arms_question_4) to getString(R.string.yes),
+                    getString(R.string.arms_question_5) to getString(R.string.yes),
+                    getString(R.string.arms_question_6) to getString(R.string.no),
+                    getString(R.string.arms_question_7) to getString(R.string.no),
+                    getString(R.string.arms_question_8) to getString(R.string.no),
+                    getString(R.string.arms_question_9) to getString(R.string.no),
+                    getString(R.string.arms_question_10) to getString(R.string.no)
+                ) to getString(R.string.bursitis), // "Bursitis"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.both),
+                    getString(R.string.arms_question_3) to getString(R.string.dull),
+                    getString(R.string.arms_question_4) to getString(R.string.no),
+                    getString(R.string.arms_question_5) to getString(R.string.yes),
+                    getString(R.string.arms_question_6) to getString(R.string.no),
+                    getString(R.string.arms_question_7) to getString(R.string.no),
+                    getString(R.string.arms_question_8) to getString(R.string.no),
+                    getString(R.string.arms_question_9) to getString(R.string.yes),
+                    getString(R.string.arms_question_10) to getString(R.string.no)
+                ) to getString(R.string.swelling),// "Swelling"
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.one),
+                    getString(R.string.arms_question_3) to getString(R.string.dull),
+                    getString(R.string.arms_question_4) to getString(R.string.yes),
+                    getString(R.string.arms_question_5) to getString(R.string.no),
+                    getString(R.string.arms_question_6) to getString(R.string.yes),
+                    getString(R.string.arms_question_7) to getString(R.string.no),
+                    getString(R.string.arms_question_8) to getString(R.string.no),
+                    getString(R.string.arms_question_9) to getString(R.string.yes),
+                    getString(R.string.arms_question_10) to getString(R.string.yes)
+                ) to getString(R.string.nerve_compression), // "Nerve Compression"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.both),
+                    getString(R.string.arms_question_3) to getString(R.string.sharp),
+                    getString(R.string.arms_question_4) to getString(R.string.yes),
+                    getString(R.string.arms_question_5) to getString(R.string.yes),
+                    getString(R.string.arms_question_6) to getString(R.string.no),
+                    getString(R.string.arms_question_7) to getString(R.string.yes),
+                    getString(R.string.arms_question_8) to getString(R.string.no),
+                    getString(R.string.arms_question_9) to getString(R.string.yes),
+                    getString(R.string.arms_question_10) to getString(R.string.yes)
+                ) to getString(R.string.frozen_shoulder), // "Frozen Shoulder"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.one),
+                    getString(R.string.arms_question_3) to getString(R.string.dull),
+                    getString(R.string.arms_question_4) to getString(R.string.yes),
+                    getString(R.string.arms_question_5) to getString(R.string.yes),
+                    getString(R.string.arms_question_6) to getString(R.string.yes),
+                    getString(R.string.arms_question_7) to getString(R.string.no),
+                    getString(R.string.arms_question_8) to getString(R.string.no),
+                    getString(R.string.arms_question_9) to getString(R.string.yes),
+                    getString(R.string.arms_question_10) to getString(R.string.no)
+                ) to getString(R.string.tendinitis), // "Tendinitis"
+
+                listOf(
+                    getString(R.string.arms_question_1) to getString(R.string.yes),
+                    getString(R.string.arms_question_2) to getString(R.string.both),
+                    getString(R.string.arms_question_3) to getString(R.string.sharp),
+                    getString(R.string.arms_question_4) to getString(R.string.no),
+                    getString(R.string.arms_question_5) to getString(R.string.no),
+                    getString(R.string.arms_question_6) to getString(R.string.no),
+                    getString(R.string.arms_question_7) to getString(R.string.yes),
+                    getString(R.string.arms_question_8) to getString(R.string.yes),
+                    getString(R.string.arms_question_9) to getString(R.string.no),
+                    getString(R.string.arms_question_10) to getString(R.string.no)
+                ) to getString(R.string.myopathy) // "Myopathy"
+            ),
+            getString(R.string.joints) to listOf(
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.one),
+                    getString(R.string.joints_question_3) to getString(R.string.yes),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.constant),
+                    getString(R.string.joints_question_6) to getString(R.string.no),
+                    getString(R.string.joints_question_7) to getString(R.string.yes),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.yes),
+                    getString(R.string.joints_question_10) to getString(R.string.no)
+                ) to getString(R.string.osteoarthritis),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.multiple),
+                    getString(R.string.joints_question_3) to getString(R.string.yes),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.intermittent),
+                    getString(R.string.joints_question_6) to getString(R.string.yes),
+                    getString(R.string.joints_question_7) to getString(R.string.yes),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.yes),
+                    getString(R.string.joints_question_10) to getString(R.string.no)
+                ) to getString(R.string.rheumatoid_arthritis),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.one),
+                    getString(R.string.joints_question_3) to getString(R.string.no),
+                    getString(R.string.joints_question_4) to getString(R.string.no),
+                    getString(R.string.joints_question_5) to getString(R.string.intermittent),
+                    getString(R.string.joints_question_6) to getString(R.string.no),
+                    getString(R.string.joints_question_7) to getString(R.string.no),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.no),
+                    getString(R.string.joints_question_10) to getString(R.string.no)
+                ) to getString(R.string.tendinitis),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.multiple),
+                    getString(R.string.joints_question_3) to getString(R.string.yes),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.constant),
+                    getString(R.string.joints_question_6) to getString(R.string.yes),
+                    getString(R.string.joints_question_7) to getString(R.string.no),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.yes),
+                    getString(R.string.joints_question_10) to getString(R.string.yes)
+                ) to getString(R.string.gout),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.one),
+                    getString(R.string.joints_question_3) to getString(R.string.yes),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.intermittent),
+                    getString(R.string.joints_question_6) to getString(R.string.no),
+                    getString(R.string.joints_question_7) to getString(R.string.yes),
+                    getString(R.string.joints_question_8) to getString(R.string.no),
+                    getString(R.string.joints_question_9) to getString(R.string.yes),
+                    getString(R.string.joints_question_10) to getString(R.string.no)
+                ) to getString(R.string.bursitis),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.multiple),
+                    getString(R.string.joints_question_3) to getString(R.string.no),
+                    getString(R.string.joints_question_4) to getString(R.string.no),
+                    getString(R.string.joints_question_5) to getString(R.string.constant),
+                    getString(R.string.joints_question_6) to getString(R.string.yes),
+                    getString(R.string.joints_question_7) to getString(R.string.yes),
+                    getString(R.string.joints_question_8) to getString(R.string.no),
+                    getString(R.string.joints_question_9) to getString(R.string.no),
+                    getString(R.string.joints_question_10) to getString(R.string.no)
+                ) to getString(R.string.psoriatic_arthritis),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.one),
+                    getString(R.string.joints_question_3) to getString(R.string.no),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.intermittent),
+                    getString(R.string.joints_question_6) to getString(R.string.no),
+                    getString(R.string.joints_question_7) to getString(R.string.no),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.no),
+                    getString(R.string.joints_question_10) to getString(R.string.no)
+                ) to getString(R.string.ligament_sprain),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.multiple),
+                    getString(R.string.joints_question_3) to getString(R.string.yes),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.constant),
+                    getString(R.string.joints_question_6) to getString(R.string.yes),
+                    getString(R.string.joints_question_7) to getString(R.string.yes),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.yes),
+                    getString(R.string.joints_question_10) to getString(R.string.yes)
+                ) to getString(R.string.reactive_arthritis),
+
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.one),
+                    getString(R.string.joints_question_3) to getString(R.string.no),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.intermittent),
+                    getString(R.string.joints_question_6) to getString(R.string.no),
+                    getString(R.string.joints_question_7) to getString(R.string.yes),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.yes),
+                    getString(R.string.joints_question_10) to getString(R.string.yes)
+                ) to getString(R.string.scleroderma),
+                listOf(
+                    getString(R.string.joints_question_1) to getString(R.string.yes),
+                    getString(R.string.joints_question_2) to getString(R.string.multiple),
+                    getString(R.string.joints_question_3) to getString(R.string.yes),
+                    getString(R.string.joints_question_4) to getString(R.string.yes),
+                    getString(R.string.joints_question_5) to getString(R.string.constant),
+                    getString(R.string.joints_question_6) to getString(R.string.yes),
+                    getString(R.string.joints_question_7) to getString(R.string.no),
+                    getString(R.string.joints_question_8) to getString(R.string.yes),
+                    getString(R.string.joints_question_9) to getString(R.string.yes),
+                    getString(R.string.joints_question_10) to getString(R.string.yes)
+                ) to getString(R.string.systemic_lupus_erythematosus),
+            ),
+            getString(R.string.feet) to listOf(
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.one),
+                    getString(R.string.feet_question_3) to getString(R.string.yes),
+                    getString(R.string.feet_question_4) to getString(R.string.no),
+                    getString(R.string.feet_question_5) to getString(R.string.sharp),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.no),
+                    getString(R.string.feet_question_8) to getString(R.string.yes),
+                    getString(R.string.feet_question_9) to getString(R.string.no),
+                    getString(R.string.feet_question_10) to getString(R.string.no)
+                ) to getString(R.string.plantar_fasciitis),
+
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.both),
+                    getString(R.string.feet_question_3) to getString(R.string.yes),
+                    getString(R.string.feet_question_4) to getString(R.string.yes),
+                    getString(R.string.feet_question_5) to getString(R.string.dull),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.no),
+                    getString(R.string.feet_question_8) to getString(R.string.no),
+                    getString(R.string.feet_question_9) to getString(R.string.yes),
+                    getString(R.string.feet_question_10) to getString(R.string.yes)
+                ) to getString(R.string.peripheral_neuropathy),
+
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.one),
+                    getString(R.string.feet_question_3) to getString(R.string.no),
+                    getString(R.string.feet_question_4) to getString(R.string.no),
+                    getString(R.string.feet_question_5) to getString(R.string.sharp),
+                    getString(R.string.feet_question_6) to getString(R.string.no),
+                    getString(R.string.feet_question_7) to getString(R.string.yes),
+                    getString(R.string.feet_question_8) to getString(R.string.yes),
+                    getString(R.string.feet_question_9) to getString(R.string.no),
+                    getString(R.string.feet_question_10) to getString(R.string.no)
+                ) to getString(R.string.foot_sprain),
+
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.both),
+                    getString(R.string.feet_question_3) to getString(R.string.yes),
+                    getString(R.string.feet_question_4) to getString(R.string.no),
+                    getString(R.string.feet_question_5) to getString(R.string.dull),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.no),
+                    getString(R.string.feet_question_8) to getString(R.string.no),
+                    getString(R.string.feet_question_9) to getString(R.string.yes),
+                    getString(R.string.feet_question_10) to getString(R.string.yes)
+                ) to getString(R.string.gout),
+
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.one),
+                    getString(R.string.feet_question_3) to getString(R.string.no),
+                    getString(R.string.feet_question_4) to getString(R.string.yes),
+                    getString(R.string.feet_question_5) to getString(R.string.sharp),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.no),
+                    getString(R.string.feet_question_8) to getString(R.string.no),
+                    getString(R.string.feet_question_9) to getString(R.string.no),
+                    getString(R.string.feet_question_10) to getString(R.string.no)
+                ) to getString(R.string.mortons_neuroma),
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.both),
+                    getString(R.string.feet_question_3) to getString(R.string.no),
+                    getString(R.string.feet_question_4) to getString(R.string.no),
+                    getString(R.string.feet_question_5) to getString(R.string.dull),
+                    getString(R.string.feet_question_6) to getString(R.string.no),
+                    getString(R.string.feet_question_7) to getString(R.string.no),
+                    getString(R.string.feet_question_8) to getString(R.string.no),
+                    getString(R.string.feet_question_9) to getString(R.string.no),
+                    getString(R.string.feet_question_10) to getString(R.string.yes)
+                ) to getString(R.string.flat_feet),
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.one),
+                    getString(R.string.feet_question_3) to getString(R.string.yes),
+                    getString(R.string.feet_question_4) to getString(R.string.no),
+                    getString(R.string.feet_question_5) to getString(R.string.dull),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.yes),
+                    getString(R.string.feet_question_8) to getString(R.string.yes),
+                    getString(R.string.feet_question_9) to getString(R.string.no),
+                    getString(R.string.feet_question_10) to getString(R.string.yes)
+                ) to getString(R.string.tendinitis),
+
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.both),
+                    getString(R.string.feet_question_3) to getString(R.string.yes),
+                    getString(R.string.feet_question_4) to getString(R.string.yes),
+                    getString(R.string.feet_question_5) to getString(R.string.dull),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.no),
+                    getString(R.string.feet_question_8) to getString(R.string.yes),
+                    getString(R.string.feet_question_9) to getString(R.string.no),
+                    getString(R.string.feet_question_10) to getString(R.string.yes)
+                ) to getString(R.string.diabetic_foot),
+
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.one),
+                    getString(R.string.feet_question_3) to getString(R.string.no),
+                    getString(R.string.feet_question_4) to getString(R.string.yes),
+                    getString(R.string.feet_question_5) to getString(R.string.sharp),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.no),
+                    getString(R.string.feet_question_8) to getString(R.string.no),
+                    getString(R.string.feet_question_9) to getString(R.string.yes),
+                    getString(R.string.feet_question_10) to getString(R.string.no)
+                ) to getString(R.string.nerve_compression),
+
+                listOf(
+                    getString(R.string.feet_question_1) to getString(R.string.yes),
+                    getString(R.string.feet_question_2) to getString(R.string.both),
+                    getString(R.string.feet_question_3) to getString(R.string.yes),
+                    getString(R.string.feet_question_4) to getString(R.string.no),
+                    getString(R.string.feet_question_5) to getString(R.string.dull),
+                    getString(R.string.feet_question_6) to getString(R.string.yes),
+                    getString(R.string.feet_question_7) to getString(R.string.yes),
+                    getString(R.string.feet_question_8) to getString(R.string.no),
+                    getString(R.string.feet_question_9) to getString(R.string.no),
+                    getString(R.string.feet_question_10) to getString(R.string.yes)
+                ) to getString(R.string.arthritis)
+            ),
+            getString(R.string.neck) to listOf(
+                listOf(
+                    getString(R.string.neck_question_1) to getString(R.string.yes),
+                    getString(R.string.neck_question_2) to getString(R.string.sharp),
+                    getString(R.string.neck_question_3) to getString(R.string.yes),
+                    getString(R.string.neck_question_4) to getString(R.string.yes),
+                    getString(R.string.neck_question_5) to getString(R.string.no),
+                    getString(R.string.neck_question_6) to getString(R.string.no),
+                    getString(R.string.neck_question_7) to getString(R.string.yes),
+                    getString(R.string.neck_question_8) to getString(R.string.no),
+                    getString(R.string.neck_question_9) to getString(R.string.yes),
+                    getString(R.string.neck_question_10) to getString(R.string.no)
+                ) to getString(R.string.cervical_strain),
+
+                listOf(
+                    getString(R.string.neck_question_1) to getString(R.string.yes),
+                    getString(R.string.neck_question_2) to getString(R.string.dull),
+                    getString(R.string.neck_question_3) to getString(R.string.no),
+                    getString(R.string.neck_question_4) to getString(R.string.yes),
+                    getString(R.string.neck_question_5) to getString(R.string.yes),
+                    getString(R.string.neck_question_6) to getString(R.string.yes),
+                    getString(R.string.neck_question_7) to getString(R.string.no),
+                    getString(R.string.neck_question_8) to getString(R.string.yes),
+                    getString(R.string.neck_question_9) to getString(R.string.yes),
+                    getString(R.string.neck_question_10) to getString(R.string.yes)
+                ) to getString(R.string.herniated_disc),
+
+                listOf(
+                    getString(R.string.neck_question_1) to getString(R.string.yes),
+                    getString(R.string.neck_question_2) to getString(R.string.sharp),
+                    getString(R.string.neck_question_3) to getString(R.string.yes),
+                    getString(R.string.neck_question_4) to getString(R.string.no),
+                    getString(R.string.neck_question_5) to getString(R.string.no),
+                    getString(R.string.neck_question_6) to getString(R.string.no),
+                    getString(R.string.neck_question_7) to getString(R.string.no),
+                    getString(R.string.neck_question_8) to getString(R.string.no),
+                    getString(R.string.neck_question_9) to getString(R.string.no),
+                    getString(R.string.neck_question_10) to getString(R.string.no)
+                ) to getString(R.string.muscle_strain),
+
+                listOf(
+                    getString(R.string.neck_question_1) to getString(R.string.yes),
+                    getString(R.string.neck_question_2) to getString(R.string.dull),
+                    getString(R.string.neck_question_3) to getString(R.string.no),
+                    getString(R.string.neck_question_4) to getString(R.string.yes),
+                    getString(R.string.neck_question_5) to getString(R.string.yes),
+                    getString(R.string.neck_question_6) to getString(R.string.no),
+                    getString(R.string.neck_question_7) to getString(R.string.yes),
+                    getString(R.string.neck_question_8) to getString(R.string.yes),
+                    getString(R.string.neck_question_9) to getString(R.string.no),
+                    getString(R.string.neck_question_10) to getString(R.string.yes)
+                ) to getString(R.string.spinal_stenosis),
+
+                listOf(
+                    getString(R.string.neck_question_1) to getString(R.string.yes),
+                    getString(R.string.neck_question_2) to getString(R.string.sharp),
+                    getString(R.string.neck_question_3) to getString(R.string.yes),
+                    getString(R.string.neck_question_4) to getString(R.string.yes),
+                    getString(R.string.neck_question_5) to getString(R.string.no),
+                    getString(R.string.neck_question_6) to getString(R.string.yes),
+                    getString(R.string.neck_question_7) to getString(R.string.no),
+                    getString(R.string.neck_question_8) to getString(R.string.no),
+                    getString(R.string.neck_question_9) to getString(R.string.yes),
+                    getString(R.string.neck_question_10) to getString(R.string.no)
+                ) to getString(R.string.nerve_compression),
+                listOf(
+                    getString(R.string.neck_question_1) to getString(R.string.yes),
+                    getString(R.string.neck_question_2) to getString(R.string.dull),
+                    getString(R.string.neck_question_3) to getString(R.string.no),
+                    getString(R.string.neck_question_4) to getString(R.string.no),
+                    getString(R.string.neck_question_5) to getString(R.string.yes),
+                    getString(R.string.neck_question_6) to getString(R.string.no),
+                    getString(R.string.neck_question_7) to getString(R.string.no),
+                    getString(R.string.neck_question_8) to getString(R.string.yes),
+                    getString(R.string.neck_question_9) to getString(R.string.no),
+                    getString(R.string.neck_question_10) to getString(R.string.yes)
+                ) to getString(R.string.osteoarthritis),
+
+                listOf(
+                    getString(R.string.neck_question_1) to getString(R.string.yes),
+                    getString(R.string.neck_question_2) to getString(R.string.sharp),
+                    getString(R.string.neck_question_3) to getString(R.string.yes),
+                    getString(R.string.neck_question_4) to getString(R.string.yes),
+                    getString(R.string.neck_question_5) to getString(R.string.no),
+                    getString(R.string.neck_question_6) to getString(R.string.yes),
+                    getString(R.string.neck_question_7) to getString(R.string.no),
+                    getString(R.string.neck_question_8) to getString(R.string.no),
+                    getString(R.string.neck_question_9) to getString(R.string.yes),
+                    getString(R.string.neck_question_10) to getString(R.string.no)
+                ) to getString(R.string.rheumatoid_arthritis)
+            ),
+            getString(R.string.hands) to listOf(
+                listOf(
+                    getString(R.string.hands_question_1) to getString(R.string.yes),
+                    getString(R.string.hands_question_2) to getString(R.string.one),
+                    getString(R.string.hands_question_3) to getString(R.string.yes),
+                    getString(R.string.hands_question_4) to getString(R.string.no),
+                    getString(R.string.hands_question_5) to getString(R.string.sharp),
+                    getString(R.string.hands_question_6) to getString(R.string.yes),
+                    getString(R.string.hands_question_7) to getString(R.string.no),
+                    getString(R.string.hands_question_8) to getString(R.string.yes),
+                    getString(R.string.hands_question_9) to getString(R.string.no),
+                    getString(R.string.hands_question_10) to getString(R.string.no)
+                ) to getString(R.string.carpal_tunnel_syndrome),
+
+                listOf(
+                    getString(R.string.hands_question_1) to getString(R.string.yes),
+                    getString(R.string.hands_question_2) to getString(R.string.both),
+                    getString(R.string.hands_question_3) to getString(R.string.no),
+                    getString(R.string.hands_question_4) to getString(R.string.yes),
+                    getString(R.string.hands_question_5) to getString(R.string.dull),
+                    getString(R.string.hands_question_6) to getString(R.string.no),
+                    getString(R.string.hands_question_7) to getString(R.string.yes),
+                    getString(R.string.hands_question_8) to getString(R.string.no),
+                    getString(R.string.hands_question_9) to getString(R.string.yes),
+                    getString(R.string.hands_question_10) to getString(R.string.yes)
+                ) to getString(R.string.rheumatoid_arthritis),
+
+                listOf(
+                    getString(R.string.hands_question_1) to getString(R.string.yes),
+                    getString(R.string.hands_question_2) to getString(R.string.one),
+                    getString(R.string.hands_question_3) to getString(R.string.yes),
+                    getString(R.string.hands_question_4) to getString(R.string.yes),
+                    getString(R.string.hands_question_5) to getString(R.string.sharp),
+                    getString(R.string.hands_question_6) to getString(R.string.yes),
+                    getString(R.string.hands_question_7) to getString(R.string.no),
+                    getString(R.string.hands_question_8) to getString(R.string.yes),
+                    getString(R.string.hands_question_9) to getString(R.string.no),
+                    getString(R.string.hands_question_10) to getString(R.string.no)
+                ) to getString(R.string.gout),
+
+                listOf(
+                    getString(R.string.hands_question_1) to getString(R.string.yes),
+                    getString(R.string.hands_question_2) to getString(R.string.both),
+                    getString(R.string.hands_question_3) to getString(R.string.no),
+                    getString(R.string.hands_question_4) to getString(R.string.no),
+                    getString(R.string.hands_question_5) to getString(R.string.dull),
+                    getString(R.string.hands_question_6) to getString(R.string.no),
+                    getString(R.string.hands_question_7) to getString(R.string.yes),
+                    getString(R.string.hands_question_8) to getString(R.string.no),
+                    getString(R.string.hands_question_9) to getString(R.string.yes),
+                    getString(R.string.hands_question_10) to getString(R.string.yes)
+                ) to getString(R.string.tendonitis),
+
+                listOf(
+                    getString(R.string.hands_question_1) to getString(R.string.yes),
+                    getString(R.string.hands_question_2) to getString(R.string.one),
+                    getString(R.string.hands_question_3) to getString(R.string.yes),
+                    getString(R.string.hands_question_4) to getString(R.string.no),
+                    getString(R.string.hands_question_5) to getString(R.string.sharp),
+                    getString(R.string.hands_question_6) to getString(R.string.yes),
+                    getString(R.string.hands_question_7) to getString(R.string.no),
+                    getString(R.string.hands_question_8) to getString(R.string.yes),
+                    getString(R.string.hands_question_9) to getString(R.string.yes),
+                    getString(R.string.hands_question_10) to getString(R.string.no)
+                ) to getString(R.string.osteoarthritis),
+
+                listOf(
+                    getString(R.string.hands_question_1) to getString(R.string.yes),
+                    getString(R.string.hands_question_2) to getString(R.string.both),
+                    getString(R.string.hands_question_3) to getString(R.string.yes),
+                    getString(R.string.hands_question_4) to getString(R.string.yes),
+                    getString(R.string.hands_question_5) to getString(R.string.sharp),
+                    getString(R.string.hands_question_6) to getString(R.string.yes),
+                    getString(R.string.hands_question_7) to getString(R.string.yes),
+                    getString(R.string.hands_question_8) to getString(R.string.yes),
+                    getString(R.string.hands_question_9) to getString(R.string.no),
+                    getString(R.string.hands_question_10) to getString(R.string.no)
+                ) to getString(R.string.de_quervains_tenosynovitis)
+            ),
+            getString(R.string.stomach) to listOf(
+                listOf(
+                    getString(R.string.stomach_question_1) to getString(R.string.yes),
+                    getString(R.string.stomach_question_2) to getString(R.string.sharp),
+                    getString(R.string.stomach_question_3) to getString(R.string.yes),
+                    getString(R.string.stomach_question_4) to getString(R.string.constant),
+                    getString(R.string.stomach_question_5) to getString(R.string.no),
+                    getString(R.string.stomach_question_6) to getString(R.string.no),
+                    getString(R.string.stomach_question_7) to getString(R.string.yes),
+                    getString(R.string.stomach_question_8) to getString(R.string.no),
+                    getString(R.string.stomach_question_9) to getString(R.string.yes),
+                    getString(R.string.stomach_question_10) to getString(R.string.no)
+                ) to getString(R.string.gastritis),
+
+                listOf(
+                    getString(R.string.stomach_question_1) to getString(R.string.yes),
+                    getString(R.string.stomach_question_2) to getString(R.string.cramping),
+                    getString(R.string.stomach_question_3) to getString(R.string.no),
+                    getString(R.string.stomach_question_4) to getString(R.string.intermittent),
+                    getString(R.string.stomach_question_5) to getString(R.string.yes),
+                    getString(R.string.stomach_question_6) to getString(R.string.yes),
+                    getString(R.string.stomach_question_7) to getString(R.string.yes),
+                    getString(R.string.stomach_question_8) to getString(R.string.yes),
+                    getString(R.string.stomach_question_9) to getString(R.string.no),
+                    getString(R.string.stomach_question_10) to getString(R.string.yes)
+                ) to getString(R.string.irritable_bowel_syndrome),
+
+                listOf(
+                    getString(R.string.stomach_question_1) to getString(R.string.yes),
+                    getString(R.string.stomach_question_2) to getString(R.string.sharp),
+                    getString(R.string.stomach_question_3) to getString(R.string.yes),
+                    getString(R.string.stomach_question_4) to getString(R.string.constant),
+                    getString(R.string.stomach_question_5) to getString(R.string.no),
+                    getString(R.string.stomach_question_6) to getString(R.string.no),
+                    getString(R.string.stomach_question_7) to getString(R.string.no),
+                    getString(R.string.stomach_question_8) to getString(R.string.no),
+                    getString(R.string.stomach_question_9) to getString(R.string.yes),
+                    getString(R.string.stomach_question_10) to getString(R.string.no)
+                ) to getString(R.string.peptic_ulcer),
+
+                listOf(
+                    getString(R.string.stomach_question_1) to getString(R.string.yes),
+                    getString(R.string.stomach_question_2) to getString(R.string.cramping),
+                    getString(R.string.stomach_question_3) to getString(R.string.no),
+                    getString(R.string.stomach_question_4) to getString(R.string.intermittent),
+                    getString(R.string.stomach_question_5) to getString(R.string.no),
+                    getString(R.string.stomach_question_6) to getString(R.string.yes),
+                    getString(R.string.stomach_question_7) to getString(R.string.yes),
+                    getString(R.string.stomach_question_8) to getString(R.string.yes),
+                    getString(R.string.stomach_question_9) to getString(R.string.no),
+                    getString(R.string.stomach_question_10) to getString(R.string.yes)
+                ) to getString(R.string.constipation),
+
+                listOf(
+                    getString(R.string.stomach_question_1) to getString(R.string.yes),
+                    getString(R.string.stomach_question_2) to getString(R.string.cramping),
+                    getString(R.string.stomach_question_3) to getString(R.string.no),
+                    getString(R.string.stomach_question_4) to getString(R.string.constant),
+                    getString(R.string.stomach_question_5) to getString(R.string.yes),
+                    getString(R.string.stomach_question_6) to getString(R.string.no),
+                    getString(R.string.stomach_question_7) to getString(R.string.yes),
+                    getString(R.string.stomach_question_8) to getString(R.string.no),
+                    getString(R.string.stomach_question_9) to getString(R.string.yes),
+                    getString(R.string.stomach_question_10) to getString(R.string.no)
+                ) to getString(R.string.gastroenteritis)
+            )
+        )
+
+        val possibleConditions = diagnosisOptions[painLocation]?.map { (criteria, condition) ->
+            val matchingCriteria = criteria.count { (question, answer) ->
+                answersSelected[question] == answer
+            }
+            val confidencePercentage = (matchingCriteria.toDouble() / criteria.size * 100).toInt()
+            condition to confidencePercentage
+        } ?: emptyList()
+
+        val bestMatch = possibleConditions.maxByOrNull { it.second }
+            ?: getString(R.string.unknown_condition) to 0
+
+        return "${getString(R.string.possible_condition)} ${bestMatch.first} (${getString(R.string.confidence)} ${bestMatch.second}%)"
     }
 
     private fun showAlert() {
         val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_custom, null)
-        val imageView: ImageView = dialogView.findViewById(R.id.dialog_image)
         val messageTextView: TextView = dialogView.findViewById(R.id.dialog_message)
         val okButton: Button = dialogView.findViewById(R.id.dialog_button)
 
-        messageTextView.text =
-            "It's still advisable to see a personal health authority for a more accurate analysis."
+        messageTextView.text = getString(R.string.advisory_message)
 
         val dialog = AlertDialog.Builder(this)
             .setView(dialogView)

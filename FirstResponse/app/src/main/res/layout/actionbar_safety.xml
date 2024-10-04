@@ -21,13 +21,13 @@
         android:background="@drawable/rounded_background"
         android:layout_centerHorizontal="true"
         android:contentDescription="Icon"
-        android:src="@drawable/shield" />
+        android:src="@drawable/vest" />
 
     <TextView
         android:id="@+id/action_bar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SAFETY AND PREPAREDNESS"
+        android:text="@string/safety_preparedness_t"
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:fontFamily="@font/montserrat_bold"
@@ -43,5 +43,6 @@
         android:layout_marginStart="10dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="Back"
+        android:layout_marginTop="10dp"
         android:src="@drawable/back" />
 </RelativeLayout>

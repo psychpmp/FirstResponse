@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">FirstResponse</string>
-    <string name="home">Home</string>
     <string name="about_us">About Us</string>
     <string name="website">Website</string>
     <string name="url">https://redcrosskarnataka.org/</string>
@@ -805,6 +804,14 @@ Act to break the contact between the casualty and the electrical supply. If poss
     <string name="safety_pins_description">Safety pins are versatile tools used for securing bandages, dressings, and other first aid supplies. They are helpful in holding materials in place during wound care.</string>
     <string name="emergency_blanket_description">Emergency blankets provide warmth in critical situations, such as when exposed to cold weather or after shock. They are compact and essential for outdoor and survival situations.</string>
     <string name="mask_description">Medical masks are used to protect against airborne particles and reduce the risk of infection. They are crucial for preventing the spread of respiratory illnesses and ensuring safety in medical environments.</string>
+    <string name="splint_description">A splint is used to immobilize and protect an injured limb, reducing movement and preventing further injury until medical assistance can be provided.</string>
+    <string name="eye_wash_description">Eye wash solutions are used to rinse and cleanse the eyes in case of exposure to harmful substances or debris, helping to reduce irritation and prevent serious eye damage.</string>
+    <string name="hand_sanitizer_description">Hand sanitizer is a quick and effective solution for disinfecting hands, eliminating bacteria and viruses when soap and water are not available.</string>
+    <string name="cotton_balls_description">Cotton balls are soft, absorbent tools used for cleaning wounds, applying antiseptics, or other medical purposes in a first aid kit.</string>
+    <string name="burn_gel_description">Burn gel is used to soothe and protect minor burns, cooling the skin and relieving pain while preventing infection.</string>
+    <string name="trauma_pad_description">Trauma pads are large, absorbent pads designed to manage heavy bleeding and provide protection for large wounds or injuries.</string>
+    <string name="finger_splint_description">A finger splint immobilizes and protects injured fingers, helping to reduce pain and prevent further damage during the healing process.</string>
+
 
     <string name="shop_now">Shop Now</string>
     <string name="kit_image_desc">Description of the first aid kit image</string>
@@ -819,6 +826,336 @@ Act to break the contact between the casualty and the electrical supply. If poss
     <string name="ligao_city_hospital_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
     <string name="duran_hospital_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
     <string name="ligao_rhu_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
+
+    //OTHER ONES
+        <string name="start_text">Start</string>
+        <string name="saved">Saved</string>
+        <string name="home">Home</string>
+        <string name="helpline">Helpline</string>
+        <string name="first_aid_kits">FIRST AID KITS YOU NEED</string>
+        <string name="basic_first_aid">BASIC FIRST AID</string>
+        <string name="psychological_first_aid">PSYCHOLOGICAL FIRST AID</string>
+        <string name="disaster_management">DISASTER MANAGEMENT</string>
+        <string name="basic_sanitation_t">BASIC SANITATION</string>
+        <string name="test_your_knowledge">TEST YOUR KNOWLEDGE!</string>
+        <string name="safety_preparedness">SAFETY AND &#10;PREPAREDNESS</string>
+        <string name="whats_wrong">WHAT\'S WRONG?</string>
+        <string name="safety_preparedness_t">SAFETY AND PREPAREDNESS</string>
+
+
+        <string name="burns_t">BURNS</string>
+        <string name="choking_t">CHOKING</string>
+        <string name="cpr_t">CPR</string>
+        <string name="splints_t">SPLINTS</string>
+        <string name="seizures_t">SEIZURES</string>
+        <string name="shock_t">SHOCK</string>
+        <string name="bleeding_t">BLEEDING</string>
+        <string name="snake_bite_t">SNAKE BITE</string>
+        <string name="insect_bites_t">INSECT BITES/STING</string>
+        <string name="bruises_t">BRUISES</string>
+        <string name="sprains_t">SPRAINS</string>
+        <string name="strains_t">STRAINS</string>
+        <string name="nose_bleeds_t">NOSE BLEEDS</string>
+        <string name="allergic_reactions_t">ALLERGIC REACTIONS</string>
+        <string name="headaches_t">HEADACHES</string>
+        <string name="minor_concussions_t">MINOR CONCUSSIONS</string>
+        <string name="muscle_cramps_t">MUSCLE CRAMPS</string>
+        <string name="blisters_t">BLISTERS</string>
+
+    <string name="acute_grief_t">ACUTE GRIEF</string>
+    <string name="anxiety_management_t">ANXIETY MANAGEMENT</string>
+    <string name="panic_attack_response_t">PANIC ATTACK RESPONSE</string>
+    <string name="trauma_informed_care_t">TRAUMA- INFORMED CARE</string>
+    <string name="grounding_techniques_t">GROUNDING TECHNIQUES</string>
+    <string name="stress_reduction_t">STRESS REDUCTION</string>
+
+    <string name="floods_t">FLOODS</string>
+    <string name="earthquake_t">EARTHQUAKE</string>
+    <string name="volcanic_eruption_t">VOLCANIC ERUPTION</string>
+    <string name="epidemic_t">EPIDEMIC</string>
+
+    <string name="water_safety_t">WATER SAFETY</string>
+    <string name="road_safety_t">ROAD SAFETY</string>
+    <string name="daily_food_safety_t">DAILY FOOD SAFETY</string>
+    <string name="emergency_food_safety_t">EMERGENCY FOOD SAFETY</string>
+    <string name="heatwave_t">HEATWAVE</string>
+
+    <string name="location_t">Location</string>
+    <string name="language_t">Language</string>
+    <string name="credits_t">Credits</string>
+    <string name="suggestions_t">Suggestions</string>
+
+    <string name="quiz_level">Quiz Level</string>
+
+    <string name="when_symptom_started">When did the symptom start?</string>
+    <string name="where_pain_originate">Where does the pain or discomfort originate?</string>
+    <string name="head">Head</string>
+    <string name="chest">Chest</string>
+    <string name="head_question_1">Do you have a headache?</string>
+    <string name="head_question_2">Is the pain localized or diffuse?</string>
+    <string name="head_question_3">Do you experience nausea?</string>
+    <string name="head_question_4">Do you have sensitivity to light?</string>
+    <string name="head_question_5">Is the headache severe?</string>
+    <string name="head_question_6">Does the pain get worse with activity?</string>
+    <string name="head_question_7">Have you had similar headaches before?</string>
+    <string name="head_question_8">Are you experiencing any vision changes?</string>
+    <string name="head_question_9">Do you have any other symptoms?</string>
+    <string name="head_question_10">Is there a family history of headaches?</string>
+
+    <string name="chest_question_1">Do you have chest pain?</string>
+    <string name="chest_question_2">Is the pain sharp or dull?</string>
+    <string name="chest_question_3">Does the pain radiate to other areas?</string>
+    <string name="chest_question_4">Do you have difficulty breathing?</string>
+    <string name="chest_question_5">Is the pain constant or intermittent?</string>
+    <string name="chest_question_6">Do you experience nausea?</string>
+    <string name="chest_question_7">Is the pain related to physical activity?</string>
+    <string name="chest_question_8">Do you have a history of any chronic health conditions?</string>
+    <string name="chest_question_9">Are you experiencing sweating/bloating/wheezing/tenderness?</string>
+    <string name="chest_question_10">Do you have any other symptoms?</string>
+
+
+    <!-- Pain Locations -->
+    <string name="abdomen">Abdomen</string>
+    <string name="back">Back</string>
+    <string name="legs">Legs</string>
+    <string name="arms">Arms</string>
+    <string name="joints">Joints</string>
+    <string name="feet">Feet</string>
+    <string name="neck">Neck</string>
+    <string name="hands">Hands</string>
+    <string name="stomach">Stomach</string>
+
+    <!-- Abdomen Questions -->
+    <string name="abdomen_question_1">Do you feel any abdominal pain?</string>
+    <string name="abdomen_question_2">Is the pain localized or diffuse?</string>
+    <string name="abdomen_question_3">Is the pain cramping or sharp?</string>
+    <string name="abdomen_question_4">Is there any nausea associated with the pain?</string>
+    <string name="abdomen_question_5">Do you have a loss of appetite?</string>
+    <string name="abdomen_question_6">Is the pain worsened by movement?</string>
+    <string name="abdomen_question_7">Have you experienced any weight loss?</string>
+    <string name="abdomen_question_8">Is there any swelling in your abdomen?</string>
+    <string name="abdomen_question_9">Do you have any fever?</string>
+    <string name="abdomen_question_10">Is the pain affecting your daily activities?</string>
+
+
+    <string name="back_question_1">Do you have back pain?</string>
+    <string name="back_question_2">Is the pain in the upper or lower back?</string>
+    <string name="back_question_3">Is the pain sharp or dull?</string>
+    <string name="back_question_4">Does the pain radiate down your legs?</string>
+    <string name="back_question_5">Is there any tingling or numbness?</string>
+    <string name="back_question_6">Does the pain worsen with certain positions?</string>
+    <string name="back_question_7">Is the pain worse when standing or sitting?</string>
+    <string name="back_question_8">Does physical activity relieve the pain?</string>
+    <string name="back_question_9">Is the pain affecting your sleep?</string>
+    <string name="back_question_10">Do you have any other symptoms like fever or chills?</string>
+
+
+    <!-- Legs Questions -->
+    <string name="legs_question_1">Do you have leg pain?</string>
+    <string name="legs_question_2">Is the pain in one or both legs?</string>
+    <string name="legs_question_3">Is the pain sharp or dull?</string>
+    <string name="legs_question_4">Is there swelling in the leg?</string>
+    <string name="legs_question_5">Is the pain worse with movement?</string>
+    <string name="legs_question_6">Do you have any numbness or tingling?</string>
+    <string name="legs_question_7">Have you had any injuries to your leg?</string>
+    <string name="legs_question_8">Is the pain affecting your walking?</string>
+    <string name="legs_question_9">Do you have a history of blood clots?</string>
+    <string name="legs_question_10">Is there redness or warmth in the leg?</string>
+
+    <!-- Arms Questions -->
+    <string name="arms_question_1">Do you have arm pain?</string>
+    <string name="arms_question_2">Is the pain in one or both arms?</string>
+    <string name="arms_question_3">Is the pain sharp or dull?</string>
+    <string name="arms_question_4">Is there any swelling in the arm?</string>
+    <string name="arms_question_5">Is the pain worse with movement?</string>
+    <string name="arms_question_6">Do you have any numbness or tingling?</string>
+    <string name="arms_question_7">Have you had any injuries to your arm?</string>
+    <string name="arms_question_8">Is the pain affecting your grip strength?</string>
+    <string name="arms_question_9">Do you have a history of heart problems?</string>
+    <string name="arms_question_10">Is there redness or warmth in the arm?</string>
+
+
+    <!-- Joints Questions -->
+    <string name="joints_question_1">Do you have joint pain?</string>
+    <string name="joints_question_2">Is the pain in one or multiple joints?</string>
+    <string name="joints_question_3">Does the pain worsen with activity?</string>
+    <string name="joints_question_4">Is there any swelling in the joint?</string>
+    <string name="joints_question_5">Is the pain constant or intermittent?</string>
+    <string name="joints_question_6">Have you had any recent injuries?</string>
+    <string name="joints_question_7">Do you have a history of arthritis?</string>
+    <string name="joints_question_8">Is the pain affecting your range of motion?</string>
+    <string name="joints_question_9">Do you have any fever or chills?</string>
+    <string name="joints_question_10">Is the pain affecting your daily activities?</string>
+
+    <!-- Feet Questions -->
+    <string name="feet_question_1">Do you have foot pain?</string>
+    <string name="feet_question_2">Is the pain in one or both feet?</string>
+    <string name="feet_question_3">Is there swelling in the foot?</string>
+    <string name="feet_question_4">Does the pain worsen with walking?</string>
+    <string name="feet_question_5">Is the pain sharp or dull?</string>
+    <string name="feet_question_6">Have you had any injuries to your foot?</string>
+    <string name="feet_question_7">Is the pain affecting your balance?</string>
+    <string name="feet_question_8">Do you have a history of diabetes?</string>
+    <string name="feet_question_9">Is there redness or warmth in the foot?</string>
+    <string name="feet_question_10">Is the pain affecting your daily activities?</string>
+
+    <!-- Neck Questions -->
+    <string name="neck_question_1">Do you have pain in your neck?</string>
+    <string name="neck_question_2">Is the pain sharp or dull?</string>
+    <string name="neck_question_3">Does the pain radiate to your arms?</string>
+    <string name="neck_question_4">Is there any stiffness in your neck?</string>
+    <string name="neck_question_5">Have you had any recent injuries?</string>
+    <string name="neck_question_6">Does the pain worsen with movement?</string>
+    <string name="neck_question_7">Do you have any numbness or tingling?</string>
+    <string name="neck_question_8">Is the pain affecting your sleep?</string>
+    <string name="neck_question_9">Do you have any headache associated with the pain?</string>
+    <string name="neck_question_10">Is the pain affecting your daily activities?</string>
+
+
+    <!-- Hands Questions -->
+    <string name="hands_question_1">Do you have hand pain?</string>
+    <string name="hands_question_2">Is the pain in one or both hands?</string>
+    <string name="hands_question_3">Do you experience tingling or numbness?</string>
+    <string name="hands_question_4">Is there any swelling in the hand?</string>
+    <string name="hands_question_5">Is the pain sharp or dull?</string>
+    <string name="hands_question_6">Have you had any recent injuries?</string>
+    <string name="hands_question_7">Do you have any numbness or tingling?</string>
+    <string name="hands_question_8">Is the pain affecting your daily activities?</string>
+    <string name="hands_question_9">Do you have a history of arthritis?</string>
+    <string name="hands_question_10">Is there redness or warmth in the hand?</string>
+
+    <string name="stomach_question_1">Do you have stomach pain?</string>
+    <string name="stomach_question_2">Is the pain sharp or cramping?</string>
+    <string name="stomach_question_3">Do you experience nausea or vomiting?</string>
+    <string name="stomach_question_4">Is the pain constant or intermittent?</string>
+    <string name="stomach_question_5">Do you have a fever?</string>
+    <string name="stomach_question_6">Do you have any changes in appetite?</string>
+    <string name="stomach_question_7">Is there bloating?</string>
+    <string name="stomach_question_8">Do you experience diarrhea or constipation?</string>
+    <string name="stomach_question_9">Is there any tenderness to touch?</string>
+    <string name="stomach_question_10">Do you have any other symptoms?</string>
+
+
+    <!-- Common Answers -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="localized">Localized</string>
+    <string name="diffuse">Diffuse</string>
+    <string name="cramping">Cramping</string>
+    <string name="sharp">Sharp</string>
+    <string name="dull">Dull</string>
+    <string name="one">One</string>
+    <string name="both">Both</string>
+    <string name="constant">Constant</string>
+    <string name="intermittent">Intermittent</string>
+    <string name="upper">Upper</string>
+    <string name="lower">Lower</string>
+
+    <string name="standing">Standing</string>
+    <string name="sitting">Sitting</string>
+    <string name="multiple">Multiple</string>
+
+
+    <string name="migraine">Migraine</string>
+    <string name="tension_headache">Tension Headache</string>
+    <string name="concussion">Concussion</string>
+    <string name="meningitis">Meningitis</string>
+    <string name="stroke">Stroke</string>
+
+    <string name="angina">Angina</string>
+    <string name="heart_attack">Heart Attack</string>
+    <string name="gerd">Gastroesophageal Reflux Disease (GERD)</string>
+    <string name="pulmonary_embolism">Pulmonary Embolsim</string>
+    <string name="peptic_ulcer">Peptic Ulcer</string>
+    <string name="asthma">Asthma</string>
+    <string name="muscle_strain">Muscle Strain</string>
+
+    <string name="gastritis">Gastritis</string>
+    <string name="appendicitis">Appendicitis</string>
+    <string name="ibs">Irritable Bowel Syndrome (IBS)</string>
+    <string name="diverticulitis">Diverticulitis</string>
+    <string name="constipation">Constipation</string>
+    <string name="celiac_disease">Celiac Disease</string>
+    <string name="lactose_intolerance">Lactose Intolerance</string>
+    <string name="food_poisoning">Food Poisoning</string>
+    <string name="ibd">Inflammatory Bowel Disease (IBD)</string>
+    <string name="functional_dyspepsia">Functional Dyspepsia</string>
+
+    <string name="herniated_disc">Herniated Disc</string>
+    <string name="spinal_stenosis">Spinal Stenosis</string>
+    <string name="postural_issues">Postural Issues</string>
+    <string name="sciatica">Sciatica</string>
+    <string name="kidney_stones">Kidney Stones</string>
+    <string name="thoracic_outlet_syndrome">Thoracic Outlet Syndrome</string>
+    <string name="degenerative_disc_disease">Degenerative Disc Disease</string>
+    <string name="upper_back_pain">Upper Back Pain</string>
+    <string name="muscle_spasm">Muscle Spasm</string>
+
+    <string name="deep_vein_thrombosis">Deep Vein Thrombosis (DVT)</string>
+    <string name="peripheral_artery_disease">Peripheral Artery Disease (PAD)</string>
+    <string name="varicose_veins">Varicose Veins</string>
+    <string name="cellulitis">Cellulitis</string>
+    <string name="chronic_venous_insufficiency">Chronic Venous Insufficiency</string>
+
+    <string name="tendinitis">Tendinitis</string>
+    <string name="overuse_syndrome">Overuse Syndrome</string>
+    <string name="carpal_tunnel_syndrome">Carpal Tunnel Syndrome</string>
+    <string name="bursitis">Bursitis</string>
+    <string name="swelling">Swelling</string>
+    <string name="nerve_compression">Nerve Compression</string>
+    <string name="frozen_shoulder">Frozen Shoulder</string>
+    <string name="myopathy">Myopathy</string>
+
+    <string name="osteoarthritis">Osteoarthritis</string>
+    <string name="rheumatoid_arthritis">Rheumatoid Arthritis</string>
+    <string name="gout">Gout</string>
+    <string name="psoriatic_arthritis">Psoriatic Arthritis</string>
+    <string name="ligament_sprain">Ligament Sprain</string>
+    <string name="reactive_arthritis">Reactive Arthritis</string>
+    <string name="scleroderma">Scleroderma</string>
+    <string name="systemic_lupus_erythematosus">Systemic Lupus Erythematosus</string>
+
+    <string name="plantar_fasciitis">Plantar Fasciitis</string>
+    <string name="peripheral_neuropathy">Peripheral Neuropathy</string>
+    <string name="foot_sprain">Foot Sprain</string>
+    <string name="mortons_neuroma">Morton\'s Neuroma</string>
+    <string name="flat_feet">Flat Feet</string>
+    <string name="diabetic_foot">Diabetic Foot</string>
+    <string name="arthritis">Arthritis</string>
+
+    <string name="cervical_strain">Cervical Strain</string>
+
+    <string name="tendonitis">Tendonitis</string>
+    <string name="de_quervains_tenosynovitis">De Quervain\'s Tenosynovitis</string>
+
+    <string name="irritable_bowel_syndrome">Irritable Bowel Syndrome</string>
+    <string name="gastroenteritis">Gastroenteritis</string>
+
+
+
+
+    <string name="advisory_message">It\'s still advisable to see a personal health authority for a more accurate analysis.</string>
+    <string name="unknown_condition">Unknown Condition</string>
+    <string name="possible_condition">Possible Condition:</string>
+    <string name="confidence">Confidence:</string>
+    <string name="select_option_message">Please select an option.</string>
+    <string name="select_an_option">Select an option</string>
+
+    <string name="less_than_24_hours">Less than 24 hours</string>
+    <string name="one_to_three_days">1-3 days</string>
+    <string name="more_than_three_days">More than 3 days</string>
+
+    <string name="savedt">SAVED TOPICS</string>
+    <string name="nosavedt">No saved topics yet</string>
+
+
+
+
+
+
+
+
+
 
 
 

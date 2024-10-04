@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -34,10 +35,32 @@ class OasRhuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oas_rhu)
 
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.shadow2)))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        // Load animations
+        val pressAnim = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val releaseAnim = AnimationUtils.loadAnimation(this, R.anim.button_release)
 
-        val title: TextView = findViewById(R.id.title_oas_rhu)
+        // Initialize custom toolbar
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.customToolbar)
+        setSupportActionBar(toolbar)
+
+        // Set the title for the Toolbar
+        supportActionBar?.title = "OAS RURAL HEALTH UNIT"  // Replace with your desired title
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.red))
+
+        // Show back button on the Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationIcon(R.drawable.back)
+
+        // Set up back button click listener with animation
+        toolbar.setNavigationOnClickListener {
+            it.startAnimation(pressAnim)
+            it.postDelayed({
+                it.startAnimation(releaseAnim)
+                finish()
+            }, pressAnim.duration)
+        }
+
+
         val content: TextView = findViewById(R.id.content_oas_rhu)
         val buttonGetDirections: Button = findViewById(R.id.button_get_directions_oas_rhu)
         val distanceTextView: TextView = findViewById(R.id.distance_text_view_oas_rhu)

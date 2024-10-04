@@ -3,31 +3,54 @@ package com.example.android.firstresponse
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class GroundingTechniques : BaseActivity() {
 
     private lateinit var webView1: WebView
     private lateinit var fabSave: FloatingActionButton
     private val topicId = "grounding techniques" // Unique ID for the topic
+    private val topicTitle = "Grounding Techniques" // Topic title for display
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grounding_techniques)
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.shadow2)))
 
-        // Change title of action bar
-        supportActionBar?.title = "GROUNDING TECHNIQUES"
+        // Load animations
+        val pressAnim = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val releaseAnim = AnimationUtils.loadAnimation(this, R.anim.button_release)
 
-        // Show back button on action bar
+        // Initialize custom toolbar
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.customToolbar)
+        setSupportActionBar(toolbar)
+
+        // Set the title for the Toolbar
+        supportActionBar?.title = getString(R.string.grounding_techniques_t)
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.red))
+
+        // Show back button on the Toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationIcon(R.drawable.back)
 
-        // Setup WebView
+        // Set up back button click listener with animation
+        toolbar.setNavigationOnClickListener {
+            it.startAnimation(pressAnim)
+            it.postDelayed({
+                it.startAnimation(releaseAnim)
+                finish()
+            }, pressAnim.duration)
+        }
+
+
+    // Setup WebView
         webView1 = findViewById(R.id.webView1)
         webView1.settings.javaScriptEnabled = true
         webView1.webViewClient = WebViewClient()
@@ -52,19 +75,30 @@ class GroundingTechniques : BaseActivity() {
     // Function to toggle save status
     private fun toggleSaveTopic() {
         val sharedPref = getSharedPreferences("SavedTopics", MODE_PRIVATE)
-        val savedTopicsSet = sharedPref.getStringSet("savedTopics", mutableSetOf()) ?: mutableSetOf()
-        val isSaved = savedTopicsSet.contains(topicId)
+        val gson = Gson()
+
+        // Load saved topics from SharedPreferences
+        val savedTopicsJson = sharedPref.getString("savedTopicsJson", "[]")
+        val type = object : TypeToken<MutableList<SavedTopic>>() {}.type
+        val savedTopicsSet: MutableList<SavedTopic> = gson.fromJson(savedTopicsJson, type)
+
+        // Check if the topic is already saved
+        val isSaved = savedTopicsSet.any { it.id == topicId }
 
         if (isSaved) {
-            savedTopicsSet.remove(topicId)
+            // Remove the topic if it's already saved
+            savedTopicsSet.removeAll { it.id == topicId }
             Toast.makeText(this, "Topic removed", Toast.LENGTH_SHORT).show()
         } else {
-            savedTopicsSet.add(topicId)
+            // Add the topic if it's not saved
+            savedTopicsSet.add(SavedTopic(topicId, topicTitle))
             Toast.makeText(this, "Topic saved", Toast.LENGTH_SHORT).show()
         }
 
+        // Save the updated list of topics to SharedPreferences
+        val updatedTopicsJson = gson.toJson(savedTopicsSet)
         with(sharedPref.edit()) {
-            putStringSet("savedTopics", savedTopicsSet)
+            putString("savedTopicsJson", updatedTopicsJson)
             apply()
         }
         updateFabIcon()
@@ -73,8 +107,15 @@ class GroundingTechniques : BaseActivity() {
     // Function to update FloatingActionButton icon based on save state
     private fun updateFabIcon() {
         val sharedPref = getSharedPreferences("SavedTopics", MODE_PRIVATE)
-        val savedTopicsSet = sharedPref.getStringSet("savedTopics", mutableSetOf()) ?: mutableSetOf()
-        val isSaved = savedTopicsSet.contains(topicId)
+        val gson = Gson()
+
+        // Load saved topics from SharedPreferences
+        val savedTopicsJson = sharedPref.getString("savedTopicsJson", "[]")
+        val type = object : TypeToken<List<SavedTopic>>() {}.type
+        val savedTopicsSet: List<SavedTopic> = gson.fromJson(savedTopicsJson, type)
+
+        // Check if the topic is already saved
+        val isSaved = savedTopicsSet.any { it.id == topicId }
         val iconResId = if (isSaved) R.drawable.saved_red else R.drawable.saved
         fabSave.setImageDrawable(ContextCompat.getDrawable(this, iconResId))
     }

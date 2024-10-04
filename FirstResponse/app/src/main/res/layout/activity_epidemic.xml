@@ -1,19 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/shadow"
-    tools:context=".Epidemic">
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:contentInsetStartWithNavigation="0dp"
+        android:layout_marginTop="8dp"
+        app:navigationIcon="@drawable/back"
+        app:titleTextAppearance="@style/CustomToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"/>
+
+
+    <!-- FloatingActionButton for saving the topic -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/saved"
+        app:fabSize="normal"
+        app:tint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@color/shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/innerConstraintLayout"
@@ -34,8 +79,8 @@
                 android:id="@+id/textView1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:gravity="center"
+                android:layout_marginLeft="32dp"
                 android:text="What is an epidemic?"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/black"
@@ -66,20 +111,22 @@
             <!-- Second Section -->
             <ImageView
                 android:id="@+id/imageNumber2"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:src="@drawable/numbertwonew"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/floodText1"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="24dp" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="287dp"
                 android:layout_height="88dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginLeft="24dp"
                 android:gravity="center"
-                android:text="Epidemic vs. Pandemic vs. Endemic"
+                android:text="Epidemic vs.\nPandemic vs.\nEndemic"
+
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat_bold"
@@ -112,8 +159,8 @@
 
             <ImageView
                 android:id="@+id/imageNumber3"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
                 android:src="@drawable/numberthreenew"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/floodText2"
@@ -122,10 +169,11 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="0dp"
+                android:layout_marginTop="8dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginLeft="46dp"
                 android:gravity="center"
-                android:text="Safety measures to take"
+                android:text="Safety measures \nto take"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat_bold"
@@ -163,18 +211,8 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </ScrollView>
+        </LinearLayout>
 
-    <!-- FloatingActionButton for saving the topic -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/saved"
-        app:fabSize="normal"
-        app:tint="@color/red"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

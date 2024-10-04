@@ -2,14 +2,12 @@ package com.example.android.firstresponse
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import androidx.appcompat.app.AppCompatActivity
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import com.airbnb.lottie.LottieAnimationView
 
 class SplashScreenActivity : BaseActivity() {
-    private val delayMillis: Long = 5000 // 2 seconds
-    private val pauseProgress: Float = 0.9f // Pause the animation at 80% completion
+    private val pauseProgress: Float = 0.9f // Pause the animation at 90% completion
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,26 +27,44 @@ class SplashScreenActivity : BaseActivity() {
                 val progress = animator.animatedValue as Float
                 if (progress >= pauseProgress) {
                     pauseAnimation()
+                    // Show the start button after the animation is complete
+                    post {
+                        showStartButton()
+                    }
                 }
             }
         }
 
-        // Initialize and hide the start button initially
+        // Initialize the start button
         val startButton = findViewById<Button>(R.id.startButton)
         startButton.alpha = 0f
         startButton.isEnabled = false
 
-        // Show the start button after a delay
-        Handler(mainLooper).postDelayed({
-            startButton.alpha = 1f
-            startButton.isEnabled = true
-        }, delayMillis)
+        // Load animations
+        val buttonPressAnimation = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val buttonReleaseAnimation = AnimationUtils.loadAnimation(this, R.anim.button_release)
 
         // Add button click listener
-        startButton.setOnClickListener {
-            val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+        startButton.setOnTouchListener { _, event ->
+            when (event.action) {
+                android.view.MotionEvent.ACTION_DOWN -> {
+                    startButton.startAnimation(buttonPressAnimation)
+                }
+                android.view.MotionEvent.ACTION_UP -> {
+                    startButton.startAnimation(buttonReleaseAnimation)
+                    // Start the MainActivity
+                    val intent = Intent(this@SplashScreenActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+            true
         }
+    }
+
+    private fun showStartButton() {
+        val startButton = findViewById<Button>(R.id.startButton)
+        startButton.alpha = 1f
+        startButton.isEnabled = true
     }
 }

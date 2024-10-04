@@ -4,10 +4,10 @@ import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 class SearchResultsActivity : BaseActivity() {
@@ -16,10 +16,32 @@ class SearchResultsActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_results)
 
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.shadow2)))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val pressAnim = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val releaseAnim = AnimationUtils.loadAnimation(this, R.anim.button_release)
 
-        val listView: ListView = findViewById(R.id.listView)
+        // Initialize custom toolbar
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.customToolbar)
+        setSupportActionBar(toolbar)
+
+        // Set the title for the Toolbar
+        supportActionBar?.title = "SEARCH RESULTS"  // Replace with your desired title
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.red))
+
+        // Show back button on the Toolbar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationIcon(R.drawable.back)
+
+        // Set up back button click listener with animation
+        toolbar.setNavigationOnClickListener {
+            it.startAnimation(pressAnim)
+            it.postDelayed({
+                it.startAnimation(releaseAnim)
+                finish()
+            }, pressAnim.duration)
+        }
+
+
+    val listView: ListView = findViewById(R.id.listView)
         val resultsLabel: TextView = findViewById(R.id.resultsLabel)
 
         // Get the search input and results from the Intent

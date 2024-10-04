@@ -1,108 +1,105 @@
 package com.example.android.firstresponse
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.recyclerview.widget.RecyclerView
+import android.widget.TextView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class SavedActivity : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var noSavedTopicsTextView: TextView
-    private lateinit var emptyAnimationView: LottieAnimationView
-    private lateinit var savedTopicsAdapter: SavedTopicsAdapter
-    private var savedTopicsList: List<SavedTopic> = listOf()
+    private lateinit var emptyAnimation: LottieAnimationView
+    private lateinit var noSavedTopicsText: TextView
+    private lateinit var bottomNavigationView: BottomNavigationView
+
+    private lateinit var sharedPreferences: SharedPreferences
+    private val savedTopics = mutableListOf<SavedTopic>()
+    private lateinit var adapter: SavedTopicsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        try {
-            setContentView(R.layout.activity_saved)
+        setContentView(R.layout.activity_saved)
 
-            // Hide the Action Bar for this activity
-            supportActionBar?.hide()
+        // Hide the Action Bar
+        supportActionBar?.hide()
 
-            recyclerView = findViewById(R.id.recyclerView)
-            noSavedTopicsTextView = findViewById(R.id.no_saved_topics_text)
-            emptyAnimationView = findViewById(R.id.empty_animation)
+        // Initialize views
+        recyclerView = findViewById(R.id.recyclerView)
+        emptyAnimation = findViewById(R.id.empty_animation)
+        noSavedTopicsText = findViewById(R.id.no_saved_topics_text)
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
-            recyclerView.layoutManager = LinearLayoutManager(this)
+        // Initialize SharedPreferences
+        sharedPreferences = getSharedPreferences("SavedTopics", Context.MODE_PRIVATE)
 
-            // Load saved topics
-            loadSavedTopics()
-
-            if (savedTopicsList.isEmpty()) {
-                // Show "No saved topics" message and Lottie animation
-                recyclerView.visibility = View.GONE
-                noSavedTopicsTextView.visibility = View.VISIBLE
-                emptyAnimationView.visibility = View.VISIBLE
-                emptyAnimationView.playAnimation() // Ensure this line is executed
-            } else {
-                // Show the RecyclerView with saved topics
-                savedTopicsAdapter = SavedTopicsAdapter(savedTopicsList) { topicId ->
-                    navigateToTopic(topicId)
-                }
-                recyclerView.adapter = savedTopicsAdapter
-                recyclerView.visibility = View.VISIBLE
-                noSavedTopicsTextView.visibility = View.GONE
-                emptyAnimationView.visibility = View.GONE
-            }
-
-
-            val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-            bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
-                when (menuItem.itemId) {
-                    R.id.bottomHome -> {
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        // Apply transition animations
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                        true
-                    }
-                    R.id.bottomHelpline -> {
-                        val intent = Intent(this, HelplineActivity::class.java)
-                        startActivity(intent)
-                        // Apply transition animations
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
-                        true
-                    }
-                    R.id.bottomSaved -> {
-                        // Already in SavedActivity, no need to navigate
-                        true
-                    }
-                    else -> false
-                }
-            }
-        } catch (e: Exception) {
-            Log.e("SavedActivity", "Error during onCreate", e)
-            Toast.makeText(this, "An error occurred: ${e.message}", Toast.LENGTH_LONG).show()
+        // Set up RecyclerView
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = SavedTopicsAdapter(savedTopics) { topicId ->
+            navigateToTopic(topicId)
         }
+        recyclerView.adapter = adapter
+
+        // Load saved topics from SharedPreferences
+        loadSavedTopics()
+
+        // Bottom Navigation setup
+        bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.bottomHome -> {
+                    startActivity(Intent(this, MainActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    true
+                }
+                R.id.bottomHelpline -> {
+                    startActivity(Intent(this, HelplineActivity::class.java))
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
+                    true
+                }
+                R.id.bottomSaved -> {
+                    // Already in SavedActivity, no need to navigate
+                    true
+                }
+                else -> false
+            }
+        }
+
     }
 
     private fun loadSavedTopics() {
-        try {
-            val sharedPref = getSharedPreferences("SavedTopics", MODE_PRIVATE)
-            val savedTopicsSet = sharedPref.getStringSet("savedTopics", mutableSetOf()) ?: mutableSetOf()
+        savedTopics.clear()
 
-            // Convert saved topic IDs into SavedTopic objects
-            savedTopicsList = savedTopicsSet.map { id ->
-                // Create SavedTopic objects using the ID as the title
-                SavedTopic(id, id)
-            }
+        // Load saved topics from SharedPreferences as a JSON string
+        val savedTopicsJson = sharedPreferences.getString("savedTopicsJson", "[]")
+        val gson = Gson()
+        val type = object : TypeToken<List<SavedTopic>>() {}.type
+        val savedTopicList: List<SavedTopic> = gson.fromJson(savedTopicsJson, type)
 
-        } catch (e: Exception) {
-            Log.e("SavedActivity", "Error loading saved topics", e)
-            Toast.makeText(this, "An error occurred while loading saved topics: ${e.message}", Toast.LENGTH_LONG).show()
+        savedTopics.addAll(savedTopicList)
+        adapter.notifyDataSetChanged()
+
+        // Update UI based on whether there are saved topics
+        if (savedTopics.isEmpty()) {
+            recyclerView.visibility = RecyclerView.GONE
+            emptyAnimation.visibility = LottieAnimationView.VISIBLE
+            emptyAnimation.playAnimation() // Ensure this line is executed
+            noSavedTopicsText.visibility = TextView.VISIBLE
+        } else {
+            recyclerView.visibility = RecyclerView.VISIBLE
+            emptyAnimation.visibility = LottieAnimationView.GONE
+            noSavedTopicsText.visibility = TextView.GONE
         }
     }
 
-    private fun navigateToTopic(topicId: String) {
+
+        private fun navigateToTopic(topicId: String) {
         // Define a map of topic IDs to their corresponding activity classes
         val activityMap = mapOf(
             "burns" to burns::class.java,
@@ -113,20 +110,21 @@ class SavedActivity : BaseActivity() {
             "shock" to shock::class.java,
             "bleeding" to bleeding::class.java,
             "snakebite" to snakebite::class.java,
+            "insectbite" to insectbite::class.java,
             "bruises" to bruises::class.java,
-            "sprains" to sprain::class.java,
-            "strains" to strain::class.java,
-            "nosebleeds" to nosebleed::class.java,
+            "sprain" to sprain::class.java,
+            "strain" to strain::class.java,
+            "nosebleed" to nosebleed::class.java,
             "allergic reaction" to allergicreaction::class.java,
-            "headaches" to headache::class.java,
-            "minor concussions" to minorconcussion::class.java,
-            "muscle cramp" to musclecramps::class.java,
+            "headache" to headache::class.java,
+            "minor_concussion" to minorconcussion::class.java,
+            "muscle_cramps" to musclecramps::class.java,
             "blister" to blister::class.java,
             "anxiety management" to AnxietyManagement::class.java,
             "panic attack response" to PanicAttackResponse::class.java,
             "trauma-informed care" to TraumaInformedCare::class.java,
             "grounding techniques" to GroundingTechniques::class.java,
-            "stress reduction" to StressReduction::class.java,
+            "stress_reduction" to StressReduction::class.java,
             "floods" to Floods::class.java,
             "acute grief" to AcuteGrief::class.java,
             "volcanic eruption" to VolcanicEruption::class.java,
@@ -140,15 +138,13 @@ class SavedActivity : BaseActivity() {
             "heatwave" to Heatwave::class.java
         )
 
-        // Find the activity class for the given topic ID
+        // Navigate to the corresponding activity
         val activityClass = activityMap[topicId]
-
-        // If the activity class is found, start the activity
         if (activityClass != null) {
             val intent = Intent(this, activityClass)
             startActivity(intent)
-        } else {
-            Toast.makeText(this, "Unknown topic: $topicId", Toast.LENGTH_SHORT).show()
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
     }
 }
+

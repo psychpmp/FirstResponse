@@ -4,29 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="R.BasicSanitation">
+    android:background="@android:color/white"
+    tools:context=".RoadSafety">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutMain"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:contentInsetStartWithNavigation="0dp"
+        android:layout_marginTop="8dp"
+        app:navigationIcon="@drawable/back"
+        app:titleTextAppearance="@style/CustomToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"/>
 
 
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:padding="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:background="@color/shadow">
@@ -72,19 +86,18 @@
                         android:id="@+id/textView1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="92dp"
-                        android:layout_marginEnd="183dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
                         android:text="WHY?"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/black"
                         app:fontFamily="@font/montserrat_bold"
                         app:layout_constraintBottom_toTopOf="@+id/textView2"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.345"
                         app:layout_constraintStart_toEndOf="@id/imageNumber1"
-                        app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
-                        app:layout_constraintVertical_bias="0.50">
-
-                    </TextView>
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.50" />
 
                     <TextView
                         android:id="@+id/textView2"
@@ -130,8 +143,8 @@
 
                     <ImageView
                         android:id="@+id/imageNumber2"
-                        android:layout_width="49dp"
-                        android:layout_height="50dp"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
                         android:layout_marginTop="15dp"
                         android:paddingRight="10dp"
                         android:src="@drawable/numbertwonew"
@@ -375,8 +388,8 @@
 
                     <ImageView
                         android:id="@+id/imageNumber3"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
                         android:paddingRight="10dp"
                         android:src="@drawable/numberthreenew"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -422,16 +435,8 @@
                         app:layout_constraintTop_toBottomOf="@+id/textView12">
 
                     </TextView>
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
             </LinearLayout>
         </ScrollView>
-
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+

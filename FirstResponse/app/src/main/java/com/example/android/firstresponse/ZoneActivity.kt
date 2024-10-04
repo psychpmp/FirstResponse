@@ -10,6 +10,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -17,7 +18,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.android.gms.location.*
 
-class LigaoCityHospitalActivity : AppCompatActivity() {
+class ZoneActivity : AppCompatActivity() {
 
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationCallback: LocationCallback
@@ -30,12 +31,34 @@ class LigaoCityHospitalActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ligao_city_hospital)
+        setContentView(R.layout.activity_zone)
 
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.shadow2)))
+        // Load animations
+        val pressAnim = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val releaseAnim = AnimationUtils.loadAnimation(this, R.anim.button_release)
+
+        // Initialize custom toolbar
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.customToolbar)
+        setSupportActionBar(toolbar)
+
+        // Set the title for the Toolbar
+        supportActionBar?.title = "ZONE MEDICAL AND INTERVENTION HOSPITAL"  // Replace with your desired title
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.red))
+
+
+        // Show back button on the Toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationIcon(R.drawable.back)
 
-        val title: TextView = findViewById(R.id.title_ligao_city_hospital)
+        // Set up back button click listener with animation
+        toolbar.setNavigationOnClickListener {
+            it.startAnimation(pressAnim)
+            it.postDelayed({
+                it.startAnimation(releaseAnim)
+                finish()
+            }, pressAnim.duration)
+        }
+
         val content: TextView = findViewById(R.id.content_ligao_city_hospital)
         val buttonGetDirections: Button = findViewById(R.id.button_get_directions_ligao_city_hospital)
         val distanceTextView: TextView = findViewById(R.id.distance_text_view_ligao_city_hospital)

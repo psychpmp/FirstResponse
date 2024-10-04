@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">FirstResponse</string>
-    <string name="home">Home</string>
     <string name="about_us">About Us</string>
     <string name="website">Website</string>
     <string name="url">https://redcrosskarnataka.org/</string>
@@ -716,6 +715,14 @@
     <string name="safety_pins_description">Ang mga safety pins ay versatile tools na ginagamit para sa pag-secure ng mga bandage, dressing, at iba pang first aid supplies. Nakakatulong ang mga ito sa pagpapanatili ng mga materyales sa lugar sa panahon ng pangangalaga sa sugat.</string>
     <string name="emergency_blanket_description">Ang mga emergency blanket ay nagbibigay ng init sa mga kritikal na sitwasyon, tulad ng pagkakalantad sa malamig na panahon o pagkatapos ng shock. Kompakto ang mga ito at mahalaga para sa mga outdoor at survival na sitwasyon.</string>
     <string name="mask_description">Ang mga medical mask ay ginagamit upang protektahan laban sa mga airborne particles at bawasan ang panganib ng impeksyon. Mahalaga ang mga ito para sa pagpigil sa pagkalat ng mga sakit sa paghinga at pagtiyak ng kaligtasan sa mga medikal na kapaligiran.</string>
+    <string name="splint_description">Ang splint ay ginagamit upang imobilisa at protektahan ang napinsalang bahagi ng katawan, binabawasan ang paggalaw at iniiwasan ang karagdagang pinsala hanggang sa makuha ang medikal na tulong.</string>
+    <string name="eye_wash_description">Ang eye wash solution ay ginagamit upang banlawan at linisin ang mga mata kapag nalantad sa mga nakakapinsalang sangkap o debris, tumutulong na mabawasan ang iritasyon at maiwasan ang malubhang pinsala sa mata.</string>
+    <string name="hand_sanitizer_description">Ang hand sanitizer ay mabilis at epektibong solusyon para sa pagdidisimpekta ng mga kamay, tinatanggal ang bacteria at virus kapag walang sabon at tubig na magagamit.</string>
+    <string name="cotton_balls_description">Ang cotton balls ay malambot at sumisipsip na kagamitan na ginagamit para sa paglilinis ng sugat, paglalagay ng antiseptics, o iba pang layuning medikal sa first aid kit.</string>
+    <string name="burn_gel_description">Ang burn gel ay ginagamit upang maibsan ang sakit at protektahan ang minor na paso, pinapalamig ang balat at pinapawi ang sakit habang pinipigilan ang impeksyon.</string>
+    <string name="trauma_pad_description">Ang trauma pads ay malalaki at sumisipsip na pads na idinisenyo para kontrolin ang malakas na pagdurugo at protektahan ang malalaking sugat o pinsala.</string>
+    <string name="finger_splint_description">Ang finger splint ay imobilisahin at pinoprotektahan ang napinsalang daliri, tumutulong na mabawasan ang sakit at maiwasan ang karagdagang pinsala habang gumagaling.</string>
+
 
     <string name="shop_now">Shop Now</string>
     <string name="kit_image_desc">Description of the first aid kit image</string>
@@ -728,6 +735,332 @@
     <string name="ligao_city_hospital_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
     <string name="duran_hospital_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
     <string name="ligao_rhu_content">Polangui Rural Health Unit is dedicated to providing comprehensive healthcare services to the community. They offer a range of medical services including general check-ups, emergency care, and specialized treatments. Their team of healthcare professionals is committed to delivering quality care and improving the well-being of their patients.</string>
+
+    //OTHER ONES
+    <string name="start_text">Magsimula</string>
+    <string name="saved">Naka-save</string>
+    <string name="home">Pangunahing Pahina</string>
+    <string name="helpline">Linya ng Tulong</string>
+    <string name="first_aid_kits">KAILANGANG FIRST AID KITS</string>
+    <string name="basic_first_aid">PANGUNAHING FIRST AID</string>
+    <string name="psychological_first_aid">PSIKOLIKAL NA FIRST AID</string>
+    <string name="disaster_management">PAMAMAHALA NG KALAMIDAD</string>
+    <string name="basic_sanitation_t">PANGUNAHING SANITASYON</string>
+    <string name="test_your_knowledge">SUBUKAN ANG IYONG KALAMAN!</string>
+    <string name="safety_preparedness">KALIGTASAN AT &#10;KAHANDAAN</string>
+    <string name="whats_wrong">ANO ANG MALI?</string>
+    <string name="safety_preparedness_t">KALIGTASAN AT KAHANDAAN</string>
+
+
+        <string name="burns_t">PASO</string>
+        <string name="choking_t">SAMID</string>
+        <string name="cpr_t">CPR</string>
+        <string name="splints_t">SPLINTS</string>
+        <string name="seizures_t">SEIZURES</string>
+        <string name="shock_t">SHOCK</string>
+        <string name="bleeding_t">PAGDURUGO</string>
+        <string name="snake_bite_t">TUKLAW NG AHAS</string>
+        <string name="insect_bites_t">KAGAT/STING NG INSEKTO</string>
+        <string name="bruises_t">PASA</string>
+        <string name="sprains_t">SPRAINS</string>
+        <string name="strains_t">STRAINS</string>
+        <string name="nose_bleeds_t">BALINGUYNGUY</string>
+        <string name="allergic_reactions_t">ALLERGIC REACTIONS</string>
+        <string name="headaches_t">SAKIT SA ULO</string>
+        <string name="minor_concussions_t">MINOR CONCUSSIONS</string>
+        <string name="muscle_cramps_t">CRAMP SA MUSCLE</string>
+        <string name="blisters_t">BLISTERS</string>
+
+    <string name="acute_grief_t">MATINDING PANGUNGULILA</string>
+    <string name="anxiety_management_t">PAMAMAHALA NG ANXIETY</string>
+    <string name="panic_attack_response_t">TUGON SA PANIC ATTACK</string>
+    <string name="trauma_informed_care_t">PANGANGALAGA SA TRAUMA</string>
+    <string name="grounding_techniques_t">GROUNDING TECHNIQUES</string>
+    <string name="stress_reduction_t">PAGBABAWAS NG STRESS</string>
+
+    <string name="floods_t">BAHA</string>
+    <string name="earthquake_t">LINDOL</string>
+    <string name="volcanic_eruption_t">PAGPUTOK NG BULKAN</string>
+    <string name="epidemic_t">EPIDEMYA</string>
+
+    <string name="water_safety_t">KALIGTASAN SA TUBIG</string>
+    <string name="road_safety_t">KALIGTASAN SA DAAN</string>
+    <string name="daily_food_safety_t">DAILY FOOD SAFETY</string>
+    <string name="emergency_food_safety_t">EMERGENCY FOOD SAFETY</string>
+    <string name="heatwave_t">HEATWAVE</string>
+
+    <string name="location_t">Lokasyon</string>
+    <string name="language_t">Wika</string>
+    <string name="credits_t">Pagpapasalamat</string>
+    <string name="suggestions_t">Mga Suhestyon</string>
+
+    <string name="quiz_level">Antas ng Pagsusulit</string>
+
+    <string name="when_symptom_started">Kailan nagsimula ang sintomas?</string>
+    <string name="where_pain_originate">Saan nagmumula ang sakit o hindi komportable?</string>
+    <string name="head">Ulo</string>
+    <string name="chest">Dibdib</string>
+    <string name="head_question_1">May sakit ka ba sa ulo?</string>
+    <string name="head_question_2">Ang sakit ba ay nakatutok o nakalat?</string>
+    <string name="head_question_3">Nakararanas ka ba ng pagduduwal?</string>
+    <string name="head_question_4">Mayroon ka bang sensibilidad sa liwanag?</string>
+    <string name="head_question_5">Ang sakit ba sa ulo ay malubha?</string>
+    <string name="head_question_6">Lumalala ba ang sakit kapag aktibo ka?</string>
+    <string name="head_question_7">Nakararanas ka ba ng ganito dati?</string>
+    <string name="head_question_8">Mayroon ka bang mga pagbabago sa paningin?</string>
+    <string name="head_question_9">Mayroon ka bang iba pang sintomas?</string>
+    <string name="head_question_10">Mayroon bang kasaysayan ng sakit sa ulo sa pamilya?</string>
+
+    <string name="chest_question_1">May sakit ka ba sa dibdib?</string>
+    <string name="chest_question_2">Ang sakit ba ay Matulis o Mahina?</string>
+    <string name="chest_question_3">Nagpapakita ba ang sakit sa ibang bahagi?</string>
+    <string name="chest_question_4">Hirap ka na sa paghinga?</string>
+    <string name="chest_question_5">Ang sakit ba ay tuloy-tuloy o pansamantala?</string>
+    <string name="chest_question_6">Nakararanas ka ba ng pagduduwal?</string>
+    <string name="chest_question_7">Ang sakit ba ay kaugnay sa pisikal na aktibidad?</string>
+    <string name="chest_question_8">May kasaysayan ka ba ng anumang malalang kondisyon sa kalusugan?</string>
+    <string name="chest_question_9">Nakararanas ka ba ng pagpapawis/pag-umbok/pag-ubo/pagkalambot?</string>
+    <string name="chest_question_10">Mayroon ka bang iba pang sintomas?</string>
+
+
+    <!-- Pain Locations -->
+    <string name="abdomen">Abdomen</string>
+    <string name="back">Likod</string>
+    <string name="legs">Binti</string>
+    <string name="arms">Braso</string>
+    <string name="joints">Kasukasuan</string>
+    <string name="feet">Paa</string>
+    <string name="neck">Leeg</string>
+    <string name="hands">Kamay</string>
+    <string name="stomach">Tiyan</string>
+
+    <!-- Abdomen Questions -->
+    <string name="abdomen_question_1">Nakakaranas ka ba ng pananakit?</string>
+    <string name="abdomen_question_2">Ang sakit ba ay nakatuon o kalat?</string>
+    <string name="abdomen_question_3">Ang sakit ba ay cramping o matulis?</string>
+    <string name="abdomen_question_4">May kasama bang pagduduwal sa sakit?</string>
+    <string name="abdomen_question_5">May nararamdaman ka ba na pamamaga ng iyong tiyan?</string>
+    <string name="abdomen_question_6">Ang sakit ba ay lumalala kapag gumagalaw?</string>
+    <string name="abdomen_question_7">May pagdurugo ba kapag nagbabawas ka??</string>
+    <string name="abdomen_question_8">Nilalagnat ka ba?</string>
+    <string name="abdomen_question_9">Maayos ba ang pakiramdam mo pakatapos kumain?</string>
+    <string name="abdomen_question_10">Naaapektuhan ba ng sakit ang iyong pang-araw-araw na aktibidad?</string>
+
+
+    <!-- Back Questions -->
+    <string name="back_question_1">May nararanasan ka bang pananakit sa iyong likod?</string>
+    <string name="back_question_2">Ang sakit ba ay nasa itaas o ibabang bahagi ng likod?</string>
+    <string name="back_question_3">Matulis ba o Mahina lang ang sakit na nararamdaman mo?</string>
+    <string name="back_question_4">Ang sakit ba ay kumakalat pababa sa iyong mga binti?</string>
+    <string name="back_question_5">Nakakaramdam ka ba nang panghihina sa iyong binti?</string>
+    <string name="back_question_6">Hirap ka bang lumakad?</string>
+    <string name="back_question_7">Lumalala ba ang sakit kapag Nakatayo o Nakaupo?</string>
+    <string name="back_question_8">Mayroon ka bang mga kamakailang pinsala?</string>
+    <string name="back_question_9">Mayroon bang pangangalay o pamamanhid?</string>
+    <string name="back_question_10">Mayroon ka bang iba pang sintomas tulad ng lagnat o panginginig?</string>
+
+
+    <!-- Legs Questions -->
+    <string name="legs_question_1">Masakit ba ang iyong Binti?</string>
+    <string name="legs_question_2">Masakit ba ang iyong isang binti o pareho?</string>
+    <string name="legs_question_3">Matulis ba o Mahina lang ang sakit na nararamdaman mo?</string>
+    <string name="legs_question_4">May pamamaga ba sa binti?</string>
+    <string name="legs_question_5">Ang sakit ba ay lumalala kapag gumagalaw?</string>
+    <string name="legs_question_6">Mayroon ka bang pamamanhid o pangangalay?</string>
+    <string name="legs_question_7">Nakaranas ka ba ng anumang pinsala sa iyong binti?</string>
+    <string name="legs_question_8">Naaapektuhan ba ng sakit ang iyong paglalakad?</string>
+    <string name="legs_question_9">Mayroon ka bang kasaysayan ng pamumuo ng dugo?</string>
+    <string name="legs_question_10">Mayroong pamumula o init sa binti?</string>
+
+    <!-- Arms Questions -->
+    <string name="arms_question_1">Masakit ba ang iyong braso?</string>
+    <string name="arms_question_2">Masakit ba ang iyong isang braso o pareho?</string>
+    <string name="arms_question_3">Matulis ba o Mahina lang ang sakit na nararamdaman mo</string>
+    <string name="arms_question_4">Mayroong pamamaga sa braso?</string>
+    <string name="arms_question_5">Ang sakit ba ay lumalala kapag gumagalaw?</string>
+    <string name="arms_question_6">Mayroon ka bang pamamanhid o pangangalay?</string>
+    <string name="arms_question_7">Nakaranas ka ba ng anumang pinsala sa iyong braso?</string>
+    <string name="arms_question_8">Naaapektuhan ba ng sakit ang iyong lakas sa pagkagat?</string>
+    <string name="arms_question_9">Mayroon ka bang kasaysayan ng mga problema sa puso?</string>
+    <string name="arms_question_10">Mayroong pamumula o init sa braso?</string>
+
+
+    <!-- Joints Questions -->
+    <string name="joints_question_1">Masakit ba ang iyong kasukasuan?</string>
+    <string name="joints_question_2">Ang sakit ba ay nasa iisang kasukasuan lang o sa marami?</string>
+    <string name="joints_question_3">Ang sakit ba ay lumalala sa aktibidad?</string>
+    <string name="joints_question_4">Mayroong pamamaga sa kasukasuan?</string>
+    <string name="joints_question_5">Ang sakit ba ay tuloy-tuloy o paminsan-minsan?</string>
+    <string name="joints_question_6">Nakaranas ka ba ng anumang kamakailang pinsala?</string>
+    <string name="joints_question_7">Mayroon ka bang kasaysayan ng arthritis?</string>
+    <string name="joints_question_8">Naaapektuhan ba ng sakit ang iyong saklaw ng paggalaw?</string>
+    <string name="joints_question_9">Mayroon ka bang lagnat o panginginig?</string>
+    <string name="joints_question_10">Naaapektuhan ba ng sakit ang iyong pang-araw-araw na aktibidad?</string>
+
+    <!-- Feet Questions -->
+    <string name="feet_question_1">Masakit ba ang iyong paa?</string>
+    <string name="feet_question_2">Isang paa o pareho bang nasakit?</string>
+    <string name="feet_question_3">May pamamaga ba sa paa?</string>
+    <string name="feet_question_4">Ang sakit ba ay lumalala kapag naglalakad?</string>
+    <string name="feet_question_5">Mayroon ka bang pamamanhid o pangangalay?</string>
+    <string name="feet_question_6">Nakaranas ka ba ng anumang pinsala sa iyong paa?</string>
+    <string name="feet_question_7">Naaapektuhan ba ng sakit ang iyong balanse?</string>
+    <string name="feet_question_8">Mayroon ka bang kasaysayan ng diabetes?</string>
+    <string name="feet_question_9">Mayroong pamumula o init sa paa?</string>
+    <string name="feet_question_10">Naaapektuhan ba ng sakit ang iyong pang-araw-araw na aktibidad?</string>
+
+    <!-- Neck Questions -->
+    <string name="neck_question_1">May sakit ka ba sa iyong leeg?</string>
+    <string name="neck_question_2">Matulis ba o Mahina lang ang sakit na nararamdaman mo?</string>
+    <string name="neck_question_3">Ang sakit ba ay kumakalat sa iyong mga braso?</string>
+    <string name="neck_question_4">Mayroong paninigas sa iyong leeg?</string>
+    <string name="neck_question_5">Nakaranas ka ba ng anumang kamakailang pinsala?</string>
+    <string name="neck_question_6">Ang sakit ba ay lumalala kapag gumagalaw?</string>
+    <string name="neck_question_7">Mayroon ka bang pamamanhid o pangangalay?</string>
+    <string name="neck_question_8">Naaapektuhan ba ng sakit ang iyong tulog?</string>
+    <string name="neck_question_9">Mayroon ka bang sakit ng ulo na kasama ng sakit?</string>
+    <string name="neck_question_10">Naaapektuhan ba ng sakit ang iyong pang-araw-araw na aktibidad?</string>
+
+
+    <!-- Hands Questions -->
+    <string name="hands_question_1">Masakit ba ang iyong kamay?</string>
+    <string name="hands_question_2">May sakit ka ba sa isang kamay o pareho?</string>
+    <string name="hands_question_3">Ang sakit ba ay tuloy-tuloy o paminsan-minsan?</string>
+    <string name="hands_question_4">Mayroong pamamaga sa kamay?</string>
+    <string name="hands_question_5">Matulis ba o Mahina lang ang sakit na nararamdaman mo?</string>
+    <string name="hands_question_6">Nakaranas ka ba ng anumang kamakailang pinsala?</string>
+    <string name="hands_question_7">Mayroon ka bang pamamanhid o pangangalay?</string>
+    <string name="hands_question_8">Naaapektuhan ba ng sakit ang iyong pang-araw-araw na aktibidad?</string>
+    <string name="hands_question_9">Mayroon ka bang kasaysayan ng arthritis?</string>
+    <string name="hands_question_10">Mayroong pamumula o init sa kamay?</string>
+
+    <string name="stomach_question_1">May sakit ka ba sa tiyan?</string>
+    <string name="stomach_question_2">Sakit ba ang pakiramdam na Matulis o cramping?</string>
+    <string name="stomach_question_3">Nakararanas ka ba ng pagduduwal o pagsusuka?</string>
+    <string name="stomach_question_4">Patuloy ba o Paminsan-minsan ang sakit?</string>
+    <string name="stomach_question_5">May lagnat ka ba?</string>
+    <string name="stomach_question_6">May pagbabago ka ba sa gana sa pagkain?</string>
+    <string name="stomach_question_7">Nakakaramdam ka ba ng paglobo sa tiyan?</string>
+    <string name="stomach_question_8">Nakararanas ka ba ng pagtatae o constipation?</string>
+    <string name="stomach_question_9">May lambot ba kapag hinahawakan?</string>
+    <string name="stomach_question_10">May iba ka bang sintomas?</string>
+
+
+    <!-- Common Answers -->
+    <string name="yes">Oo</string>
+    <string name="no">Hindi</string>
+    <string name="localized">Nakatuon</string>
+    <string name="diffuse">Kalat</string>
+    <string name="cramping">May cramping</string>
+    <string name="sharp">Matulis</string>
+    <string name="dull">Mahina</string>
+    <string name="one">Isa</string>
+    <string name="both">Pareho</string>
+    <string name="constant">Tuluy-tuloy</string>
+    <string name="intermittent">Paminsan-minsan</string>
+    <string name="upper">Taas na Bahagi</string>
+    <string name="lower">Babang Bahagi</string>
+
+    <!-- Additional Common Answers -->
+    <string name="standing">Nakatayo</string>
+    <string name="sitting">Nakaupo</string>
+    <string name="multiple">Marami</string>
+
+
+    <string name="migraine">Migraine</string>
+    <string name="tension_headache">Tension Headache</string>
+    <string name="concussion">Concussion</string>
+    <string name="meningitis">Meningitis</string>
+    <string name="stroke">Stroke</string>
+
+    <string name="angina">Angina</string>
+    <string name="heart_attack">Heart Attack</string>
+    <string name="gerd">Gastroesophageal Reflux Disease (GERD)</string>
+    <string name="pulmonary_embolism">Pulmonary Embolsim</string>
+    <string name="peptic_ulcer">Peptic Ulcer</string>
+    <string name="asthma">Asthma</string>
+    <string name="muscle_strain">Muscle Strain</string>
+
+    <string name="gastritis">Gastritis</string>
+    <string name="appendicitis">Appendicitis</string>
+    <string name="ibs">Irritable Bowel Syndrome (IBS)</string>
+    <string name="diverticulitis">Diverticulitis</string>
+    <string name="constipation">Constipation</string>
+    <string name="food_poisoning">Food Poisoning</string>
+    <string name="ibd">Inflammatory Bowel Disease (IBD)</string>
+    <string name="celiac_disease">Celiac Disease</string>
+    <string name="lactose_intolerance">Lactose Intolerance</string>
+    <string name="functional_dyspepsia">Functional Dyspepsia</string>
+
+    <string name="herniated_disc">Herniated Disc</string>
+    <string name="spinal_stenosis">Spinal Stenosis</string>
+    <string name="postural_issues">Postural Issues</string>
+    <string name="sciatica">Sciatica</string>
+    <string name="kidney_stones">Kidney Stones</string>
+    <string name="thoracic_outlet_syndrome">Thoracic Outlet Syndrome</string>
+    <string name="degenerative_disc_disease">Degenerative Disc Disease</string>
+    <string name="upper_back_pain">Upper Back Pain</string>
+    <string name="muscle_spasm">Muscle Spasm</string>
+
+    <string name="deep_vein_thrombosis">Deep Vein Thrombosis (DVT)</string>
+    <string name="peripheral_artery_disease">Peripheral Artery Disease (PAD)</string>
+    <string name="varicose_veins">Varicose Veins</string>
+    <string name="cellulitis">Cellulitis</string>
+    <string name="chronic_venous_insufficiency">Chronic Venous Insufficiency</string>
+
+    <string name="tendinitis">Tendinitis</string>
+    <string name="overuse_syndrome">Overuse Syndrome</string>
+    <string name="carpal_tunnel_syndrome">Carpal Tunnel Syndrome</string>
+    <string name="bursitis">Bursitis</string>
+    <string name="swelling">Swelling</string>
+    <string name="nerve_compression">Nerve Compression</string>
+    <string name="frozen_shoulder">Frozen Shoulder</string>
+    <string name="myopathy">Myopathy</string>
+
+    <string name="osteoarthritis">Osteoarthritis</string>
+    <string name="rheumatoid_arthritis">Rheumatoid Arthritis</string>
+    <string name="gout">Gout</string>
+    <string name="psoriatic_arthritis">Psoriatic Arthritis</string>
+    <string name="ligament_sprain">Ligament Sprain</string>
+    <string name="reactive_arthritis">Reactive Arthritis</string>
+    <string name="scleroderma">Scleroderma</string>
+    <string name="systemic_lupus_erythematosus">Systemic Lupus Erythematosus</string>
+
+    <string name="plantar_fasciitis">Plantar Fasciitis</string>
+    <string name="peripheral_neuropathy">Peripheral Neuropathy</string>
+    <string name="foot_sprain">Foot Sprain</string>
+    <string name="mortons_neuroma">Morton\'s Neuroma</string>
+    <string name="flat_feet">Flat Feet</string>
+    <string name="diabetic_foot">Diabetic Foot</string>
+    <string name="arthritis">Arthritis</string>
+
+    <string name="cervical_strain">Cervical Strain</string>
+
+    <string name="tendonitis">Tendonitis</string>
+    <string name="de_quervains_tenosynovitis">De Quervain\'s Tenosynovitis</string>
+
+    <string name="irritable_bowel_syndrome">Irritable Bowel Syndrome</string>
+    <string name="gastroenteritis">Gastroenteritis</string>
+
+
+
+    <string name="advisory_message">Mas mabuti pa ring kumonsulta sa isang personal na awtoridad sa kalusugan para sa mas tumpak na pagsusuri.</string>
+    <string name="unknown_condition">Di Kilalang Kundisyon</string>
+    <string name="possible_condition">Posibleng Kundisyon:</string>
+    <string name="confidence">Kumpiyansa:</string>
+    <string name="select_option_message">Mangyaring pumili ng isang opsyon.</string>
+    <string name="select_an_option">Mangyaring pumili ng opsyon.</string>
+
+    <string name="less_than_24_hours">Mas mababa sa 24 na oras</string>
+    <string name="one_to_three_days">1-3 araw</string>
+    <string name="more_than_three_days">Higit sa 3 araw</string>
+
+
+    <string name="savedt">MGA PAKSANG NAKASAVE</string>
+    <string name="nosavedt">Walang paksang nakasave</string>
+
+
+
 
 
 </resources>

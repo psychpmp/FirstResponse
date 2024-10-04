@@ -14,23 +14,61 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Image Section with Floating Logos -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:layout_marginBottom="8dp">
 
+            <!-- Kit Image -->
             <ImageView
-                android:layout_marginTop="20dp"
                 android:id="@+id/kitImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
                 android:scaleType="centerCrop"
                 android:contentDescription="@string/kit_image_desc"
-                android:layout_gravity="center"
-                />
+                android:layout_gravity="center"/>
+
+            <!-- Container for Logos (Aligned Vertically) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="end|top"
+                android:padding="4dp"
+                android:layout_margin="8dp">
+
+                <!-- Shopee Button -->
+                <ImageButton
+                    android:id="@+id/shopeeButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_shopee_logo"
+                    android:layout_marginTop="30dp"
+                    android:scaleType="fitCenter"/>
+
+                <!-- Lazada Button -->
+                <ImageButton
+                    android:id="@+id/lazadaButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_lazada_logo"
+                    android:scaleType="fitCenter"
+                    android:layout_marginTop="8dp"/>
+
+                <!-- Temu Button -->
+                <ImageButton
+                    android:id="@+id/temuButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/ic_temu_logo"
+                    android:scaleType="fitCenter"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
 
         </FrameLayout>
-
+        <!-- Title -->
         <TextView
             android:id="@+id/kitTitle"
             android:layout_width="wrap_content"
@@ -39,26 +77,16 @@
             android:textColor="@android:color/black"
             android:textSize="18sp"
             android:textAllCaps="true"
-            android:fontFamily="@font/montserrat_bold"
-            />
+            android:fontFamily="@font/montserrat_bold" />
 
+        <!-- Description -->
         <TextView
             android:id="@+id/kitDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textSize="12sp"
+            android:textSize="14sp"
             android:textColor="@android:color/black"
             android:fontFamily="@font/opensans"/>
-
-        <Button
-            android:id="@+id/kitButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/white"
-            app:backgroundTint="@color/red"
-            android:text="Shop Now"
-            android:fontFamily="@font/montserrat_bold" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

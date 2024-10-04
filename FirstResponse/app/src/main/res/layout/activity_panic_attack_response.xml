@@ -4,18 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PanicAttackResponse">
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:contentInsetStartWithNavigation="0dp"
+        android:layout_marginTop="8dp"
+        app:navigationIcon="@drawable/back"
+        app:titleTextAppearance="@style/CustomToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"/>
+
+
+    <!-- FloatingActionButton for saving the topic -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/saved"
+        app:fabSize="normal"
+        app:tint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -23,6 +55,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@color/shadow"
+            android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -37,6 +70,7 @@
                     android:id="@+id/imageNumber1"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
+                    android:layout_marginTop="8dp"
                     android:src="@drawable/numberonenew"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -94,8 +128,8 @@
 
                 <ImageView
                     android:id="@+id/imageNumber2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:src="@drawable/numbertwonew"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -110,6 +144,7 @@
                     android:layout_width="271dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:layout_marginLeft="32dp"
                     android:text="How to help someone who is dealing with it?"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
@@ -144,8 +179,9 @@
                 android:id="@+id/groundingbutton1"
                 android:layout_width="250dp"
                 android:layout_height="73dp"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="45dp"
                 android:paddingBottom="10dp"
+                android:fontFamily="@font/montserrat_bold"
                 android:background="@drawable/white_button_background"
                 android:text="GROUNDING TECHNIQUES"
                 android:textColor="@android:color/white"
@@ -188,17 +224,4 @@
 
         </LinearLayout>
     </ScrollView>
-    <!-- FloatingActionButton for saving the topic -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/saved"
-        app:fabSize="normal"
-        app:tint="@color/red"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

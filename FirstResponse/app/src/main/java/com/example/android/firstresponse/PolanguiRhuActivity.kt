@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -34,12 +35,33 @@ class PolanguiRhuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_polangui_rhu)
 
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, R.color.shadow2)))
+        // Load animations
+        val pressAnim = AnimationUtils.loadAnimation(this, R.anim.button_press)
+        val releaseAnim = AnimationUtils.loadAnimation(this, R.anim.button_release)
+
+        // Initialize custom toolbar
+        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.customToolbar)
+        setSupportActionBar(toolbar)
+
+        // Set the title for the Toolbar
+        supportActionBar?.title = "POLANGUI RURAL HEALTH UNIT"  // Replace with your desired title
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.red))
+
+
+        // Show back button on the Toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationIcon(R.drawable.back)
 
+        // Set up back button click listener with animation
+        toolbar.setNavigationOnClickListener {
+            it.startAnimation(pressAnim)
+            it.postDelayed({
+                it.startAnimation(releaseAnim)
+                finish()
+            }, pressAnim.duration)
+        }
 
-        val title: TextView = findViewById(R.id.title_polangui_rhu)
-        val content: TextView = findViewById(R.id.content_polangui_rhu)
+    val content: TextView = findViewById(R.id.content_polangui_rhu)
         val buttonGetDirections: Button = findViewById(R.id.button_get_directions_polangui_rhu)
         val distanceTextView: TextView = findViewById(R.id.distance_text_view_polangui_rhu)
         val buttonContact: Button = findViewById(R.id.button_contact_polangui_rhu)

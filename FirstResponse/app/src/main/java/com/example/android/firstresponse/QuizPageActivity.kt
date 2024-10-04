@@ -121,10 +121,10 @@ class QuizPageActivity : BaseActivity() {
         lockIconLevel3.visibility = if (buttonLevel3.isEnabled) View.GONE else View.VISIBLE
 
         buttonLevel2.setBackgroundTintList(
-            ContextCompat.getColorStateList(this, if (buttonLevel2.isEnabled) R.color.shadow2 else R.color.shadow)
+            ContextCompat.getColorStateList(this, if (buttonLevel2.isEnabled) R.color.shadow2 else R.color.shadow4)
         )
         buttonLevel3.setBackgroundTintList(
-            ContextCompat.getColorStateList(this, if (buttonLevel3.isEnabled) R.color.shadow2 else R.color.shadow)
+            ContextCompat.getColorStateList(this, if (buttonLevel3.isEnabled) R.color.shadow2 else R.color.shadow4)
         )
     }
 }

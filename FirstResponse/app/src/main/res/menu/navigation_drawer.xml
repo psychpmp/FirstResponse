@@ -10,19 +10,19 @@
             android:id="@+id/sideHome"
             android:icon="@drawable/ic_baseline_home_24" />
 
-        <item android:title="Location"
+        <item android:title="@string/location_t"
             android:id="@+id/location"
             android:icon="@drawable/ic_baseline_location_on_24" />
 
-        <item android:title="Language Settings"
+        <item android:title="@string/language_t"
             android:id="@+id/settings"
             android:icon="@drawable/ic_baseline_settings_24" />
 
-        <item android:title="Credits"
+        <item android:title="@string/credits_t"
             android:id="@+id/credits"
             android:icon="@drawable/ic_baseline_info_24" />
 
-        <item android:title="Suggestions"
+        <item android:title="@string/suggestions_t"
             android:id="@+id/suggestions"
             android:icon="@drawable/baseline_attach_email_24" />
 

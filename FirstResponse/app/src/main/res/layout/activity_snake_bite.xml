@@ -4,24 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".snakebite">
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:contentInsetStartWithNavigation="0dp"
+        android:layout_marginTop="8dp"
+        app:navigationIcon="@drawable/back"
+        app:titleTextAppearance="@style/CustomToolbarTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"/>
+
+
+    <!-- FloatingActionButton for saving the topic -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/saved"
+        app:fabSize="normal"
+        app:tint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customToolbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
+        app:layout_constraintStart_toStartOf="parent">
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:padding="16dp"
             android:background="@color/shadow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -37,6 +69,7 @@
                     android:id="@+id/imageNumber1"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
+                    android:layout_marginTop="16dp"
                     android:src="@drawable/numberonenew"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +89,7 @@
                     android:gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="What is A Snake Bite"
+                    android:text="What is A Snake \nBite"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -147,8 +180,8 @@
 
                 <ImageView
                     android:id="@+id/imageNumber2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
                     android:src="@drawable/numbertwonew"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -163,7 +196,7 @@
                     android:layout_width="271dp"
                     android:layout_height="56dp"
                     android:gravity="center"
-                    android:text="Actions For each types of Bites"
+                    android:text="Actions for each \ntypes of Bites"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -266,17 +299,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- FloatingActionButton for saving the topic -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/saved"
-        app:fabSize="normal"
-        app:tint="@color/red"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+  =
 
 </androidx.constraintlayout.widget.ConstraintLayout>

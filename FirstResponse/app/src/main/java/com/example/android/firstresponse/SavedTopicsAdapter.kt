@@ -44,20 +44,21 @@ class SavedTopicsAdapter(
             "shock" -> R.drawable.shock
             "bleeding" -> R.drawable.bleeding
             "snakebite" -> R.drawable.snake_bite
+            "insectbite" -> R.drawable.insect_bite
             "bruises" -> R.drawable.bruise
-            "sprains" -> R.drawable.sprain
-            "strains" -> R.drawable.strains
-            "nosebleeds" -> R.drawable.nosebleeds
+            "sprain" -> R.drawable.sprain
+            "strain" -> R.drawable.strains
+            "nosebleed" -> R.drawable.nosebleeds
             "allergic reaction" -> R.drawable.allergic_reactions
-            "headaches" -> R.drawable.headaches
-            "minor concussions" -> R.drawable.minor_concussions
-            "muscle cramps" -> R.drawable.cramp
-            "blisters" -> R.drawable.blisters
+            "headache" -> R.drawable.headaches
+            "minor_concussion" -> R.drawable.minor_concussions
+            "muscle_cramps" -> R.drawable.cramp
+            "blister" -> R.drawable.blisters
             "acute grief" -> R.drawable.acute_grief
-            "trauma informed care" -> R.drawable.trauma_informed_care
+            "trauma-informed care" -> R.drawable.trauma_informed_care
             "panic attack response" -> R.drawable.panic_attack_response
             "grounding techniques" -> R.drawable.grounding_techniques
-            "stress reduction" -> R.drawable.stress_reduction
+            "stress_reduction" -> R.drawable.stress_reduction
             "floods" -> R.drawable.floods
             "anxiety management" -> R.drawable.anxiety_management
             "volcanic eruption" -> R.drawable.volcanic
