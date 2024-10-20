@@ -20,6 +20,18 @@
         android:layout_marginTop="65dp"
         android:layout_marginBottom="16dp" />
 
+    <!-- Question Icon at Top Right -->
+    <ImageButton
+        android:id="@+id/questionIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/question"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp" />
+
     <!-- ScrollView to handle content overflow -->
     <ScrollView
         android:id="@+id/scrollView"
@@ -383,7 +395,7 @@
                         android:id="@+id/cdrmoleg_text"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="CDRRMO EQRT LIGAO CITY"
+                        android:text="CDRRMO EQRT Ligao City"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"
@@ -409,57 +421,7 @@
 
 
 
-            <!-- MDRRMO LIGAO CardView -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:backgroundTint="@color/red"
-                app:cardCornerRadius="16dp">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:id="@+id/image_logo_mdrmmo_ligao"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/qrtpol"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/text_mdrmmo_ligao"
-                        android:contentDescription="MDRRMO Ligao Logo" />
-
-                    <TextView
-                        android:id="@+id/text_mdrmmo_ligao"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="MDRRMO Ligao"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/montserrat_bold"
-                        app:layout_constraintStart_toEndOf="@+id/image_logo_mdrmmo_ligao"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/button_mdrmmo_ligao" />
-
-                    <Button
-                        android:id="@+id/button_mdrmmo_ligao"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Call"
-                        android:textColor="@color/white"
-                        android:fontFamily="@font/montserrat_bold"
-                        android:backgroundTint="@color/black"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
 
 
             <!-- Zone Medical and Intervention Hospital CardView -->
@@ -543,7 +505,7 @@
                         android:id="@+id/text_qrt_ligao_rural"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Ligao Rural Health Unit"
+                        android:text="City Health Office Ligao"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:fontFamily="@font/montserrat_bold"

@@ -83,11 +83,12 @@
 
                 <TextView
                     android:id="@+id/textView1"
-                    android:layout_width="267dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:text="What is a Volcanic Eruption"
+                    android:layout_marginLeft="34dp"
+                    android:text="@string/vulcant1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -138,13 +139,11 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="271dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="36dp"
                     android:gravity="center"
-                    android:text="Key Hazards During
-                    a Volcanic Eruption"
+                    android:text="@string/vulcant2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -178,7 +177,8 @@
                 android:id="@+id/faults"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/volc_eruption"></ImageView>
+                android:src="@drawable/volc_eruption">
+            </ImageView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout4"
@@ -204,19 +204,19 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="293dp"
-                    android:layout_height="56dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:layout_marginLeft="8dp"
-                    android:gravity="left"
-                    android:text="How to Handle a Volcanic Eruption?"
+                    android:gravity="center"
+                    android:text="@string/vulcant3"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/imageNumber3"
-                    app:layout_constraintTop_toTopOf="parent"></TextView>
+                    app:layout_constraintTop_toTopOf="parent">
+                </TextView>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -224,12 +224,11 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginRight="100dp"
-                android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:text="Before an Eruption:"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="15dp"
+                android:text="@string/vulcant4"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/black"
                 app:fontFamily="@font/montserrat_bold"/>
@@ -252,11 +251,10 @@
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginRight="100dp"
-                android:paddingLeft="20dp"
-                android:text="During an Eruption:"
+                android:layout_marginLeft="15dp"
+                android:text="@string/vulcant5"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/black"
                 app:fontFamily="@font/montserrat_bold"/>
@@ -279,11 +277,10 @@
             <TextView
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginRight="100dp"
-                android:paddingLeft="20dp"
-                android:text="After an Eruption:"
+                android:layout_marginLeft="15dp"
+                android:text="@string/vulcant6"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/black"
                 app:fontFamily="@font/montserrat_bold"/>

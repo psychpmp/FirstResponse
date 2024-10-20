@@ -83,14 +83,12 @@
 
                 <TextView
                     android:id="@+id/textView1"
-                    android:layout_width="280dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
                     android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
                     android:layout_marginLeft="24dp"
-                    android:text="What is Acute Grief?"
+                    android:text="@string/acutet1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -141,11 +139,11 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="271dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginLeft="32dp"
-                    android:text="How to help someone who is dealing with it?"
+                    android:text="@string/acutet2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"

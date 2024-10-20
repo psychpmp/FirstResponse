@@ -83,13 +83,12 @@
 
                 <TextView
                     android:id="@+id/textView1"
-                    android:layout_width="280dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="How dangerous Heatwave is?"
+                    android:layout_marginLeft="32dp"
+                    android:text="@string/heatt1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -140,12 +139,12 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="271dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="How to stay cool
-                    from Heatwave"
+                    android:layout_marginLeft="24dp"
+                    android:text="@string/heatt2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"

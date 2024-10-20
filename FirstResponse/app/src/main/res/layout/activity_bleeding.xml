@@ -83,13 +83,14 @@
 
                 <TextView
                     android:id="@+id/textView1"
-                    android:layout_width="310dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="90dp"
                     android:layout_marginTop="4dp"
                     android:gravity="center"
+                    android:layout_marginLeft="30dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Classification of Bleeding"
+                    android:text="@string/bleedingt1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -232,10 +233,11 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="271dp"
-                    android:layout_height="56dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
                     android:gravity="center"
-                    android:text="Actions for each \ntypes of Bleeding"
+                    android:text="@string/bleedingt2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"

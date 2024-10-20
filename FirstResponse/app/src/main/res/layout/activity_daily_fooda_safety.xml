@@ -83,14 +83,12 @@
 
                 <TextView
                     android:id="@+id/textView1"
-                    android:layout_width="280dp"
-                    android:layout_height="70dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginLeft="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="Importance of Daily Food Safety"
+                    android:layout_marginLeft="38dp"
+                    android:text="@string/dailyt1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"
@@ -141,13 +139,12 @@
 
                 <TextView
                     android:id="@+id/textView2"
-                    android:layout_width="271dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginLeft="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:gravity="center"
-                    android:text="Actions to ensure
-                    Daily Food Safety"
+                    android:layout_marginLeft="32dp"
+                    android:text="@string/dailyt2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     app:fontFamily="@font/montserrat_bold"

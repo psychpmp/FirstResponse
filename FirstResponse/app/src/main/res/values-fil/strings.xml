@@ -39,32 +39,29 @@
 
     <string name="earth_para1">Ang lindol ay isang biglaang pagyanig ng ibabaw ng Lupa na dulot ng paggalaw ng mga bato sa ilalim. Karamihan sa mga lindol ay hindi napapansin ng mga tao sa ibabaw ng Lupa. Libu-libong lindol ang nagaganap araw-araw ngunit masyadong mahina upang maramdaman.</string>
 
+    <string name="earth_para2"><b>■Plate tectonics</b> - Ang pinakamataas na bahagi ng Lupa ay nahahati sa mga pangunahing bahagi na tinatawag na tectonic plates. Ang mga slab na ito ay bumubuo sa lithosphere, na binubuo ng crust (kontinental at karagatan) at ang itaas na bahagi ng mantle. Ang mga tectonic plates ay gumagalaw ng napakabagal kumpara sa isa\'t isa, karaniwang ilang sentimetro bawat taon, ngunit nagdudulot ito ng malaking pagbabago sa mga hangganan ng plate, na nagreresulta sa mga lindol.\n
+\n<b>■Elastic rebound theory</b> - Bago ang isang lindol, ang pagbuo ng stress sa mga bato sa magkabilang panig ng isang fault ay nagreresulta sa unti-unting pagbabago. Sa huli, ang pagbabago na ito ay lumalampas sa frictional force na humahawak sa mga bato at biglang pagdulas ang nagaganap sa kahabaan ng fault. Ang paglabas ng naipong stress na ito ay nagdudulot sa mga bato sa magkabilang panig ng fault na bumalik sa kanilang orihinal na anyo (elastic rebound) ngunit may pag-aalis sa magkabilang panig ng fault.</string>
 
-    <string name="earth_para2"><b>■Plate tectonics</b> - Ang pinakamataas na bahagi ng Lupa ay nahahati sa mga pangunahing bahagi na tinatawag na tectonic plates. Ang mga slab na ito ay bumubuo sa lithosphere, na binubuo ng crust (kontinental at karagatan) at ang itaas na bahagi ng mantle. Ang mga tectonic plates ay gumagalaw ng napakabagal kumpara sa isat isa, karaniwang ilang sentimetro bawat taon, ngunit nagdudulot ito ng malaking pagbabago sa mga hangganan ng plate, na nagreresulta sa mga lindol.\n
-    \n<b>■Elastic rebound theory</b> - Bago ang isang lindol, ang pagbuo ng stress sa mga bato sa magkabilang panig ng isang fault ay nagreresulta sa unti-unting pagbabago. Sa huli, ang pagbabago na ito ay lumalampas sa frictional force na humahawak sa mga bato at biglang pagdulas ang nagaganap sa kahabaan ng fault. Ang paglabas ng naipong stress na ito ay nagdudulot sa mga bato sa magkabilang panig ng fault na bumalik sa kanilang orihinal na anyo (elastic rebound) ngunit may pag-aalis sa magkabilang panig ng fault.</string>
+    <string name="earth_indoor"><b>Yumuko, Magtago, at Kumapit:</b> <b>Dumapa</b> sa iyong mga kamay at tuhod upang maiwasan ang pagbagsak. <b>Takpan</b> ang iyong ulo at leeg (at ang buong katawan kung maaari) sa ilalim ng matibay na piraso ng kasangkapan tulad ng mesa o desk. <b>Kumapit</b> sa kasangkapan upang mapanatili itong nasa lugar hanggang sa huminto ang pagyanig.\n<b>Lumayo sa mga bintana, salamin, at panlabas na pader:</b> Ang mga ito ay maaaring masira o mag-collapse, na nagdudulot ng pinsala.\n<b>Huwag tumakbo palabas:</b> Mas ligtas na manatili sa loob ng bahay dahil ang bumabagsak na debris ay maaaring mapanganib malapit sa mga gusali.\n<b>Iwasan ang mga elevator:</b> Kung mawalan ng kuryente o masira ang gusali, maaaring ma-trap ka sa elevator.</string>
 
-    <string name="earth_indoor"><b>Drop, Cover, and Hold On:</b> <b>Dumapa</b> sa iyong mga kamay at tuhod upang maiwasan ang pagbagsak. <b>Takpan</b> ang iyong ulo at leeg (at ang buong katawan kung maaari) sa ilalim ng matibay na piraso ng kasangkapan tulad ng mesa o desk. <b>Kumapit</b> sa kasangkapan sa bahay na matitibay upang mapanatili itong nasa lugar hanggang sa huminto ang pagyanig.\n<b>Stay away from windows, glass, and exterior walls:</b> Ang mga ito ay maaaring masira o mag-collapse, na nagdudulot ng pinsala.\n<b>Do not run outside:</b> Madalas na mas ligtas na manatili sa loob ng bahay dahil ang bumabagsak na debris ay maaaring mapanganib malapit sa mga gusali.\n<b>Avoid elevators:</b> Kung mawalan ng kuryente o masira ang gusali, maaaring ma-trap ka sa elevator.</string>
+    <string name="earth_outdoor"><b>Lumayo sa mga gusali, puno, ilawan ng kalye, at mga kable ng kuryente:</b> Ang mga estrukturang ito ay maaaring mag-collapse o masira sa panahon ng lindol.\n<b>Maghanap ng bukas na lugar:</b> Manatili sa isang bukas na lugar hanggang sa huminto ang pagyanig.\n<b>Yumuko sa lupa:</b> Manatiling nakayuko o mababa ang iyong sarili upang mabawasan ang panganib ng pagkakasipa ng pagyanig.</string>
 
-    <string name="earth_outdoor"><b>Move away from buildings, trees, streetlights, and utility wires:</b> Ang mga estruktura na ito ay maaaring mag-collapse o masira sa panahon ng lindol.\n<b>Find an open space:</b> Manatili sa isang bukas na lugar hanggang sa huminto ang pagyanig.\n<b>Drop to the ground:</b> Manatiling nakayuko o mababa ang iyong sarili upang mabawasan ang panganib ng pagkakasipa ng pagyanig.</string>
+    <string name="earth_vehicle"><b>Huminto sa gilid ng daan:</b> Huminto nang mabilis at ligtas hanggat maaari, iwasan ang mga overpasses, tulay, o mga linya ng kuryente.\n<b>Manatili sa loob ng sasakyan:</b> Ang sasakyan ay maaaring magbigay ng proteksyon mula sa bumabagsak na debris.\n<b>Iwasang pumarada malapit sa mga gusali, puno, o malalaking karatula:</b> Ang mga ito ay maaaring mag-collapse sa iyong sasakyan.\n<b>Magpatuloy nang maingat:</b> Pagkatapos huminto ang pagyanig, magmaneho nang maingat, nagmamasid para sa pinsala sa kalsada o panganib.</string>
 
+    <string name="earth_building"><b>Manatili sa loob:</b> Huwag gumamit ng mga elevator. Maghanap ng takip sa ilalim ng matibay na kasangkapan.\n<b>Lumayo sa mga bintana at panlabas na pader:</b> Ang mga ito ay madaling masira o mag-collapse.</string>
 
-    <string name="earth_vehicle"><b>Pull over:</b> Huminto nang mabilis at ligtas hanggat maaari, iwasan ang mga overpasses, tulay, o mga linya ng kuryente.\n<b>Stay inside the vehicle:</b> Ang sasakyan ay maaaring magbigay ng proteksyon mula sa bumabagsak na debris.\n<b>Avoid parking near buildings, trees, or large signs:</b> Ang mga ito ay maaaring mag-collapse sa iyong sasakyan.\n<b>Proceed cautiously:</b> Pagkatapos huminto ang pagyanig, magmaneho nang maingat, nagmamasid para sa pinsala sa kalsada o panganib.</string>
+    <string name="earth_coast"><b>Maging alerto sa tsunami:</b> Ang mga lindol malapit sa baybayin ay maaaring magdulot ng mga tsunami. Pagkatapos huminto ang pagyanig, lumipat sa mas mataas na lugar hanggat maaari kung ikaw ay malapit sa dagat.</string>
 
-    <string name="earth_building"><b>Stay inside:</b> Huwag gumamit ng mga elevator. Maghanap ng takip sa ilalim ng matibay na kasangkapan.\n<b>Move away from windows and outside walls:</b> Ang mga ito ay madaling masira o mag-collapse.</string>
+    <string name="earth_afterearthquake"><b>Maging handa para sa mga aftershock:</b> Ang mga mas maliliit na pagyanig ay maaaring mangyari ilang minuto o kahit araw pagkatapos ng pangunahing lindol.\n<b>Suriin ang mga pinsala at panganib:</b> Kapag huminto na ang pagyanig, suriin ang iyong sarili at ang iba para sa mga pinsala. Maghanap ng mga panganib tulad ng mga tagas ng gas o nasirang mga kable ng kuryente upang maiwasan ito.\n<b>Makinig sa balita o mga alerto:</b> Gumamit ng radyo o mobile device (kung mayroon) upang makinig para sa mga update at tagubilin sa emerhensiya.</string>
 
-    <string name="earth_coast"><b>Be aware of tsunamis:</b> Ang mga lindol malapit sa baybayin ay maaaring magdulot ng tsunamis. Pagkatapos huminto ang pagyanig, lumipat sa mas mataas na lugar hanggat maaari kung ikaw ay malapit sa dagat.</string>
+    <string name="epi_para1">Ang epidemya ay isang biglaang paglaganap ng sakit na nakakaapekto sa malaking bilang ng tao sa isang tiyak na rehiyon, komunidad, o populasyon.
+    \nAng epidemya ng isang nakakahawang sakit ay maaaring mangyari kung ang virus, bakterya, o iba pang sanhi ng sakit ay kamakailan lamang lumakas, ipinakilala sa isang lugar kung saan ito ay hindi pa umiiral, o nakakahanap ng mga bagong paraan upang makapasok sa katawan ng mga naaapektuhan nito. Maaari rin itong mangyari kung ang mga tao ay nagiging mas madaling kapitan sa sanhi ng sakit o may higit na pagkakalantad dito.
+    \nKaraniwang ikinaklasipika ang mga epidemya bilang common-source o propagated. Ang isang sakit ay tinatawag na isa o ang isa batay sa paraan ng pagkalat nito sa isang grupo ng mga tao.</string>
 
-
-    <string name="earth_afterearthquake"><b>Be prepared for aftershocks:</b> Ang mga mas maliliit na pagyanig ay maaaring mangyari ilang minuto o kahit araw pagkatapos ng pangunahing lindol.\n<b>Check for injuries and hazards:</b> Kapag huminto na ang pagyanig, suriin ang iyong sarili at ang iba para sa mga pinsala. Maghanap ng mga panganib tulad ng mga tagas ng gas o nasirang mga kable ng kuryente upang maiwasan ito.\n<b>Stay tuned to news or alerts:</b> Gumamit ng radyo o mobile device (kung mayroon) upang makinig para sa mga update at tagubilin sa emerhensiya.</string>
-
-    <string name="epi_para1">Ang epidemic ay isang biglaang paglaganap ng sakit na nakakaapekto sa malaking bilang ng tao sa isang tiyak na rehiyon, komunidad, o populasyon.
-    \nAng epidemic ng isang nakakahawang sakit ay maaaring mangyari kung ang virus, bakterya, o iba pang sanhi ng sakit ay kamakailan lamang lumakas, ipinakilala sa isang lugar kung saan ito ay hindi pa umiiral, o nakakahanap ng mga bagong paraan upang makapasok sa katawan ng mga naaapektuhan nito. Maari rin itong mangyari kung ang mga tao ay nagiging mas madaling kapitan sa sanhi ng sakit o may higit na pagkakalantad dito.
-    \nKaraniwang ikinakalas ang mga epidemic bilang common-source o propagated. Ang isang sakit ay tinatawag na isa o ang isa batay sa paraan ng pagkalat nito sa isang grupo ng mga tao.</string>
-
-    <string name="epi_para2">Ang <b>EPIDEMIC</b> ay kinabibilangan ng malawakang pagkalat ng sakit sa isang buong lugar o tiyak na komunidad kung saan hindi ito permanente. Ang <b>PANDEMIC</b> ay kinabibilangan ng mas malawak na pagkalat, madalas na umaabot sa buong mundo. Ang salitang <b>ENDEMIC</b> ay ginagamit upang ilarawan ang sakit na patuloy at regular na kumakalat sa loob ng isang tiyak na lugar o rehiyon (ibig sabihin, hindi ito nawawala ng lubusan).</string>
+    <string name="epi_para2">Ang <b>EPIDEMYA</b> ay kinabibilangan ng malawakang pagkalat ng sakit sa isang buong lugar o tiyak na komunidad kung saan hindi ito permanente. Ang <b>PANDEMYA</b> ay kinabibilangan ng mas malawak na pagkalat, madalas na umaabot sa buong mundo. Ang salitang <b>ENDEMIYA</b> ay ginagamit upang ilarawan ang sakit na patuloy at regular na kumakalat sa loob ng isang tiyak na lugar o rehiyon (ibig sabihin, hindi ito nawawala ng lubusan).</string>
 
     <string name="epi_para3">
-    \n<b>Follow public health guidelines</b>
+    \n<b>Sundin ang public health guidelines</b>
     \n<b>■Sanayin ang sarili sa kalinisan</b>
     \n<b>■Magsuot ng mask</b>
     \n<b>■Panatilihin ang pisikal na distansya</b>
@@ -569,23 +566,23 @@
     <string-array name="quiz_answers_1">
         <item>Tumawag para sa medikal na tulong</item>
         <item>Gawin ang CPR</item>
-        <item>Surihin ang kanilang airway</item>
+        <item>Suriin ang kanilang hinihingahan</item>
         <item>Bigyan sila ng pagkain</item>
     </string-array>
     <string-array name="quiz_answers_2">
         <item>Gawin ang abdominal thrusts</item>
         <item>Bigyan sila ng tubig</item>
-        <item>Patalikod ang kanilang likod</item>
+        <item>Tapikin ang kanilang likod</item>
         <item>Gawin ang chest compressions</item>
     </string-array>
     <string-array name="quiz_answers_3">
-        <item>Upang muling simulan ang puso</item>
-        <item>Upang alisin ang hadlang mula sa airway</item>
+        <item>Upang mag-simula ulit ang puso</item>
+        <item>Upang alisin ang hadlang mula sa hinihingahan</item>
         <item>Upang i-stabilize ang kondisyon ng pasyente</item>
         <item>Upang ibalik ang paghinga at sirkulasyon</item>
     </string-array>
     <string-array name="quiz_answers_4">
-        <item>Ilapat ang yelo nang diretso</item>
+        <item>Direktang ilapat ang yelo</item>
         <item>Gamitin ang bandage</item>
         <item>Palamigin ang pagkasunog gamit ang umaagos na tubig</item>
         <item>Maglagay ng ointment</item>
@@ -593,20 +590,20 @@
     <string-array name="quiz_answers_5">
         <item>Mag-apply ng init</item>
         <item>Magpahinga, yelo, compress, at iangat</item>
-        <item>Massage ang lugar</item>
-        <item>Panatilihin ang paggalaw ng joint</item>
+        <item>Imasahe ang apektadong lugar</item>
+        <item>Panatilihin ang paggalaw ng kasu-kasuan</item>
     </string-array>
     <string-array name="quiz_answers_6">
         <item>Magbigay ng antihistamines</item>
-        <item>Tumawag sa mga serbisyo ng emerhensya</item>
+        <item>Tumawag sa mga serbisyo ng emergency</item>
         <item>Maglagay ng malamig na compress</item>
         <item>Bigyan sila ng tubig</item>
     </string-array>
     <string-array name="quiz_answers_7">
-        <item>Mag-apply ng pressure at iangat</item>
+        <item>Iangat at mag-apply ng pressure</item>
         <item>Linisin gamit ang sabon at tubig</item>
         <item>Gamitin ang tourniquet</item>
-        <item>Ilapat ang yelo nang diretso</item>
+        <item>Ilapat ang yelo nang direkta</item>
     </string-array>
     <string-array name="quiz_answers_8">
         <item>Lagnat</item>
@@ -615,16 +612,16 @@
         <item>Pagkakaroon ng sakit ng ulo</item>
     </string-array>
     <string-array name="quiz_answers_9">
-        <item>Itiklop ang ulo pabalik</item>
+        <item>Iyuko ang ulo pabalik</item>
         <item>Pisilin ang mga butas ng ilong at yumuko pasulong</item>
         <item>Maglagay ng yelo sa likod ng leeg</item>
-        <item>Swallow ang dugo</item>
+        <item>Lunukin ang dugo</item>
     </string-array>
     <string-array name="quiz_answers_10">
         <item>Ilipat sila sa komportableng posisyon</item>
         <item>Panatilihing nakahiga at hindi gumagalaw</item>
         <item>Hikayatin silang maglakad ng dahan-dahan</item>
-        <item>Mag-apply ng init sa lugar</item>
+        <item>Maglagay ng mainit na bagay sa apektadong lugar</item>
     </string-array>
 
 
@@ -752,29 +749,29 @@
     <string name="safety_preparedness_t">KALIGTASAN AT KAHANDAAN</string>
 
 
-        <string name="burns_t">PASO</string>
-        <string name="choking_t">SAMID</string>
-        <string name="cpr_t">CPR</string>
-        <string name="splints_t">SPLINTS</string>
-        <string name="seizures_t">SEIZURES</string>
-        <string name="shock_t">SHOCK</string>
-        <string name="bleeding_t">PAGDURUGO</string>
-        <string name="snake_bite_t">TUKLAW NG AHAS</string>
-        <string name="insect_bites_t">KAGAT/STING NG INSEKTO</string>
-        <string name="bruises_t">PASA</string>
-        <string name="sprains_t">SPRAINS</string>
-        <string name="strains_t">STRAINS</string>
-        <string name="nose_bleeds_t">BALINGUYNGUY</string>
-        <string name="allergic_reactions_t">ALLERGIC REACTIONS</string>
-        <string name="headaches_t">SAKIT SA ULO</string>
-        <string name="minor_concussions_t">MINOR CONCUSSIONS</string>
-        <string name="muscle_cramps_t">CRAMP SA MUSCLE</string>
-        <string name="blisters_t">BLISTERS</string>
+    <string name="burns_t">PASO</string>
+    <string name="choking_t">SAMID</string>
+    <string name="cpr_t">CPR</string>
+    <string name="splints_t">SPLINTS</string>
+    <string name="seizures_t">SEIZURES</string>
+    <string name="shock_t">SHOCK</string>
+    <string name="bleeding_t">PAGDURUGO</string>
+    <string name="snake_bite_t">TUKLAW NG AHAS</string>
+    <string name="insect_bites_t">KAGAT/STING NG INSEKTO</string>
+    <string name="bruises_t">PASA</string>
+    <string name="sprains_t">SPRAINS</string>
+    <string name="strains_t">STRAINS</string>
+    <string name="nose_bleeds_t">BALINGUYNGUY</string>
+    <string name="allergic_reactions_t">ALLERGIC REACTIONS</string>
+    <string name="headaches_t">SAKIT SA ULO</string>
+    <string name="minor_concussions_t">MINOR CONCUSSIONS</string>
+    <string name="muscle_cramps_t">CRAMP SA MUSCLE</string>
+    <string name="blisters_t">BLISTERS</string>
 
-    <string name="acute_grief_t">MATINDING PANGUNGULILA</string>
+    <string name="acute_grief_t">PANGUNGULILA</string>
     <string name="anxiety_management_t">PAMAMAHALA NG ANXIETY</string>
     <string name="panic_attack_response_t">TUGON SA PANIC ATTACK</string>
-    <string name="trauma_informed_care_t">PANGANGALAGA SA TRAUMA</string>
+    <string name="trauma_informed_care_t">TRAUMA-\nINFORMED CARE</string>
     <string name="grounding_techniques_t">GROUNDING TECHNIQUES</string>
     <string name="stress_reduction_t">PAGBABAWAS NG STRESS</string>
 
@@ -796,7 +793,7 @@
 
     <string name="quiz_level">Antas ng Pagsusulit</string>
 
-    <string name="when_symptom_started">Kailan nagsimula ang sintomas?</string>
+    <string name="when_symptoms_happen">Kailan nagsimula ang sintomas?</string>
     <string name="where_pain_originate">Saan nagmumula ang sakit o hindi komportable?</string>
     <string name="head">Ulo</string>
     <string name="chest">Dibdib</string>
@@ -1046,7 +1043,7 @@
 
     <string name="advisory_message">Mas mabuti pa ring kumonsulta sa isang personal na awtoridad sa kalusugan para sa mas tumpak na pagsusuri.</string>
     <string name="unknown_condition">Di Kilalang Kundisyon</string>
-    <string name="possible_condition">Posibleng Kundisyon:</string>
+    <string name="possible_condition">Posibleng mga Kundisyon:</string>
     <string name="confidence">Kumpiyansa:</string>
     <string name="select_option_message">Mangyaring pumili ng isang opsyon.</string>
     <string name="select_an_option">Mangyaring pumili ng opsyon.</string>
@@ -1059,6 +1056,212 @@
     <string name="savedt">MGA PAKSANG NAKASAVE</string>
     <string name="nosavedt">Walang paksang nakasave</string>
 
+
+    <string name="unknown">Diko Alam</string>
+
+    <string name="panic_attack_condition">Panic Attack</string>
+
+    <string name="burnst1"> KLASIPIKASYON NG PASO</string>
+    <string name="burnst2">Unang-Degree ng \nPaso</string>
+    <string name="burnst3">Ikalawang-Degree ng \nPaso</string>
+    <string name="burnst4">Ikatlong-Degree ng \nPaso</string>
+    <string name="burnst5">ANONG GAGAWIN \nKAPAG NAPASO?</string>
+    <string name="burnst6">KAILAN PUPUNTA \nNG OSPITAL</string>
+    <string name="burnst7">Pumunta sa emergency department ng ospital kung:</string>
+
+    <string name="chokingt1">PARA SA \nWASTONG EDAD</string>
+    <string name="chokingt2">PARA SA MGA \nSANGGOL</string>
+    <string name="call">TUMAWAG NG TULONG</string>
+
+
+    <string name="cprt">ANO ANG CPR ?</string>
+    <string name="cprt1">PAANO GAWIN ANG \nCPR ?</string>
+
+    <string name="splintt1">ANO ANG SPLINT?</string>
+    <string name="splintt2">PAANO MAGLAGAY \nNG SPLINT?</string>
+
+    <string name="seizurest1">ANO ANG SEIZURES?</string>
+    <string name="seizurest2">SANHI NG SEIZURES</string>
+    <string name="seizurest3">SINTOMAS NG \nSEIZURE</string>
+    <string name="seizurest4">PAANO GAMUTING \nANG SEIZURES?</string>
+
+    <string name="shockt1">PANGANIB</string>
+    <string name="shockt2">TUGON</string>
+
+    <string name="bleedingt1">KLASIPIKASYONG NG \nPAGDURUGO</string>
+    <string name="bleedingt2">HAKBANG SA BAWAT \nURI NG PAGURUGO</string>
+
+    <string name="snaket1">ANO ANG TUKLAW \nNG AHAS</string>
+    <string name="snaket2">HAKBANG SA BAWAT \nURI NG TUKLAW</string>
+    <string name="snaket3">Tuyong Tuklaw</string>
+    <string name="snaket4">Nakalalasong Tuklaw</string>
+
+    <string name="insectt1">ANO ANG KAGAT O \nTUSOK NG INSEKTO</string>
+    <string name="insectt2">Mild na Sintomas:</string>
+    <string name="insectt3">Malalang Sintomas</string>
+    <string name="insectt4">PAANO GAMUTIN \nANG KAGAT O TUSOK \nNG INSEKTO</string>
+    <string name="insectt5">Para sa Mild na Sintomas:</string>
+    <string name="insectt6">Para sa Malalang Sintomas:</string>
+    <string name="insectt7">Para sa Tusok:</string>
+    <string name="insectt8">Para sa Kagat ng Tick:</string>
+
+    <string name="bruiset1">ANO ANG PASA</string>
+    <string name="bruiset2">PAANO GAMUTIN \nANG PASA</string>
+
+    <string name="spraint1">ANO ANG SPRAIN</string>
+    <string name="spraint2">Grade 1 (Mild na \nSprain)</string>
+    <string name="symptoms">Sintomas:</string>
+    <string name="spraint3">Grade 2 (Katamtamang \nSprain)</string>
+    <string name="spraint4">Grade 3 (Malubhang \nSprain)</string>
+    <string name="spraint5">HAKBANG PARA SA \nBAWAT SPRAIN</string>
+    <string name="spraint6">Grade 1</string>
+    <string name="spraint7">Grade 2</string>
+    <string name="spraint8">Grade 3</string>
+
+    <string name="straint1">ANO ANG STRAIN</string>
+    <string name="straint2">KAILANGANG \nHAKBANG SA STRAIN</string>
+
+    <string name="noset1">ANO ANG \nBALINGUYNGUY</string>
+    <string name="noset2">HAKBANG PARA SA \nBALINGUYNGUY</string>
+
+    <string name="allergyt1">ANO ANG ALLERGIC \nREACTION</string>
+    <string name="allergyt2">Mild na Sintomas:</string>
+    <string name="allergyt3">Malalang Sintomas:</string>
+    <string name="allergyt4">HAKBANG KONTRA \nALLERGIC REACTION</string>
+    <string name="allergyt5">Para sa Mild na Sintomas:</string>
+    <string name="allergyt6">Para sa Malalang Sintomas</string>
+
+    <string name="headt1">ANO ANG SAKIT SA \nULO</string>
+    <string name="headt2">HAKBANG KONTRA \nSAKIT NG ULO</string>
+
+    <string name="minort1">ANO ANG MINOR \nCONCUSION</string>
+    <string name="minort2">Mga Sintomas:</string>
+    <string name="minort3">HAKBANG KONTRA \nMINOR CONCUSION</string>
+
+    <string name="musclet1">ANO ANG CRAMP \nSA MUSCLE</string>
+    <string name="musclet2">Sanhi:</string>
+    <string name="musclet3">HAKBANG KONTRA \nCRAMP SA MUSCLE</string>
+
+    <string name="blistert1">ANO ANG BLISTER</string>
+    <string name="blistert2">HAKBANG KONTRA \nBLISTER</string>
+
+    <string name="acutet1">ANO ANG \nPANGUGULILA?</string>
+    <string name="acutet2">PAANO TULUNGAN \nANG TAONG \nNAKARARANAS NITO?</string>
+
+    <string name="anxietyt1">ANO ANG ANXIETY?</string>
+    <string name="anxietyt2">PAANO TULUNGAN \nANG TAONG \nNAKARARANAS NITO?</string>
+
+    <string name="panict1">ANO ANG PANIC \nATTACK?</string>
+    <string name="panict2">PAANO TULUNGAN \nANG TAONG \nNAKARARANAS NITO?</string>
+
+    <string name="traumat1">ANO ANG TRAUMA\n-INFORMED CARE?</string>
+    <string name="traumat2">PARAAN PARA GAWIN \nANG TRAUMA-\nINFORMED CARE</string>
+
+    <string name="groundt1">KAHALAHAGAHAN \nNG GROUNDING \nTECHNIQUES</string>
+    <string name="groundt2">LISTAHAN NG \nGROUNDING \nTECHNIQUES</string>
+
+    <string name="stresst1">ANO ANG STRESS?</string>
+    <string name="stresst2">MGA HAKBANG \nKONTRA STRESS</string>
+
+    <string name="floodst1">ANO ANG BAHA?</string>
+    <string name="floodst2">ANO ANG SANHI \n NG BAHA?</string>
+    <string name="floodst3">MGA DAPAT GAWIN \n TUWING MAY BAHA</string>
+
+    <string name="eartht1">ANO ANG LINDOL?</string>
+    <string name="eartht2">BAKIT NAGKAKAROON \nNG LINDOL?</string>
+    <string name="eartht3">ANO ANG MAARING \nGAWIN KAPAG \nMAY LINDOL?</string>
+    <string name="eartht4">Kung Ikaw ay Nasa Loob:</string>
+    <string name="eartht5">Yumuko, Magtago, at Kumapit:</string>
+    <string name="eartht6">Lumayo sa mga bintana, salamin, \nat panlabas na pader:</string>
+    <string name="eartht7">Huwag tumakbo palabas:</string>
+    <string name="eartht8">Iwasan ang mga elevator:</string>
+    <string name="eartht9">Kung Ikaw ay Nasa Labas:</string>
+    <string name="eartht10">Lumayo sa mga gusali, puno, \nstreetlights, at mga kable ng kuryente:</string>
+    <string name="eartht11">Maghanap ng bukas na lugar:</string>
+    <string name="eartht12">Yumuko sa lupa:</string>
+    <string name="eartht13">Kung Ikaw ay Nasa Sasakyan:</string>
+    <string name="eartht14">Huminto sa gilid ng daan:</string>
+    <string name="eartht15">Manatili sa loob ng sasakyan:</string>
+    <string name="eartht16">Iwasang pumarada malapit sa mga gusali, \npuno, o malalaking karatula:</string>
+    <string name="eartht17">Magpatuloy nang maingat:</string>
+    <string name="eartht18">Kung Ikaw ay Nasa Gusali:</string>
+    <string name="eartht19">Manatili sa loob:</string>
+    <string name="eartht20">Lumayo sa mga bintana at panlabas na pader:</string>
+    <string name="eartht21">Kung Ikaw ay Nasa Baybayin:</string>
+    <string name="eartht22">Maging alerto sa tsunami:</string>
+    <string name="eartht23">Pagkatapos ng Lindol:</string>
+    <string name="eartht24">Maging handa sa mga aftershock:</string>
+    <string name="eartht25">Suriin ang mga pinsala at panganib:</string>
+    <string name="eartht26">Makinig sa balita o mga alerto:</string>
+
+    <string name="vulcant1">ANO ANG PAGPUTOK \nNG BULKAN?</string>
+    <string name="vulcant2">MGA PANGANIB SA \nPANAHON NG \nPAGPUTOK NG BULKAN?</string>
+    <string name="vulcant3">PAANO HARAPIN \nANG PAGPUTOK \nNG BULKAN?</string>
+    <string name="vulcant4">Bago ang Pagputok:</string>
+    <string name="vulcant5">Habang Nagaganap ang Pagputok:</string>
+    <string name="vulcant6">Pagkatapos ng Pagputok:</string>
+
+    <string name="epit1">ANO ANG EPIDEMYA?</string>
+    <string name="epit2">EPIDEMYA VS. \nPANDEMYA VS. \nENDEMIYA</string>
+    <string name="epit3">MGA KINAKAILANGAN \nNA GAWIN</string>
+
+    <string name="basict1">BAKIT?</string>
+    <string name="basict2">PAANO?</string>
+    <string name="basict3">KAILAN?</string>
+
+    <string name="watert1">KAHALAGAHAN NG \nKALIGTASAN SA \nTUBIG</string>
+    <string name="watert2">MGA HAKBANG \nUPANG MALINIS \nANG TUBIG</string>
+
+    <string name="roadt1">KAHALAGAHAN NG \nKALIGTASAN SA \nDAAN</string>
+    <string name="roadt2">MGA HAKBANG \nUPANG LIGTAS \nSA DAAN</string>
+
+    <string name="dailyt1">KAHALAGAHAN NG \nDAILY FOOD \nSAFETY</string>
+    <string name="dailyt2">MGA HAKBANG \nUPANG LIGTAS \nSA PAGKAIN</string>
+
+    <string name="foodt1">KAHALAGAHAN NG \nEMERGENCY FOOD \nSAFETY</string>
+    <string name="foodt2">MGA HAKBANG \nPARA SA \nEMERGENCY FOOD</string>
+
+    <string name="heatt1">GAANO KADELIKADO \nANG HEATWAVE?</string>
+    <string name="heatt2">PAANO MAGING \nLIGTAS SA \nHEATWAVE?</string>
+
+    <string name="flashlight">FLASHLIGHT</string>
+    <string name="turn_on">BUKSAN</string>
+    <string name="turn_off">PATAYIN</string>
+    <string name="strobe">KUTITAP</string>
+    <string name="sos">SOS</string>
+    <string name="sos_with_alarm">SOS NA MAY ALARMA</string>
+    <string name="stop">ITIGIL</string>
+    <string name="dialog_title_flashlight">Mga Tampok ng Flashlight:</string>
+    <string name="dialog_message">
+    \n
+    1. BUKSAN:     Nag-aactivate ng flashlight upang magbigay ng tuloy-tuloy na ilaw.\n
+    2. PATAYIN:    Nagde-deactivate ng flashlight.\n
+    3. KUTITAP:     Pagkutitap ng ilaw, kapaki-pakinabang sa mga emerhensya.\n
+    4. SOS:        Nagpapadala ng SOS na signal gamit ang Morse code para sa mga sitwasyong nangangailangan ng tulong.\n
+    5. ALARM:      Nagpapadala ng SOS na signal na may tunog ng alarma para sa agarang pangangailangan.\n
+    6. ITIGIL:     Itinitigil ang anumang nagpapatuloy na strobe o SOS na mga signal.\n
+    \n
+    Gamitin ang mga tampok na ito ayon sa iyong pangangailangan.
+</string>
+
+    <string name="instruction_dialog_title">Mga Tagubilin para sa Mga Kontak sa Emerhensya</string>
+    <string name="instruction_dialog_message">
+        Kung ikaw ay nasa Polangui at nangangailangan ng agarang tulong, mangyaring tawagan ang mga sumusunod na kontak sa emerhensya:\n\n
+        - Polangui EMS QRT\n
+        - MDRRMO Polangui\n
+        - Polangui Rural Health Unit\n\n
+        Kung ikaw ay nasa OAS, mangyaring makipag-ugnayan sa:\n
+        - OAS Emergency Response Team\n
+        - MDRRMO OAS\n
+        - OAS Rural Health Unit\n\n
+        Kung ikaw ay nasa Ligao City, makipag-ugnayan sa:\n
+        - CDRRMO EQRT Ligao City\n
+        - Zone Medical Clinic\n
+        - Ligao Rural Health Unit\n\n
+        Para sa agarang atensiyong medikal, maaari mo ring tawagan:\n
+        - Duran Hospital\n\n
+        Mangyaring i-click ang kaukulang button upang tawagan ang kinakailangang serbisyo.
+    </string>
 
 
 

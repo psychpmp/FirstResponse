@@ -77,11 +77,11 @@
 
             <TextView
                 android:id="@+id/textView1"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginLeft="32dp"
-                android:text="What is an epidemic?"
+                android:text="@string/epit1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat_bold"
@@ -120,13 +120,12 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="287dp"
-                android:layout_height="88dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="24dp"
                 android:gravity="center"
-                android:text="Epidemic vs.\nPandemic vs.\nEndemic"
-
+                android:text="@string/epit2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat_bold"
@@ -168,12 +167,12 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="46dp"
+                android:layout_marginLeft="48dp"
                 android:gravity="center"
-                android:text="Safety measures \nto take"
+                android:text="@string/epit3"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@color/black"
                 android:fontFamily="@font/montserrat_bold"

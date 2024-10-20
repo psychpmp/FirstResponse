@@ -74,7 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="What are floods?"
+                    android:text="@string/floodst1"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     android:fontFamily="@font/montserrat_bold" />
@@ -112,10 +112,10 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="8dp"
                     android:layout_gravity="center"
-                    android:text="How are floods
-                    caused?"
-
+                    android:text="@string/floodst2"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     android:fontFamily="@font/montserrat_bold"/>
@@ -151,12 +151,12 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
                     android:gravity="center"
-                    android:text="What can we do
-                    during floods?"
+                    android:text="@string/floodst3"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="@color/black"
                     android:fontFamily="@font/montserrat_bold" />
