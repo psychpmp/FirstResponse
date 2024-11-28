@@ -28,6 +28,7 @@ import com.google.android.gms.common.api.ResolvableApiException
 import com.google.android.gms.location.LocationSettingsResponse
 import android.content.ActivityNotFoundException
 import android.view.Menu
+import com.google.android.gms.location.Priority
 
 class MainActivity : BaseActivity() {
     private val items = listOf(
@@ -74,6 +75,7 @@ class MainActivity : BaseActivity() {
     private lateinit var buttonFirstAidKits: Button
     private lateinit var buttonSafetyPreparedness: Button
     private lateinit var buttonWhatsWrong: Button
+    private lateinit var buttonFlashlight: Button
 
     companion object {
         private const val LOCATION_PERMISSION_REQUEST_CODE = 1
@@ -165,6 +167,12 @@ class MainActivity : BaseActivity() {
         buttonWhatsWrong.setOnClickListener {
             startActivity(Intent(this, WhatsWrongActivity::class.java))
         }
+
+        buttonFlashlight = findViewById<Button>(R.id.buttonFlashlight)
+        buttonFlashlight.setOnClickListener {
+            startActivity(Intent(this, FlashlightActivity::class.java))
+        }
+
 
         // Bottom navigation setup
         findViewById<BottomNavigationView>(R.id.bottomNavigationView).setOnNavigationItemSelectedListener { menuItem ->
@@ -281,9 +289,10 @@ class MainActivity : BaseActivity() {
     }
 
     private fun enableLocationSettings() {
-        val locationRequest = LocationRequest.create().apply {
-            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-        }
+        // Create a location request with high accuracy using the Builder
+        val locationRequest = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 1000) // Update interval of 1 second
+            .setMinUpdateIntervalMillis(500) // Set minimum update interval to 0.5 seconds
+            .build()
 
         val builder = LocationSettingsRequest.Builder().addLocationRequest(locationRequest)
         val client: SettingsClient = LocationServices.getSettingsClient(this)
@@ -310,13 +319,13 @@ class MainActivity : BaseActivity() {
         }
     }
 
+
     private fun getCurrentLocationAndOpenGoogleMaps() {
         if (checkLocationPermission()) {
-            val locationRequest = LocationRequest.create().apply {
-                priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-                interval = 5000 // Request location updates every 5 seconds for quicker response
-                fastestInterval = 2000 // Allow updates every 2 seconds
-            }
+            // Updated location request using Builder
+            val locationRequest = LocationRequest.Builder(Priority.PRIORITY_HIGH_ACCURACY, 5000) // Every 5 seconds
+                .setMinUpdateIntervalMillis(500) // Allow updates every 2 seconds
+                .build()
 
             val locationCallback = object : com.google.android.gms.location.LocationCallback() {
                 override fun onLocationResult(locationResult: com.google.android.gms.location.LocationResult) {
@@ -353,12 +362,14 @@ class MainActivity : BaseActivity() {
     }
 
 
+
     private fun openGoogleMaps(userLocation: Pair<Double, Double>) {
         val locations = listOf(
             Pair(13.292603487659566, 123.49065310834811), // RHU Polangui
             Pair(13.257769416930843, 123.49944847998052), // RHU Oas
             Pair(13.239677184699186, 123.55644399532457), // Josefina Belmonte Duran Albay Provincial Hospital
-            Pair(13.193639797921866, 123.32731289517719)  // Pantao District Hospital
+            Pair(13.239371029764875, 123.53186333310623), // Zone
+            Pair(13.240612986354503, 123.54160481199426)  // Ligao RHU
         )
 
         val nearestLocation = locations.minByOrNull { distance(userLocation, it) }

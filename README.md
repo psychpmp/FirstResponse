@@ -1,2 +1,2 @@
-# FirstResponse
-Capstone Project
+# Capstone_FirstResponse
+Capstone Project First Aid Application
